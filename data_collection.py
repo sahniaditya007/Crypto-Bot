@@ -220,6 +220,52 @@ class DataCollector:
             logging.error(f"Twitter API error: {e}")
             return []
 
+    def collect_market_data(self):
+        """Collect market data from CoinMarketCap."""
+        try:
+            url = f"{os.getenv('COINMARKETCAP_API_URL')}/cryptocurrency/listings/latest"
+            params = {
+                'start': '1',
+                'limit': '100',
+                'convert': 'USD'
+            }
+            
+            response = requests.get(url, headers=self.cmc_headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+            
+            if 'data' not in data:
+                raise ValueError("Invalid response format from CoinMarketCap API")
+            
+            market_data = []
+            for crypto in data['data']:
+                try:
+                    quote = crypto['quote']['USD']
+                    market_data.append({
+                        'timestamp': datetime.now().isoformat(),
+                        'symbol': crypto['symbol'],
+                        'name': crypto['name'],
+                        'price': quote['price'],
+                        'market_cap': quote['market_cap'],
+                        'volume': quote['volume_24h'],
+                        'percent_change_24h': quote['percent_change_24h'],
+                        'volume_change_24h': quote.get('volume_change_24h', 0),
+                        'market_cap_change_24h': quote.get('market_cap_change_24h', 0)
+                    })
+                except KeyError as e:
+                    logging.warning(f"Skipping cryptocurrency due to missing data: {e}")
+                    continue
+            
+            # Save market data
+            with open(os.path.join(self.data_dir, "market_data.json"), "w") as f:
+                json.dump(market_data, f)
+            
+            logging.info(f"Successfully collected market data for {len(market_data)} cryptocurrencies")
+            
+        except Exception as e:
+            logging.error(f"Error collecting market data: {e}")
+            raise
+
     def create_historical_data(self):
         """Create historical data file for model training."""
         try:
@@ -236,48 +282,103 @@ class DataCollector:
                 current = market_data[i]
                 previous = market_data[i-1]
 
-                # Calculate price change
-                price_change = ((current['current_price'] - previous['current_price']) / previous['current_price']) * 100
-                market_cap_change = ((current['market_cap'] - previous['market_cap']) / previous['market_cap']) * 100
-                volume_change = ((current['total_volume'] - previous['total_volume']) / previous['total_volume']) * 100 if previous['total_volume'] != 0 else 0
-
-                # Add sentiment data if available
-                sentiment_score = 0
                 try:
-                    with open(os.path.join(self.data_dir, "twitter_sentiment.json"), "r") as file:
-                        sentiment_data = json.load(file)
-                        if sentiment_data:
-                            sentiments = [item.get('sentiment', 0) for item in sentiment_data]
-                            sentiment_score = sum(sentiments) / len(sentiments)
-                except Exception as e:
-                    logging.warning(f"Could not load sentiment data: {e}")
-
-                historical_data.append({
-                    "price": current['current_price'],
-                    "market_cap": current['market_cap'],
-                    "volume": current['total_volume'],
-                    "price_change_24h": price_change,
-                    "market_cap_change_24h": market_cap_change,
-                    "volume_change_24h": volume_change,
-                    "sentiment_score": sentiment_score,
-                    "target": 1 if price_change > 0 else 0
-                })
+                    historical_data.append({
+                        'timestamp': current['timestamp'],
+                        'price': current['price'],
+                        'market_cap': current['market_cap'],
+                        'volume': current['volume'],
+                        'price_change_24h': current['percent_change_24h'],
+                        'market_cap_change_24h': current['market_cap_change_24h'],
+                        'volume_change_24h': current['volume_change_24h']
+                    })
+                except KeyError as e:
+                    logging.warning(f"Skipping data point due to missing field: {e}")
+                    continue
 
             # Save historical data
-            if historical_data:
-                historical_data_path = os.path.join(self.data_dir, "historical_data.json")
-                with open(historical_data_path, "w") as file:
-                    json.dump(historical_data, file)
-                logging.info(f"Created historical data file with {len(historical_data)} samples")
-            else:
-                logging.warning("No historical data was created")
+            with open(os.path.join(self.data_dir, "historical_data.json"), "w") as f:
+                json.dump(historical_data, f)
+            logging.info("Successfully created historical data")
 
         except Exception as e:
             logging.error(f"Error creating historical data: {e}")
             raise
 
+    def collect_news_data(self):
+        """Collect news data from various sources."""
+        try:
+            # Collect from CryptoPanic
+            cryptopanic_url = os.getenv("CRYPTOPANIC_API_URL")
+            response = requests.get(cryptopanic_url, timeout=10)
+            response.raise_for_status()
+            cryptopanic_data = response.json()
+            
+            # Save CryptoPanic data
+            with open(os.path.join(self.data_dir, "cryptopanic_news.json"), "w") as f:
+                json.dump(cryptopanic_data, f)
+            logging.info("Successfully collected CryptoPanic news data")
+
+            # Collect from NewsAPI
+            newsapi_key = os.getenv("NEWSAPI_URL").split("apiKey=")[1]
+            newsapi_url = f"https://newsapi.org/v2/everything?q=cryptocurrency&apiKey={newsapi_key}&language=en&sortBy=publishedAt&pageSize=100"
+            
+            response = requests.get(newsapi_url, timeout=10)
+            response.raise_for_status()
+            newsapi_data = response.json()
+            
+            # Save NewsAPI data
+            with open(os.path.join(self.data_dir, "newsapi_news.json"), "w") as f:
+                json.dump(newsapi_data, f)
+            logging.info("Successfully collected NewsAPI data")
+
+        except Exception as e:
+            logging.error(f"Error collecting news data: {e}")
+
+    def collect_social_data(self):
+        """Collect social media data."""
+        try:
+            # Collect Twitter data
+            if self.twitter_api:
+                try:
+                    # Collect tweets about major cryptocurrencies
+                    cryptocurrencies = ["bitcoin", "ethereum", "crypto"]
+                    all_tweets = []
+                    
+                    for crypto in cryptocurrencies:
+                        try:
+                            tweets = self.fetch_twitter_data(query=crypto, count=100)
+                            all_tweets.extend(tweets)
+                        except Exception as e:
+                            logging.warning(f"Error fetching tweets for {crypto}: {e}")
+                            continue
+                    
+                    # Save Twitter data if we have any
+                    if all_tweets:
+                        with open(os.path.join(self.data_dir, "twitter_data.json"), "w") as f:
+                            json.dump(all_tweets, f)
+                        logging.info("Successfully collected Twitter data")
+                    else:
+                        logging.warning("No Twitter data collected")
+                except Exception as e:
+                    logging.warning(f"Twitter API error: {e}")
+                    # Create empty Twitter data file to prevent errors
+                    with open(os.path.join(self.data_dir, "twitter_data.json"), "w") as f:
+                        json.dump([], f)
+            else:
+                logging.warning("Twitter API not initialized, skipping Twitter data collection")
+                # Create empty Twitter data file to prevent errors
+                with open(os.path.join(self.data_dir, "twitter_data.json"), "w") as f:
+                    json.dump([], f)
+
+        except Exception as e:
+            logging.error(f"Error collecting social data: {e}")
+            # Create empty Twitter data file to prevent errors
+            with open(os.path.join(self.data_dir, "twitter_data.json"), "w") as f:
+                json.dump([], f)
+
     def collect_data(self):
-        """Collect all necessary data from various sources."""
+        """Main method to collect all data."""
         try:
             logging.info("Starting data collection")
             
@@ -287,93 +388,17 @@ class DataCollector:
             # Collect news data
             self.collect_news_data()
             
-            # Collect social media data
+            # Collect social data
             self.collect_social_data()
             
-            logging.info("Data collection completed")
+            # Create historical data
+            self.create_historical_data()
+            
+            logging.info("Data collection completed successfully")
             
         except Exception as e:
             logging.error(f"Error in data collection: {e}")
             raise
-
-    def collect_market_data(self):
-        """Collect market data from CoinMarketCap."""
-        try:
-            # Get top 100 cryptocurrencies
-            response = requests.get(
-                f"{os.getenv('COINMARKETCAP_API_URL')}/cryptocurrency/listings/latest",
-                headers=self.cmc_headers,
-                params={'limit': 100}
-            )
-            
-            if response.status_code == 200:
-                market_data = response.json()
-                
-                # Process and save market data
-                processed_data = []
-                for coin in market_data.get('data', []):
-                    processed_coin = {
-                        'symbol': coin['symbol'],
-                        'name': coin['name'],
-                        'price': coin['quote']['USD']['price'],
-                        'volume_24h': coin['quote']['USD']['volume_24h'],
-                        'market_cap': coin['quote']['USD']['market_cap'],
-                        'percent_change_24h': coin['quote']['USD']['percent_change_24h'],
-                        'volume_change_24h': coin['quote']['USD']['volume_change_24h'],
-                        'timestamp': datetime.now().isoformat()
-                    }
-                    processed_data.append(processed_coin)
-                
-                # Save to file
-                output_file = os.path.join(self.data_dir, "market_data.json")
-                with open(output_file, 'w') as f:
-                    json.dump(processed_data, f, indent=2)
-                
-                logging.info(f"Successfully collected market data for {len(processed_data)} cryptocurrencies")
-            else:
-                logging.error(f"Error fetching market data: {response.status_code}")
-                
-        except Exception as e:
-            logging.error(f"Error in market data collection: {e}")
-
-    def collect_news_data(self):
-        """Collect news data from various sources."""
-        try:
-            # Collect from CryptoPanic
-            cryptopanic_url = os.getenv('CRYPTOPANIC_API_URL')
-            response = requests.get(cryptopanic_url)
-            
-            if response.status_code == 200:
-                news_data = response.json()
-                output_file = os.path.join(self.data_dir, "cryptopanic_news.json")
-                with open(output_file, 'w') as f:
-                    json.dump(news_data, f, indent=2)
-                logging.info("Successfully collected CryptoPanic news data")
-            
-            # Add more news sources here
-            
-        except Exception as e:
-            logging.error(f"Error in news data collection: {e}")
-
-    def collect_social_data(self):
-        """Collect social media data."""
-        try:
-            # This is a placeholder for social media data collection
-            # You would implement actual social media API calls here
-            social_data = {
-                'timestamp': datetime.now().isoformat(),
-                'platforms': ['twitter', 'reddit'],
-                'data': []
-            }
-            
-            output_file = os.path.join(self.data_dir, "social_data.json")
-            with open(output_file, 'w') as f:
-                json.dump(social_data, f, indent=2)
-            
-            logging.info("Successfully collected social media data")
-            
-        except Exception as e:
-            logging.error(f"Error in social data collection: {e}")
 
 if __name__ == "__main__":
     collector = DataCollector()

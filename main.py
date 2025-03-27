@@ -121,10 +121,6 @@ def main():
                 print(f"  • 24h Price Change: {rec['metrics']['percent_change_24h']:+.2f}%")
                 print(f"  • 24h Volume Change: {rec['metrics']['volume_change_24h']:+.2f}%")
                 print(f"  • Market Cap: ${rec['metrics']['market_cap']:,.0f}")
-                print("  • Sentiment Breakdown:")
-                print(f"    - Market Sentiment: {rec['sentiment_scores']['market']:+.2f}")
-                print(f"    - News Sentiment: {rec['sentiment_scores']['news']:+.2f}")
-                print(f"    - Social Sentiment: {rec['sentiment_scores']['social']:+.2f}")
                 print("----------------------------------------------")
         else:
             print("\nMarket conditions are challenging, but you can consider investing in these top cryptocurrencies:")
@@ -139,11 +135,6 @@ def main():
             print("9. Chainlink (LINK) - Leading oracle network")
             print("10. Polkadot (DOT) - Interoperability focused blockchain")
             print("\nHowever, please exercise caution and consider your risk tolerance.")
-        
-        print("\nMARKET OVERVIEW:")
-        print("----------------")
-        for key, value in results['market_trends'].items():
-            print(f"• {key}: {value}")
         
         print("\nINVESTMENT STRATEGY:")
         print("-------------------")
