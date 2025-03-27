@@ -15,19 +15,13 @@ import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='crypto_bot.log'
-)
-
 # Load environment variables
 load_dotenv()
 
 class ModelTrainer:
     def __init__(self):
         self.model_dir = "models"
+        self.data_dir = "data"
         self._setup_model_dir()
         self.scaler = StandardScaler()
         self.best_model = None
@@ -42,7 +36,7 @@ class ModelTrainer:
     def load_training_data(self) -> Tuple[pd.DataFrame, pd.Series]:
         """Load and validate training data."""
         try:
-            with open(os.getenv("HISTORICAL_DATA_FILE"), "r") as file:
+            with open(os.path.join(self.data_dir, "historical_data.json"), "r") as file:
                 historical_data = json.load(file)
             
             df = pd.DataFrame(historical_data)
@@ -164,7 +158,7 @@ class ModelTrainer:
             sns.barplot(x='importance', y='feature', data=feature_importance.head(10))
             plt.title('Top 10 Most Important Features')
             plt.tight_layout()
-            plt.savefig('feature_importance.png')
+            plt.savefig(os.path.join(self.model_dir, 'feature_importance.png'))
             plt.close()
             
         except Exception as e:

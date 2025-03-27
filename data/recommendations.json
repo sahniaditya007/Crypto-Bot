@@ -1,0 +1,292 @@
+[
+  {
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "score": -0.007691166944999999,
+    "confidence": 0.007691166944999999,
+    "risk_level": "Low",
+    "potential": "High",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 87319.03030095359,
+      "volume_24h": 26705045461.17949,
+      "market_cap": 1732655626198.3071,
+      "percent_change_24h": 1.06565537,
+      "volume_change_24h": -6.1931,
+      "name": "Bitcoin"
+    },
+    "sentiment_scores": {
+      "market": -0.02563722315,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.061931,
+      "potential_return": 0.752664138425,
+      "market_dominance": 0.6234523237199203,
+      "volume_stability": 0.938069,
+      "price_stability": 0.9893434463
+    }
+  },
+  {
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "score": -0.0007730627699999999,
+    "confidence": 0.0007730627699999999,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 2012.5297311633271,
+      "volume_24h": 12392552859.066391,
+      "market_cap": 242805519551.41083,
+      "percent_change_24h": 0.38512482,
+      "volume_change_24h": -0.9005,
+      "name": "Ethereum"
+    },
+    "sentiment_scores": {
+      "market": -0.0025768758999999996,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.009004999999999999,
+      "potential_return": 0.321030261080296,
+      "market_dominance": 0.08736742783013018,
+      "volume_stability": 0.990995,
+      "price_stability": 0.9961487518
+    }
+  },
+  {
+    "symbol": "USDT",
+    "name": "Tether USDt",
+    "score": -0.0018122170799999998,
+    "confidence": 0.0018122170799999998,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 1.0001805741284244,
+      "volume_24h": 58990069348.49638,
+      "market_cap": 144197016393.3919,
+      "percent_change_24h": 0.00205528,
+      "volume_change_24h": -1.2102,
+      "name": "Tether USDt"
+    },
+    "sentiment_scores": {
+      "market": -0.0060407236,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.012102,
+      "potential_return": 0.2916167008824762,
+      "market_dominance": 0.05188565089601385,
+      "volume_stability": 0.987898,
+      "price_stability": 0.9999794472
+    }
+  },
+  {
+    "symbol": "SOL",
+    "name": "Solana",
+    "score": -0.00413876712,
+    "confidence": 0.00413876712,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 139.0463244615096,
+      "volume_24h": 2933511317.2991557,
+      "market_cap": 71116038866.66805,
+      "percent_change_24h": 0.84242192,
+      "volume_change_24h": -3.6016,
+      "name": "Solana"
+    },
+    "sentiment_scores": {
+      "market": -0.0137958904,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.036016,
+      "potential_return": 0.2726283206765455,
+      "market_dominance": 0.025589308697460587,
+      "volume_stability": 0.963984,
+      "price_stability": 0.9915757808
+    }
+  },
+  {
+    "symbol": "XRP",
+    "name": "XRP",
+    "score": 0.00973407582,
+    "confidence": 0.00973407582,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "CAUTIOUS BUY",
+    "metrics": {
+      "price": 2.3531121825455745,
+      "volume_24h": 3140623256.328855,
+      "market_cap": 136964535593.7328,
+      "percent_change_24h": -1.02061612,
+      "volume_change_24h": 7.51,
+      "name": "XRP"
+    },
+    "sentiment_scores": {
+      "market": 0.0324469194,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.0751,
+      "potential_return": 0.28697291381620904,
+      "market_dominance": 0.049283225525023774,
+      "volume_stability": 0.9249,
+      "price_stability": 0.9897938388
+    }
+  },
+  {
+    "symbol": "GRT",
+    "name": "The Graph",
+    "score": 0.00234314124,
+    "confidence": 0.00234314124,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "CAUTIOUS BUY",
+    "metrics": {
+      "price": 0.10567005025662146,
+      "volume_24h": 36803979.81447875,
+      "market_cap": 1032944796.3052685,
+      "percent_change_24h": 1.40179416,
+      "volume_change_24h": 0.1603,
+      "name": "The Graph"
+    },
+    "sentiment_scores": {
+      "market": 0.007810470799999999,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.001603,
+      "potential_return": 0.25380256679040636,
+      "market_dominance": 0.000371679071013049,
+      "volume_stability": 0.998397,
+      "price_stability": 0.9859820584
+    }
+  },
+  {
+    "symbol": "NEAR",
+    "name": "NEAR Protocol",
+    "score": 0.0036743946299999993,
+    "confidence": 0.0036743946299999993,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "CAUTIOUS BUY",
+    "metrics": {
+      "price": 3.02366261254787,
+      "volume_24h": 160856326.72871992,
+      "market_cap": 3621460866.7835593,
+      "percent_change_24h": 1.74439642,
+      "volume_change_24h": 0.7052,
+      "name": "NEAR Protocol"
+    },
+    "sentiment_scores": {
+      "market": 0.012247982099999999,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.007052,
+      "potential_return": 0.2554060518260786,
+      "market_dominance": 0.0013030911385495103,
+      "volume_stability": 0.992948,
+      "price_stability": 0.9825560358
+    }
+  },
+  {
+    "symbol": "LINK",
+    "name": "Chainlink",
+    "score": 0.0058553784,
+    "confidence": 0.0058553784,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "CAUTIOUS BUY",
+    "metrics": {
+      "price": 15.53925476870995,
+      "volume_24h": 364176755.1933129,
+      "market_cap": 10210843849.377632,
+      "percent_change_24h": 2.3629856,
+      "volume_change_24h": 1.5406,
+      "name": "Chainlink"
+    },
+    "sentiment_scores": {
+      "market": 0.019517928,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.015406,
+      "potential_return": 0.25885405179707477,
+      "market_dominance": 0.00367411401826201,
+      "volume_stability": 0.984594,
+      "price_stability": 0.976370144
+    }
+  },
+  {
+    "symbol": "UNI",
+    "name": "Uniswap",
+    "score": 7.066338000000001e-05,
+    "confidence": 7.066338000000001e-05,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "CAUTIOUS BUY",
+    "metrics": {
+      "price": 6.789517481669359,
+      "volume_24h": 117018428.57199395,
+      "market_cap": 4267171371.5788035,
+      "percent_change_24h": 0.59050892,
+      "volume_change_24h": -0.5434,
+      "name": "Uniswap"
+    },
+    "sentiment_scores": {
+      "market": 0.00023554460000000006,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.005434,
+      "potential_return": 0.2527076685760568,
+      "market_dominance": 0.0015354337394552964,
+      "volume_stability": 0.994566,
+      "price_stability": 0.9940949108
+    }
+  },
+  {
+    "symbol": "S",
+    "name": "Sonic (prev. FTM)",
+    "score": 0.006461198625,
+    "confidence": 0.006461198625,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "CAUTIOUS BUY",
+    "metrics": {
+      "price": 0.611893007698508,
+      "volume_24h": 156300300.78992856,
+      "market_cap": 1762251862.1717029,
+      "percent_change_24h": 2.66786575,
+      "volume_change_24h": 1.6396,
+      "name": "Sonic (prev. FTM)"
+    },
+    "sentiment_scores": {
+      "market": 0.02153732875,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.016396,
+      "potential_return": 0.25717820509005207,
+      "market_dominance": 0.0006341017810107859,
+      "volume_stability": 0.983604,
+      "price_stability": 0.9733213425
+    }
+  }
+]

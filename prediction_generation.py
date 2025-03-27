@@ -10,13 +10,6 @@ from datetime import datetime
 from dataclasses import dataclass
 from enum import Enum
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='crypto_bot.log'
-)
-
 # Load environment variables
 load_dotenv()
 
@@ -36,6 +29,7 @@ class PredictionResult:
 class PredictionGenerator:
     def __init__(self):
         self.model_dir = "models"
+        self.data_dir = "data"
         self.model = None
         self.scaler = None
         self.feature_importance = None
@@ -180,7 +174,7 @@ def generate_predictions() -> Tuple[np.ndarray, np.ndarray]:
     """Wrapper function for prediction generation."""
     try:
         # Load market trends
-        with open("market_trends.json", "r") as file:
+        with open(os.path.join("data", "market_trends.json"), "r") as file:
             market_trends = json.load(file)
 
         # Initialize generator
@@ -190,7 +184,7 @@ def generate_predictions() -> Tuple[np.ndarray, np.ndarray]:
         results = generator.generate_predictions(market_trends)
 
         # Save predictions
-        generator.save_predictions(results, "predictions.json")
+        generator.save_predictions(results, os.path.join("data", "predictions.json"))
 
         # Extract predictions and confidence scores
         predictions = np.array([r.prediction for r in results])

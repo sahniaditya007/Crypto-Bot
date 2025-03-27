@@ -1,1 +1,719 @@
-{"count": 200, "next": "https://cryptopanic.com/api/free/v1/posts/?auth_token=5d3efdf3405c86e637926d16c630b32483628a26&page=2", "previous": null, "results": [{"kind": "news", "domain": "thecoinrepublic.com", "source": {"title": "The Coin Republic", "region": "en", "domain": "thecoinrepublic.com", "path": null, "type": "feed"}, "title": "Peter Schiff Cheers Gold\u2019s $3,060 Rally as Bitcoin Price Struggles", "published_at": "2025-03-27T17:14:00Z", "slug": "Peter-Schiff-Cheers-Golds-3060-Rally-as-Bitcoin-Price-Struggles", "currencies": [{"code": "BTC", "title": "Bitcoin", "slug": "bitcoin", "url": "https://cryptopanic.com/news/bitcoin/"}], "id": 20884424, "url": "https://cryptopanic.com/news/20884424/Peter-Schiff-Cheers-Golds-3060-Rally-as-Bitcoin-Price-Struggles?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:14:00Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "@DaanCrypto", "source": {"title": "Twitter - daancrypto", "region": "en", "domain": "DaanCrypto", "path": "@daancrypto", "type": "twitter"}, "title": "$ETH The big $2.1K level has held as resistance on the first test.\n\nTo get some kind of higher timeframe reversal going, it is important that ETH breaks through that area and gets itself back in the $2.1K-$2.8K range.\n\nFor now, still stuck within the $1.7K-$2.1K range.", "published_at": "2025-03-27T17:13:41Z", "slug": "ETH-The-big-21K-level-has-held-as-resistance-on-the-first-test-To-get-some-kind-of-higher-timeframe-reversal-going-it-is-important-that-ETH-breaks-through-that-area-and-gets-itself-back-in-the-21K-28K-range-For-now-still-stuck-within-the-17K-21K-range", "currencies": [{"code": "ETH", "title": "Bridged Ether (StarkGate)", "slug": "bridged-wrapped-ether-starkgate", "url": "https://cryptopanic.com/news/bridged-wrapped-ether-starkgate/"}], "id": 20884416, "url": "https://cryptopanic.com/news/20884416/ETH-The-big-21K-level-has-held-as-resistance-on-the-first-test-To-get-some-kind-of-higher-timeframe-reversal-going-it-is-important-that-ETH-breaks-through-that-area-and-gets-itself-back-in-the-21K-28K-range-For-now-still-stuck-within-the-17K-21K-range?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:13:41Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "decrypt.co", "source": {"title": "Decrypt", "region": "en", "domain": "decrypt.co", "path": null, "type": "feed"}, "title": "'Ghiblification' AI Anime Image Trend Pumps GHIBLI Solana Meme Coin", "published_at": "2025-03-27T17:11:13Z", "slug": "Ghiblification-AI-Anime-Image-Trend-Pumps-GHIBLI-Solana-Meme-Coin", "currencies": [{"code": "SOL", "title": "Solana", "slug": "solana", "url": "https://cryptopanic.com/news/solana/"}, {"code": "GHIBLI", "title": "Ghiblification", "slug": "ghiblification", "url": "https://cryptopanic.com/news/ghiblification/"}], "id": 20884417, "url": "https://cryptopanic.com/news/20884417/Ghiblification-AI-Anime-Image-Trend-Pumps-GHIBLI-Solana-Meme-Coin?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:11:13Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "cointelegraph.com", "source": {"title": "CoinTelegraph", "region": "en", "domain": "cointelegraph.com", "path": null, "type": "feed"}, "title": "Bitcoin price rally stalls as gold nears record $3.1K", "published_at": "2025-03-27T17:10:57Z", "slug": "Bitcoin-price-rally-stalls-as-gold-nears-record-31K", "currencies": [{"code": "BTC", "title": "Bitcoin", "slug": "bitcoin", "url": "https://cryptopanic.com/news/bitcoin/"}], "id": 20884414, "url": "https://cryptopanic.com/news/20884414/Bitcoin-price-rally-stalls-as-gold-nears-record-31K?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:10:57Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "thedefiant.io", "source": {"title": "DeFi News", "region": "en", "domain": "thedefiant.io", "path": null, "type": "feed"}, "title": "Crypto Market Extends Losses as Tariff Uncertainty Weighs on Investor Sentiment", "published_at": "2025-03-27T17:04:31Z", "slug": "Crypto-Market-Extends-Losses-as-Tariff-Uncertainty-Weighs-on-Investor-Sentiment", "currencies": [{"code": "BTC", "title": "Bitcoin", "slug": "bitcoin", "url": "https://cryptopanic.com/news/bitcoin/"}, {"code": "ETH", "title": "Ethereum", "slug": "ethereum", "url": "https://cryptopanic.com/news/ethereum/"}, {"code": "XRP", "title": "XRP", "slug": "ripple", "url": "https://cryptopanic.com/news/ripple/"}, {"code": "SOL", "title": "Solana", "slug": "solana", "url": "https://cryptopanic.com/news/solana/"}], "id": 20884393, "url": "https://cryptopanic.com/news/20884393/Crypto-Market-Extends-Losses-as-Tariff-Uncertainty-Weighs-on-Investor-Sentiment?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:04:31Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "cryptobriefing.com", "source": {"title": "CryptoBriefing", "region": "en", "domain": "cryptobriefing.com", "path": null, "type": "feed"}, "title": "BlackRock\u2019s Global Allocation Fund boosts IBIT shares by 91%", "published_at": "2025-03-27T17:03:04Z", "slug": "BlackRocks-Global-Allocation-Fund-boosts-IBIT-shares-by-91", "currencies": [{"code": "BTC", "title": "Bitcoin", "slug": "bitcoin", "url": "https://cryptopanic.com/news/bitcoin/"}], "id": 20884372, "url": "https://cryptopanic.com/news/20884372/BlackRocks-Global-Allocation-Fund-boosts-IBIT-shares-by-91?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:03:04Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "feeds2.benzinga.com", "source": {"title": "Benzinga", "region": "en", "domain": "feeds2.benzinga.com", "path": null, "type": "feed"}, "title": "XRP Slides Another 2%: What Is Going On?", "published_at": "2025-03-27T17:01:53Z", "slug": "XRP-Slides-Another-2-What-Is-Going-On", "currencies": [{"code": "BTC", "title": "Bitcoin", "slug": "bitcoin", "url": "https://cryptopanic.com/news/bitcoin/"}, {"code": "ETH", "title": "Ethereum", "slug": "ethereum", "url": "https://cryptopanic.com/news/ethereum/"}, {"code": "XRP", "title": "XRP", "slug": "ripple", "url": "https://cryptopanic.com/news/ripple/"}], "id": 20884429, "url": "https://cryptopanic.com/news/20884429/XRP-Slides-Another-2-What-Is-Going-On?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:01:53Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "media", "domain": "youtube.com", "source": {"title": "Crypto Tips", "region": "en", "domain": "youtube.com", "path": null, "type": "media"}, "title": "How To Get OUT Of Crypto Safely", "published_at": "2025-03-27T17:00:57Z", "slug": "How-To-Get-OUT-Of-Crypto-Safely", "id": 20884391, "url": "https://cryptopanic.com/news/20884391/How-To-Get-OUT-Of-Crypto-Safely?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:00:57Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "newsbtc.com", "source": {"title": "NewsBTC", "region": "en", "domain": "newsbtc.com", "path": null, "type": "feed"}, "title": "On-Chain Data Shows Dogecoin At A Crucial Inflection Point", "published_at": "2025-03-27T17:00:55Z", "slug": "On-Chain-Data-Shows-Dogecoin-At-A-Crucial-Inflection-Point", "currencies": [{"code": "DOGE", "title": "Dogecoin", "slug": "dogecoin", "url": "https://cryptopanic.com/news/dogecoin/"}], "id": 20884374, "url": "https://cryptopanic.com/news/20884374/On-Chain-Data-Shows-Dogecoin-At-A-Crucial-Inflection-Point?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:00:55Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "cryptopolitan.com", "source": {"title": "Feed - Cryptopolitan.Com", "region": "en", "domain": "cryptopolitan.com", "path": null, "type": "feed"}, "title": "California judge dropped ICP investor (DFINITY) lawsuit due to expired statute of limitations", "published_at": "2025-03-27T17:00:48Z", "slug": "California-judge-dropped-ICP-investor-DFINITY-lawsuit-due-to-expired-statute-of-limitations", "currencies": [{"code": "ICP", "title": "Internet Computer", "slug": "internet-computer", "url": "https://cryptopanic.com/news/internet-computer/"}, {"code": "S", "title": "Sonic (prev. FTM)", "slug": "sonic-3", "url": "https://cryptopanic.com/news/sonic-3/"}], "id": 20884409, "url": "https://cryptopanic.com/news/20884409/California-judge-dropped-ICP-investor-DFINITY-lawsuit-due-to-expired-statute-of-limitations?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:00:48Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "coincu.com", "source": {"title": "coincu", "region": "en", "domain": "coincu.com", "path": null, "type": "feed"}, "title": "Senate Delays Vote on SEC Chairman Paul Atkins", "published_at": "2025-03-27T17:00:41Z", "slug": "Senate-Delays-Vote-on-SEC-Chairman-Paul-Atkins", "id": 20884354, "url": "https://cryptopanic.com/news/20884354/Senate-Delays-Vote-on-SEC-Chairman-Paul-Atkins?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:00:41Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "media", "domain": "youtube.com", "source": {"title": "Simply Bitcoin", "region": "en", "domain": "youtube.com", "path": null, "type": "media"}, "title": "GameStop Is Buying Bitcoin!", "published_at": "2025-03-27T17:00:25Z", "slug": "GameStop-Is-Buying-Bitcoin", "currencies": [{"code": "BTC", "title": "Bitcoin", "slug": "bitcoin", "url": "https://cryptopanic.com/news/bitcoin/"}], "id": 20884411, "url": "https://cryptopanic.com/news/20884411/GameStop-Is-Buying-Bitcoin?mtm_campaign=API-OFA", "created_at": "2025-03-27T17:00:25Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "dailyhodl.com", "source": {"title": "The Daily Hodl", "region": "en", "domain": "dailyhodl.com", "path": null, "type": "feed"}, "title": "Ripple Agrees To Pay $50,000,000 Fine To Conclude SEC Lawsuit Once and for All", "published_at": "2025-03-27T16:55:57Z", "slug": "Ripple-Agrees-To-Pay-50000000-Fine-To-Conclude-SEC-Lawsuit-Once-and-for-All", "currencies": [{"code": "XRP", "title": "XRP", "slug": "ripple", "url": "https://cryptopanic.com/news/ripple/"}, {"code": "S", "title": "Sonic (prev. FTM)", "slug": "sonic-3", "url": "https://cryptopanic.com/news/sonic-3/"}], "id": 20884335, "url": "https://cryptopanic.com/news/20884335/Ripple-Agrees-To-Pay-50000000-Fine-To-Conclude-SEC-Lawsuit-Once-and-for-All?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:55:57Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "nftgators.com", "source": {"title": "Nftgators", "region": "en", "domain": "nftgators.com", "path": null, "type": "feed"}, "title": "Maven 11 Closes $107M Third Fund Anchored by Theta Capital Management", "published_at": "2025-03-27T16:55:56Z", "slug": "Maven-11-Closes-107M-Third-Fund-Anchored-by-Theta-Capital-Management", "id": 20884341, "url": "https://cryptopanic.com/news/20884341/Maven-11-Closes-107M-Third-Fund-Anchored-by-Theta-Capital-Management?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:55:56Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "thestreet.com", "source": {"title": "The Street Crypto", "region": "en", "domain": "thestreet.com", "path": null, "type": "feed"}, "title": "Veteran analyst warns major trouble ahead for markets", "published_at": "2025-03-27T16:53:02Z", "slug": "Veteran-analyst-warns-major-trouble-ahead-for-markets", "id": 20884425, "url": "https://cryptopanic.com/news/20884425/Veteran-analyst-warns-major-trouble-ahead-for-markets?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:53:02Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "coinjournal.net", "source": {"title": "CoinJournal", "region": "en", "domain": "coinjournal.net", "path": null, "type": "feed"}, "title": "Intercontinental Exchange exploring USDC and USYC integration, partners with Circle", "published_at": "2025-03-27T16:52:03Z", "slug": "Intercontinental-Exchange-exploring-USDC-and-USYC-integration-partners-with-Circle", "currencies": [{"code": "USDC", "title": "USDC", "slug": "usd-coin", "url": "https://cryptopanic.com/news/usd-coin/"}, {"code": "USYC", "title": "Hashnote USYC", "slug": "hashnote-usyc", "url": "https://cryptopanic.com/news/hashnote-usyc/"}, {"code": "ICE", "title": "Ice Open Network", "slug": "ice", "url": "https://cryptopanic.com/news/ice/"}], "id": 20884403, "url": "https://cryptopanic.com/news/20884403/Intercontinental-Exchange-exploring-USDC-and-USYC-integration-partners-with-Circle?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:52:03Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "protos.com", "source": {"title": "Protos.com", "region": "en", "domain": "protos.com", "path": null, "type": "feed"}, "title": "US Treasury could sanction Tornado Cash again if court accepts \u2018moot\u2019 notice", "published_at": "2025-03-27T16:48:32Z", "slug": "US-Treasury-could-sanction-Tornado-Cash-again-if-court-accepts-moot-notice", "currencies": [{"code": "GAL", "title": "Galxe", "slug": "project-galaxy", "url": "https://cryptopanic.com/news/project-galaxy/"}, {"code": "TORN", "title": "Tornado Cash", "slug": "tornado-cash", "url": "https://cryptopanic.com/news/tornado-cash/"}], "id": 20884324, "url": "https://cryptopanic.com/news/20884324/US-Treasury-could-sanction-Tornado-Cash-again-if-court-accepts-moot-notice?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:48:32Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "cryptopolitan.com", "source": {"title": "Feed - Cryptopolitan.Com", "region": "en", "domain": "cryptopolitan.com", "path": null, "type": "feed"}, "title": "Cosmos developers bring IBC to Ethereum in landmark interoperability test", "published_at": "2025-03-27T16:47:27Z", "slug": "Cosmos-developers-bring-IBC-to-Ethereum-in-landmark-interoperability-test", "currencies": [{"code": "ETH", "title": "Ethereum", "slug": "ethereum", "url": "https://cryptopanic.com/news/ethereum/"}], "id": 20884337, "url": "https://cryptopanic.com/news/20884337/Cosmos-developers-bring-IBC-to-Ethereum-in-landmark-interoperability-test?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:47:27Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "decrypt.co", "source": {"title": "Decrypt", "region": "en", "domain": "decrypt.co", "path": null, "type": "feed"}, "title": "Wyoming Stablecoin Is Just a State-Issued CBDC by Another Name: Rep. Tom Emmer", "published_at": "2025-03-27T16:44:00Z", "slug": "Wyoming-Stablecoin-Is-Just-a-State-Issued-CBDC-by-Another-Name-Rep-Tom-Emmer", "id": 20884290, "url": "https://cryptopanic.com/news/20884290/Wyoming-Stablecoin-Is-Just-a-State-Issued-CBDC-by-Another-Name-Rep-Tom-Emmer?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:44:00Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}, {"kind": "news", "domain": "decrypt.co", "source": {"title": "Decrypt", "region": "en", "domain": "decrypt.co", "path": null, "type": "feed"}, "title": "Elizabeth Warren Slams SEC Chair Nominee for Potential Crypto 'Pre-Bribe'", "published_at": "2025-03-27T16:43:46Z", "slug": "Elizabeth-Warren-Slams-SEC-Chair-Nominee-for-Potential-Crypto-Pre-Bribe", "id": 20884289, "url": "https://cryptopanic.com/news/20884289/Elizabeth-Warren-Slams-SEC-Chair-Nominee-for-Potential-Crypto-Pre-Bribe?mtm_campaign=API-OFA", "created_at": "2025-03-27T16:43:46Z", "votes": {"negative": 0, "positive": 0, "important": 0, "liked": 0, "disliked": 0, "lol": 0, "toxic": 0, "saved": 0, "comments": 0}}]}
+{
+  "count": 200,
+  "next": "https://cryptopanic.com/api/free/v1/posts/?auth_token=5af695bcff5c75367f3c78b782e79ffb96df0678&page=2",
+  "previous": null,
+  "results": [
+    {
+      "kind": "news",
+      "domain": "decrypt.co",
+      "source": {
+        "title": "Decrypt",
+        "region": "en",
+        "domain": "decrypt.co",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "FTX Founder SBF Shipped to Oklahoma via 'Con Air' After Unauthorized Jailhouse Interview",
+      "published_at": "2025-03-27T18:47:14Z",
+      "slug": "FTX-Founder-SBF-Shipped-to-Oklahoma-via-Con-Air-After-Unauthorized-Jailhouse-Interview",
+      "id": 20884791,
+      "url": "https://cryptopanic.com/news/20884791/FTX-Founder-SBF-Shipped-to-Oklahoma-via-Con-Air-After-Unauthorized-Jailhouse-Interview?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:47:14Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptoslate.com",
+      "source": {
+        "title": "CryptoSlate",
+        "region": "en",
+        "domain": "cryptoslate.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "BlackRock\u2019s Global Allocation Fund raises Bitcoin exposure by 1,810% over 12 months",
+      "published_at": "2025-03-27T18:45:52Z",
+      "slug": "BlackRocks-Global-Allocation-Fund-raises-Bitcoin-exposure-by-1810-over-12-months",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        }
+      ],
+      "id": 20884768,
+      "url": "https://cryptopanic.com/news/20884768/BlackRocks-Global-Allocation-Fund-raises-Bitcoin-exposure-by-1810-over-12-months?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:45:52Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "dailyhodl.com",
+      "source": {
+        "title": "The Daily Hodl",
+        "region": "en",
+        "domain": "dailyhodl.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "$5,000,000,000,000 Asset Manager Fidelity To Launch a USD-Pegged Stablecoin: Report",
+      "published_at": "2025-03-27T18:45:49Z",
+      "slug": "5000000000000-Asset-Manager-Fidelity-To-Launch-a-USD-Pegged-Stablecoin-Report",
+      "id": 20884774,
+      "url": "https://cryptopanic.com/news/20884774/5000000000000-Asset-Manager-Fidelity-To-Launch-a-USD-Pegged-Stablecoin-Report?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:45:49Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "blockchainlab.co.in",
+      "source": {
+        "title": "Blockchain Lab",
+        "region": "en",
+        "domain": "blockchainlab.co.in",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "The Strategy Effect: How Much Bitcoin Did Corporates Buy This Week?",
+      "published_at": "2025-03-27T18:43:40Z",
+      "slug": "The-Strategy-Effect-How-Much-Bitcoin-Did-Corporates-Buy-This-Week",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        }
+      ],
+      "id": 20884765,
+      "url": "https://cryptopanic.com/news/20884765/The-Strategy-Effect-How-Much-Bitcoin-Did-Corporates-Buy-This-Week?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:43:40Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptobriefing.com",
+      "source": {
+        "title": "CryptoBriefing",
+        "region": "en",
+        "domain": "cryptobriefing.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "French investment powerhouse unveils $27M crypto token fund to boost blockchain projects",
+      "published_at": "2025-03-27T18:43:11Z",
+      "slug": "French-investment-powerhouse-unveils-27M-crypto-token-fund-to-boost-blockchain-projects",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        }
+      ],
+      "id": 20884771,
+      "url": "https://cryptopanic.com/news/20884771/French-investment-powerhouse-unveils-27M-crypto-token-fund-to-boost-blockchain-projects?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:43:11Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cointelegraph.com",
+      "source": {
+        "title": "CoinTelegraph",
+        "region": "en",
+        "domain": "cointelegraph.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Senator John Kennedy grills SEC nominee Paul Atkins about SBF pardon",
+      "published_at": "2025-03-27T18:42:28Z",
+      "slug": "Senator-John-Kennedy-grills-SEC-nominee-Paul-Atkins-about-SBF-pardon",
+      "id": 20884766,
+      "url": "https://cryptopanic.com/news/20884766/Senator-John-Kennedy-grills-SEC-nominee-Paul-Atkins-about-SBF-pardon?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:42:28Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "dailyhodl.com",
+      "source": {
+        "title": "The Daily Hodl",
+        "region": "en",
+        "domain": "dailyhodl.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "GameStop (GME) Stock Falls Following $1,300,000,000 Bitcoin (BTC) Announcement",
+      "published_at": "2025-03-27T18:41:29Z",
+      "slug": "GameStop-GME-Stock-Falls-Following-1300000000-Bitcoin-BTC-Announcement",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        },
+        {
+          "code": "GME",
+          "title": "GME",
+          "slug": "gme",
+          "url": "https://cryptopanic.com/news/gme/"
+        }
+      ],
+      "id": 20884758,
+      "url": "https://cryptopanic.com/news/20884758/GameStop-GME-Stock-Falls-Following-1300000000-Bitcoin-BTC-Announcement?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:41:29Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "@BTC_Archive",
+      "source": {
+        "title": "X - btc_archive",
+        "region": "en",
+        "domain": "BTC_Archive",
+        "path": "@btc_archive",
+        "type": "twitter"
+      },
+      "title": "\"Let me know when a significant company buys Bitcoin\"\n\nPeople forget Tesla and SpaceX hold Bitcoin.",
+      "published_at": "2025-03-27T18:40:11Z",
+      "slug": "Let-me-know-when-a-significant-company-buys-Bitcoin-People-forget-Tesla-and-SpaceX-hold-Bitcoin",
+      "id": 20884759,
+      "url": "https://cryptopanic.com/news/20884759/Let-me-know-when-a-significant-company-buys-Bitcoin-People-forget-Tesla-and-SpaceX-hold-Bitcoin?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:40:11Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "thedefiant.io",
+      "source": {
+        "title": "DeFi News",
+        "region": "en",
+        "domain": "thedefiant.io",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Studio Ghibli Memecoins Grab Attention After OpenAI Releases Image Generation Feature",
+      "published_at": "2025-03-27T18:35:08Z",
+      "slug": "Studio-Ghibli-Memecoins-Grab-Attention-After-OpenAI-Releases-Image-Generation-Feature",
+      "id": 20884755,
+      "url": "https://cryptopanic.com/news/20884755/Studio-Ghibli-Memecoins-Grab-Attention-After-OpenAI-Releases-Image-Generation-Feature?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:35:08Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "thedefiant.io",
+      "source": {
+        "title": "DeFi News",
+        "region": "en",
+        "domain": "thedefiant.io",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "U.S. Justice Department Seizes $201,400 in Cryptocurrency Linked to Hamas Terror Financing Scheme, $1.5M Laundered via Telegram",
+      "published_at": "2025-03-27T18:35:07Z",
+      "slug": "US-Justice-Department-Seizes-201400-in-Cryptocurrency-Linked-to-Hamas-Terror-Financing-Scheme-15M-Laundered-via-Telegram",
+      "currencies": [
+        {
+          "code": "S",
+          "title": "Sonic (prev. FTM)",
+          "slug": "sonic-3",
+          "url": "https://cryptopanic.com/news/sonic-3/"
+        }
+      ],
+      "id": 20884744,
+      "url": "https://cryptopanic.com/news/20884744/US-Justice-Department-Seizes-201400-in-Cryptocurrency-Linked-to-Hamas-Terror-Financing-Scheme-15M-Laundered-via-Telegram?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:35:07Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptopolitan.com",
+      "source": {
+        "title": "Feed - Cryptopolitan.Com",
+        "region": "en",
+        "domain": "cryptopolitan.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "US Justice Department seizes over $200K in cryptocurrency intended for terrorism financing",
+      "published_at": "2025-03-27T18:30:18Z",
+      "slug": "US-Justice-Department-seizes-over-200K-in-cryptocurrency-intended-for-terrorism-financing",
+      "id": 20884756,
+      "url": "https://cryptopanic.com/news/20884756/US-Justice-Department-seizes-over-200K-in-cryptocurrency-intended-for-terrorism-financing?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:30:18Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "newsbtc.com",
+      "source": {
+        "title": "NewsBTC",
+        "region": "en",
+        "domain": "newsbtc.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Dogecoin Set For 10x Surge? Elon Musk\u2019s Anime X Post Sparks Hype",
+      "published_at": "2025-03-27T18:30:07Z",
+      "slug": "Dogecoin-Set-For-10x-Surge-Elon-Musks-Anime-X-Post-Sparks-Hype",
+      "currencies": [
+        {
+          "code": "DOGE",
+          "title": "Dogecoin",
+          "slug": "dogecoin",
+          "url": "https://cryptopanic.com/news/dogecoin/"
+        },
+        {
+          "code": "SHIB",
+          "title": "Shiba Inu",
+          "slug": "shiba-inu",
+          "url": "https://cryptopanic.com/news/shiba-inu/"
+        }
+      ],
+      "id": 20884708,
+      "url": "https://cryptopanic.com/news/20884708/Dogecoin-Set-For-10x-Surge-Elon-Musks-Anime-X-Post-Sparks-Hype?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:30:07Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cointelegraph.com",
+      "source": {
+        "title": "CoinTelegraph",
+        "region": "en",
+        "domain": "cointelegraph.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "3 reasons why Bitcoin price can\u2019t take out the $90K resistance level",
+      "published_at": "2025-03-27T18:19:37Z",
+      "slug": "3-reasons-why-Bitcoin-price-cant-take-out-the-90K-resistance-level",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        }
+      ],
+      "id": 20884701,
+      "url": "https://cryptopanic.com/news/20884701/3-reasons-why-Bitcoin-price-cant-take-out-the-90K-resistance-level?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:19:37Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "feeds2.benzinga.com",
+      "source": {
+        "title": "Benzinga",
+        "region": "en",
+        "domain": "feeds2.benzinga.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Bitcoin Investors Love The Possibility of US Government Investing In Crypto. For Trump, Lots of Talk, But No Action Yet.",
+      "published_at": "2025-03-27T18:17:51Z",
+      "slug": "Bitcoin-Investors-Love-The-Possibility-of-US-Government-Investing-In-Crypto-For-Trump-Lots-of-Talk-But-No-Action-Yet",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        },
+        {
+          "code": "S",
+          "title": "Sonic (prev. FTM)",
+          "slug": "sonic-3",
+          "url": "https://cryptopanic.com/news/sonic-3/"
+        }
+      ],
+      "id": 20884735,
+      "url": "https://cryptopanic.com/news/20884735/Bitcoin-Investors-Love-The-Possibility-of-US-Government-Investing-In-Crypto-For-Trump-Lots-of-Talk-But-No-Action-Yet?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:17:51Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptonews.com",
+      "source": {
+        "title": "Cryptonews",
+        "region": "en",
+        "domain": "cryptonews.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Is Hyperliquid in Trouble? JELLY Token Controversy Sparks FTX 2.0 Fears",
+      "published_at": "2025-03-27T18:16:16Z",
+      "slug": "Is-Hyperliquid-in-Trouble-JELLY-Token-Controversy-Sparks-FTX-20-Fears",
+      "currencies": [
+        {
+          "code": "HYPE",
+          "title": "Hyperliquid",
+          "slug": "hyperliquid",
+          "url": "https://cryptopanic.com/news/hyperliquid/"
+        }
+      ],
+      "id": 20884747,
+      "url": "https://cryptopanic.com/news/20884747/Is-Hyperliquid-in-Trouble-JELLY-Token-Controversy-Sparks-FTX-20-Fears?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:16:16Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptonews.com",
+      "source": {
+        "title": "Cryptonews",
+        "region": "en",
+        "domain": "cryptonews.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Survey: Most EU Banks Lag Behind Growing Crypto Investor Demand",
+      "published_at": "2025-03-27T18:11:40Z",
+      "slug": "Survey-Most-EU-Banks-Lag-Behind-Growing-Crypto-Investor-Demand",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        }
+      ],
+      "id": 20884746,
+      "url": "https://cryptopanic.com/news/20884746/Survey-Most-EU-Banks-Lag-Behind-Growing-Crypto-Investor-Demand?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:11:40Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "thestreet.com",
+      "source": {
+        "title": "The Street Crypto",
+        "region": "en",
+        "domain": "thestreet.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "DOJ seizes $200k in crypto tied to Hamas terrorists",
+      "published_at": "2025-03-27T18:10:07Z",
+      "slug": "DOJ-seizes-200k-in-crypto-tied-to-Hamas-terrorists",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https://cryptopanic.com/news/bitcoin/"
+        },
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https://cryptopanic.com/news/ethereum/"
+        }
+      ],
+      "id": 20884716,
+      "url": "https://cryptopanic.com/news/20884716/DOJ-seizes-200k-in-crypto-tied-to-Hamas-terrorists?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:10:07Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "feeds2.benzinga.com",
+      "source": {
+        "title": "Benzinga",
+        "region": "en",
+        "domain": "feeds2.benzinga.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Morpheus Unveils Decentralized AI Forge For Smart Agents, Simplifying Development",
+      "published_at": "2025-03-27T18:08:57Z",
+      "slug": "Morpheus-Unveils-Decentralized-AI-Forge-For-Smart-Agents-Simplifying-Development",
+      "currencies": [
+        {
+          "code": "AERO",
+          "title": "Aerodrome Finance",
+          "slug": "aerodrome-finance",
+          "url": "https://cryptopanic.com/news/aerodrome-finance/"
+        },
+        {
+          "code": "CET",
+          "title": "CoinEx",
+          "slug": "coinex-token",
+          "url": "https://cryptopanic.com/news/coinex-token/"
+        }
+      ],
+      "id": 20884698,
+      "url": "https://cryptopanic.com/news/20884698/Morpheus-Unveils-Decentralized-AI-Forge-For-Smart-Agents-Simplifying-Development?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:08:57Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "crypto-economy.com",
+      "source": {
+        "title": "Crypto Economy",
+        "region": "en",
+        "domain": "crypto-economy.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Tether Extends USDT0 to Optimism\u2019s Superchain\u2014More Networks Coming Soon",
+      "published_at": "2025-03-27T18:08:55Z",
+      "slug": "Tether-Extends-USDT0-to-Optimisms-SuperchainMore-Networks-Coming-Soon",
+      "currencies": [
+        {
+          "code": "USDT",
+          "title": "Tether",
+          "slug": "tether",
+          "url": "https://cryptopanic.com/news/tether/"
+        },
+        {
+          "code": "USDT",
+          "title": "Arbitrum Bridged USDT (Arbitrum)",
+          "slug": "arbitrum-bridged-usdt-arbitrum",
+          "url": "https://cryptopanic.com/news/arbitrum-bridged-usdt-arbitrum/"
+        },
+        {
+          "code": "OP",
+          "title": "Optimism",
+          "slug": "optimism",
+          "url": "https://cryptopanic.com/news/optimism/"
+        },
+        {
+          "code": "USDT0",
+          "title": "USDT0",
+          "slug": "usdt0",
+          "url": "https://cryptopanic.com/news/usdt0/"
+        }
+      ],
+      "id": 20884636,
+      "url": "https://cryptopanic.com/news/20884636/Tether-Extends-USDT0-to-Optimisms-SuperchainMore-Networks-Coming-Soon?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:08:55Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cointelegraph.com",
+      "source": {
+        "title": "CoinTelegraph",
+        "region": "en",
+        "domain": "cointelegraph.com",
+        "path": null,
+        "type": "feed"
+      },
+      "title": "Senator Cruz introduces companion bill to prohibit the Fed from issuing a CBDC",
+      "published_at": "2025-03-27T18:08:02Z",
+      "slug": "Senator-Cruz-introduces-companion-bill-to-prohibit-the-Fed-from-issuing-a-CBDC",
+      "id": 20884645,
+      "url": "https://cryptopanic.com/news/20884645/Senator-Cruz-introduces-companion-bill-to-prohibit-the-Fed-from-issuing-a-CBDC?mtm_campaign=API-OFA",
+      "created_at": "2025-03-27T18:08:02Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    }
+  ]
+}

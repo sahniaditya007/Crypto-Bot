@@ -1,0 +1,636 @@
+2025-03-27 23:50:28,197 - INFO - Twitter API initialized successfully
+2025-03-27 23:50:28,198 - INFO - Starting crypto bot pipeline
+2025-03-27 23:50:28,199 - INFO - Step 1: Collecting data
+2025-03-27 23:50:28,200 - INFO - Starting data collection
+2025-03-27 23:50:28,326 - INFO - Successfully collected market data
+2025-03-27 23:50:28,604 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-27 23:50:28,900 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-27 23:50:29,207 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-27 23:50:29,487 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-27 23:50:29,510 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,510 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,511 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,512 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,512 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,513 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,514 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,514 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,515 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,516 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,517 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,517 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,518 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,519 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,519 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,520 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,520 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,521 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,522 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,522 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,523 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,523 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,524 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,524 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,525 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,525 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,526 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,527 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,527 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,528 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,528 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:50:29,532 - INFO - Created historical data file with 31 samples
+2025-03-27 23:50:29,534 - INFO - Data collection completed
+2025-03-27 23:50:29,534 - INFO - Step 2: Performing sentiment analysis
+2025-03-27 23:50:29,535 - WARNING - News file not found: data\coindesk_news.json
+2025-03-27 23:50:29,741 - ERROR - Error in sentiment analysis: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\adity/nltk_data'
+    - 'C:\\Python313\\nltk_data'
+    - 'C:\\Python313\\share\\nltk_data'
+    - 'C:\\Python313\\lib\\nltk_data'
+    - 'C:\\Users\\adity\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-03-27 23:50:29,744 - ERROR - Error processing news data: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\adity/nltk_data'
+    - 'C:\\Python313\\nltk_data'
+    - 'C:\\Python313\\share\\nltk_data'
+    - 'C:\\Python313\\lib\\nltk_data'
+    - 'C:\\Users\\adity\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-03-27 23:50:29,745 - WARNING - News file not found: data\newsapi_news.json
+2025-03-27 23:50:29,745 - WARNING - Twitter data file not found
+2025-03-27 23:50:29,746 - INFO - Step 3: Analyzing market trends
+2025-03-27 23:50:29,747 - INFO - Starting market trend analysis
+2025-03-27 23:50:29,747 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-27 23:50:29,748 - ERROR - File not found: data\cryptopanic_sentiment.json
+2025-03-27 23:50:29,749 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-27 23:50:29,749 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-27 23:50:29,749 - INFO - Loading market data from file...
+2025-03-27 23:50:29,751 - INFO - Loaded 32 market data points
+2025-03-27 23:50:29,758 - ERROR - Error loading market data: unconverted data remains when parsing with format "%Y-%m-%dT%H:%M:%S": ".323912", at position 31. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-03-27 23:50:29,758 - ERROR - No market data available for analysis
+2025-03-27 23:50:29,759 - INFO - Step 4: Generating predictions
+2025-03-27 23:50:29,928 - INFO - Loaded model from model_20250327.pkl
+2025-03-27 23:50:29,929 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-27 23:50:29,963 - INFO - Saved predictions to data\predictions.json
+2025-03-27 23:50:29,964 - INFO - Pipeline completed successfully
+2025-03-27 23:52:01,734 - INFO - Twitter API initialized successfully
+2025-03-27 23:52:01,736 - INFO - Starting crypto bot pipeline
+2025-03-27 23:52:01,736 - INFO - Step 1: Collecting data
+2025-03-27 23:52:01,737 - INFO - Starting data collection
+2025-03-27 23:52:02,433 - INFO - Successfully collected market data
+2025-03-27 23:52:02,710 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-27 23:52:03,034 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-27 23:52:03,342 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-27 23:52:03,659 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-27 23:52:03,679 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,680 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,680 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,681 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,681 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,682 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,683 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,683 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,683 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,684 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,684 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,685 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,685 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,686 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,686 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,687 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,687 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,688 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,689 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,689 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,690 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,690 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,691 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,691 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,692 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,692 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,693 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,693 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,694 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,694 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,695 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:03,698 - INFO - Created historical data file with 31 samples
+2025-03-27 23:52:03,698 - INFO - Data collection completed
+2025-03-27 23:52:03,698 - INFO - Step 2: Performing sentiment analysis
+2025-03-27 23:52:03,699 - WARNING - News file not found: data\coindesk_news.json
+2025-03-27 23:52:04,744 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-27 23:52:04,830 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-27 23:52:04,832 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-27 23:52:04,832 - WARNING - News file not found: data\newsapi_news.json
+2025-03-27 23:52:04,833 - WARNING - Twitter data file not found
+2025-03-27 23:52:04,833 - INFO - Step 3: Analyzing market trends
+2025-03-27 23:52:04,834 - INFO - Starting market trend analysis
+2025-03-27 23:52:04,834 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-27 23:52:04,848 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-27 23:52:04,849 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-27 23:52:04,849 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-27 23:52:04,850 - INFO - Loading market data from file...
+2025-03-27 23:52:04,851 - INFO - Loaded 32 market data points
+2025-03-27 23:52:04,858 - INFO - Calculating price changes...
+2025-03-27 23:52:04,864 - INFO - Calculating volatility...
+2025-03-27 23:52:04,867 - INFO - Calculating moving averages...
+2025-03-27 23:52:04,872 - INFO - Successfully loaded and processed market data
+2025-03-27 23:52:04,873 - INFO - Latest price: 87014.0
+2025-03-27 23:52:04,874 - INFO - Latest market cap: 1726184660360.0
+2025-03-27 23:52:04,874 - INFO - Calculating sentiment metrics...
+2025-03-27 23:52:04,878 - INFO - Calculating market metrics...
+2025-03-27 23:52:04,881 - INFO - Calculating metrics for timestamp: 2025-03-27 23:52:02.430885
+2025-03-27 23:52:04,882 - INFO - Market metrics calculated successfully
+2025-03-27 23:52:04,882 - INFO - Current price: 87014.0
+2025-03-27 23:52:04,882 - INFO - 24h price change: -0.003399410986148488
+2025-03-27 23:52:04,883 - INFO - Determining market trends...
+2025-03-27 23:52:04,883 - INFO - Market trend analysis completed successfully
+2025-03-27 23:52:04,884 - INFO - Step 4: Generating predictions
+2025-03-27 23:52:05,041 - INFO - Loaded model from model_20250327.pkl
+2025-03-27 23:52:05,042 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-27 23:52:05,079 - INFO - Saved predictions to data\predictions.json
+2025-03-27 23:52:05,080 - INFO - Pipeline completed successfully
+2025-03-27 23:52:44,521 - INFO - Twitter API initialized successfully
+2025-03-27 23:52:44,522 - INFO - Starting crypto bot pipeline
+2025-03-27 23:52:44,522 - INFO - Step 1: Collecting data
+2025-03-27 23:52:44,523 - INFO - Starting data collection
+2025-03-27 23:52:46,158 - INFO - Successfully collected market data
+2025-03-27 23:52:47,237 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-27 23:52:47,516 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-27 23:52:47,801 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-27 23:52:48,103 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-27 23:52:48,125 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,126 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,126 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,127 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,127 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,128 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,128 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,129 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,129 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,130 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,130 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,131 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,131 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,132 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,132 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,133 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,134 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,134 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,135 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,135 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,136 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,136 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,137 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,137 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,138 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,138 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,139 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,139 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,140 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,141 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,141 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-27 23:52:48,145 - INFO - Created historical data file with 31 samples
+2025-03-27 23:52:48,145 - INFO - Data collection completed
+2025-03-27 23:52:48,146 - INFO - Step 2: Performing sentiment analysis
+2025-03-27 23:52:48,146 - WARNING - News file not found: data\coindesk_news.json
+2025-03-27 23:52:48,411 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-27 23:52:48,450 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-27 23:52:48,452 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-27 23:52:48,453 - WARNING - News file not found: data\newsapi_news.json
+2025-03-27 23:52:48,453 - WARNING - Twitter data file not found
+2025-03-27 23:52:48,454 - INFO - Step 3: Analyzing market trends
+2025-03-27 23:52:48,454 - INFO - Starting market trend analysis
+2025-03-27 23:52:48,455 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-27 23:52:48,458 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-27 23:52:48,459 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-27 23:52:48,460 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-27 23:52:48,460 - INFO - Loading market data from file...
+2025-03-27 23:52:48,461 - INFO - Loaded 32 market data points
+2025-03-27 23:52:48,466 - INFO - Calculating price changes...
+2025-03-27 23:52:48,471 - INFO - Calculating volatility...
+2025-03-27 23:52:48,475 - INFO - Calculating moving averages...
+2025-03-27 23:52:48,479 - INFO - Successfully loaded and processed market data
+2025-03-27 23:52:48,480 - INFO - Latest price: 87100.0
+2025-03-27 23:52:48,481 - INFO - Latest market cap: 1726184660360.0
+2025-03-27 23:52:48,481 - INFO - Calculating sentiment metrics...
+2025-03-27 23:52:48,486 - INFO - Calculating market metrics...
+2025-03-27 23:52:48,487 - INFO - Calculating metrics for timestamp: 2025-03-27 23:52:46.155602
+2025-03-27 23:52:48,488 - INFO - Market metrics calculated successfully
+2025-03-27 23:52:48,488 - INFO - Current price: 87100.0
+2025-03-27 23:52:48,489 - INFO - 24h price change: -0.0024144240799587324
+2025-03-27 23:52:48,489 - INFO - Determining market trends...
+2025-03-27 23:52:48,490 - INFO - Market trend analysis completed successfully
+2025-03-27 23:52:48,490 - INFO - Step 4: Generating predictions
+2025-03-27 23:52:48,655 - INFO - Loaded model from model_20250327.pkl
+2025-03-27 23:52:48,655 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-27 23:52:48,688 - INFO - Saved predictions to data\predictions.json
+2025-03-27 23:52:48,689 - INFO - Pipeline completed successfully
+2025-03-28 00:09:29,417 - INFO - Twitter API initialized successfully
+2025-03-28 00:09:29,419 - INFO - Starting crypto bot pipeline
+2025-03-28 00:09:29,419 - INFO - Step 1: Collecting data
+2025-03-28 00:09:29,419 - INFO - Starting data collection
+2025-03-28 00:09:30,363 - INFO - Successfully collected market data
+2025-03-28 00:09:31,451 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-28 00:09:31,744 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-28 00:09:32,732 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-28 00:09:33,019 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-28 00:09:33,041 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,042 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,042 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,043 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,043 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,044 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,044 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,045 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,045 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,046 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,047 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,047 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,048 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,049 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,049 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,050 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,051 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,051 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,052 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,053 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,053 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,054 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,054 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,055 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,056 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,056 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,057 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,057 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,058 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,059 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,059 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:09:33,063 - INFO - Created historical data file with 31 samples
+2025-03-28 00:09:33,063 - INFO - Data collection completed
+2025-03-28 00:09:33,064 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:09:33,065 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:09:33,328 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:09:33,372 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:09:33,374 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:09:33,375 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:09:33,375 - WARNING - Twitter data file not found
+2025-03-28 00:09:33,376 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:09:33,376 - INFO - Starting market trend analysis
+2025-03-28 00:09:33,377 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:09:33,380 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:09:33,380 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:09:33,381 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:09:33,382 - INFO - Loading market data from file...
+2025-03-28 00:09:33,383 - INFO - Loaded 32 market data points
+2025-03-28 00:09:33,388 - INFO - Calculating price changes...
+2025-03-28 00:09:33,394 - INFO - Calculating volatility...
+2025-03-28 00:09:33,399 - INFO - Calculating moving averages...
+2025-03-28 00:09:33,403 - INFO - Successfully loaded and processed market data
+2025-03-28 00:09:33,404 - INFO - Latest price: 87246.0
+2025-03-28 00:09:33,405 - INFO - Latest market cap: 1727836757292.0
+2025-03-28 00:09:33,406 - INFO - Calculating sentiment metrics...
+2025-03-28 00:09:33,410 - INFO - Calculating market metrics...
+2025-03-28 00:09:33,412 - INFO - Calculating metrics for timestamp: 2025-03-28 00:09:30.360969
+2025-03-28 00:09:33,412 - INFO - Market metrics calculated successfully
+2025-03-28 00:09:33,413 - INFO - Current price: 87246.0
+2025-03-28 00:09:33,413 - INFO - 24h price change: -0.0007422370066599848
+2025-03-28 00:09:33,414 - INFO - Determining market trends...
+2025-03-28 00:09:33,414 - INFO - Market trend analysis completed successfully
+2025-03-28 00:09:33,414 - INFO - Step 4: Generating predictions
+2025-03-28 00:09:33,591 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:09:33,592 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:09:33,628 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:09:33,631 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:09:34,551 - INFO - Pipeline completed successfully
+2025-03-28 00:11:30,442 - INFO - Twitter API initialized successfully
+2025-03-28 00:11:30,444 - INFO - Starting crypto bot pipeline
+2025-03-28 00:11:30,444 - INFO - Step 1: Collecting data
+2025-03-28 00:11:30,444 - INFO - Starting data collection
+2025-03-28 00:11:32,111 - INFO - Successfully collected market data
+2025-03-28 00:11:32,386 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-28 00:11:33,356 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-28 00:11:33,663 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-28 00:11:33,948 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-28 00:11:33,971 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,972 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,973 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,973 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,974 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,975 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,975 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,976 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,977 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,977 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,978 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,979 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,979 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,980 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,981 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,981 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,982 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,983 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,983 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,984 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,984 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,985 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,986 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,986 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,987 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,987 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,988 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,989 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,989 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,990 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,990 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:11:33,993 - INFO - Created historical data file with 31 samples
+2025-03-28 00:11:33,994 - INFO - Data collection completed
+2025-03-28 00:11:33,994 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:11:33,995 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:11:34,211 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:11:34,246 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:11:34,248 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:11:34,249 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:11:34,249 - WARNING - Twitter data file not found
+2025-03-28 00:11:34,250 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:11:34,250 - INFO - Starting market trend analysis
+2025-03-28 00:11:34,251 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:11:34,253 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:11:34,254 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:11:34,255 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:11:34,255 - INFO - Loading market data from file...
+2025-03-28 00:11:34,256 - INFO - Loaded 32 market data points
+2025-03-28 00:11:34,261 - INFO - Calculating price changes...
+2025-03-28 00:11:34,267 - INFO - Calculating volatility...
+2025-03-28 00:11:34,271 - INFO - Calculating moving averages...
+2025-03-28 00:11:34,276 - INFO - Successfully loaded and processed market data
+2025-03-28 00:11:34,276 - INFO - Latest price: 87268.0
+2025-03-28 00:11:34,277 - INFO - Latest market cap: 1731172837535.0
+2025-03-28 00:11:34,278 - INFO - Calculating sentiment metrics...
+2025-03-28 00:11:34,282 - INFO - Calculating market metrics...
+2025-03-28 00:11:34,283 - INFO - Calculating metrics for timestamp: 2025-03-28 00:11:32.108551
+2025-03-28 00:11:34,284 - INFO - Market metrics calculated successfully
+2025-03-28 00:11:34,285 - INFO - Current price: 87268.0
+2025-03-28 00:11:34,285 - INFO - 24h price change: -0.0004902636120532877
+2025-03-28 00:11:34,286 - INFO - Determining market trends...
+2025-03-28 00:11:34,286 - INFO - Market trend analysis completed successfully
+2025-03-28 00:11:34,287 - INFO - Step 4: Generating predictions
+2025-03-28 00:11:34,446 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:11:34,447 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:11:34,483 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:11:34,484 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:11:35,175 - INFO - Pipeline completed successfully
+2025-03-28 00:15:18,022 - INFO - Twitter API initialized successfully
+2025-03-28 00:15:18,023 - INFO - Starting crypto bot pipeline
+2025-03-28 00:15:18,024 - INFO - Step 1: Collecting data
+2025-03-28 00:15:18,024 - INFO - Starting data collection
+2025-03-28 00:15:19,301 - INFO - Successfully collected market data
+2025-03-28 00:15:20,371 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-28 00:15:20,676 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-28 00:15:20,963 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-28 00:15:21,246 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-28 00:15:21,272 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,273 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,274 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,274 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,275 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,276 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,276 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,277 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,278 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,278 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,280 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,280 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,281 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,282 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,283 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,283 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,284 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,284 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,285 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,286 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,286 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,287 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,287 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,288 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,288 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,289 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,289 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,290 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,290 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,291 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,292 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:15:21,295 - INFO - Created historical data file with 31 samples
+2025-03-28 00:15:21,296 - INFO - Data collection completed
+2025-03-28 00:15:21,297 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:15:21,298 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:15:21,540 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:15:21,583 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:15:21,585 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:15:21,586 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:15:21,586 - WARNING - Twitter data file not found
+2025-03-28 00:15:21,587 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:15:21,587 - INFO - Starting market trend analysis
+2025-03-28 00:15:21,588 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:15:21,590 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:15:21,591 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:15:21,591 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:15:21,592 - INFO - Loading market data from file...
+2025-03-28 00:15:21,593 - INFO - Loaded 32 market data points
+2025-03-28 00:15:21,600 - INFO - Calculating price changes...
+2025-03-28 00:15:21,606 - INFO - Calculating volatility...
+2025-03-28 00:15:21,610 - INFO - Calculating moving averages...
+2025-03-28 00:15:21,615 - INFO - Successfully loaded and processed market data
+2025-03-28 00:15:21,616 - INFO - Latest price: 87338.0
+2025-03-28 00:15:21,617 - INFO - Latest market cap: 1731582095304.0
+2025-03-28 00:15:21,617 - INFO - Calculating sentiment metrics...
+2025-03-28 00:15:21,621 - INFO - Calculating market metrics...
+2025-03-28 00:15:21,622 - INFO - Calculating metrics for timestamp: 2025-03-28 00:15:19.298275
+2025-03-28 00:15:21,623 - INFO - Market metrics calculated successfully
+2025-03-28 00:15:21,623 - INFO - Current price: 87338.0
+2025-03-28 00:15:21,624 - INFO - 24h price change: 0.00031146991624053655
+2025-03-28 00:15:21,624 - INFO - Determining market trends...
+2025-03-28 00:15:21,625 - INFO - Market trend analysis completed successfully
+2025-03-28 00:15:21,625 - INFO - Step 4: Generating predictions
+2025-03-28 00:15:21,799 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:15:21,800 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:15:21,838 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:15:21,839 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:15:22,378 - INFO - Pipeline completed successfully
+2025-03-28 00:18:02,162 - INFO - Twitter API initialized successfully
+2025-03-28 00:18:02,164 - INFO - Starting crypto bot pipeline
+2025-03-28 00:18:02,164 - INFO - Step 1: Collecting data
+2025-03-28 00:18:02,165 - INFO - Starting data collection
+2025-03-28 00:18:02,690 - INFO - Successfully collected market data
+2025-03-28 00:18:03,665 - ERROR - Error fetching bbc-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/bbc-news.json
+2025-03-28 00:18:04,635 - ERROR - Error fetching cnn data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cnn.json
+2025-03-28 00:18:04,927 - ERROR - Error fetching fox-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/fox-news.json
+2025-03-28 00:18:05,205 - ERROR - Error fetching google-news data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/google-news.json
+2025-03-28 00:18:05,228 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,229 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,229 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,230 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,230 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,231 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,232 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,232 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,233 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,233 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,234 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,235 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,235 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,236 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,236 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,237 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,238 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,238 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,239 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,239 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,240 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,241 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,241 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,242 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,242 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,243 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,243 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,244 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,245 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,245 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,246 - WARNING - Could not load sentiment data: [Errno 2] No such file or directory: 'data\\twitter_sentiment.json'
+2025-03-28 00:18:05,251 - INFO - Created historical data file with 31 samples
+2025-03-28 00:18:05,251 - INFO - Data collection completed
+2025-03-28 00:18:05,252 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:18:05,252 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:18:05,493 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:18:05,532 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:18:05,534 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:18:05,535 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:18:05,535 - WARNING - Twitter data file not found
+2025-03-28 00:18:05,536 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:18:05,536 - INFO - Starting market trend analysis
+2025-03-28 00:18:05,537 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:18:05,540 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:18:05,540 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:18:05,541 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:18:05,541 - INFO - Loading market data from file...
+2025-03-28 00:18:05,542 - INFO - Loaded 32 market data points
+2025-03-28 00:18:05,547 - INFO - Calculating price changes...
+2025-03-28 00:18:05,553 - INFO - Calculating volatility...
+2025-03-28 00:18:05,558 - INFO - Calculating moving averages...
+2025-03-28 00:18:05,562 - INFO - Successfully loaded and processed market data
+2025-03-28 00:18:05,563 - INFO - Latest price: 87356.0
+2025-03-28 00:18:05,564 - INFO - Latest market cap: 1733419607362.0
+2025-03-28 00:18:05,564 - INFO - Calculating sentiment metrics...
+2025-03-28 00:18:05,569 - INFO - Calculating market metrics...
+2025-03-28 00:18:05,570 - INFO - Calculating metrics for timestamp: 2025-03-28 00:18:02.688179
+2025-03-28 00:18:05,571 - INFO - Market metrics calculated successfully
+2025-03-28 00:18:05,571 - INFO - Current price: 87356.0
+2025-03-28 00:18:05,572 - INFO - 24h price change: 0.0005176299663733896
+2025-03-28 00:18:05,572 - INFO - Determining market trends...
+2025-03-28 00:18:05,573 - INFO - Market trend analysis completed successfully
+2025-03-28 00:18:05,573 - INFO - Step 4: Generating predictions
+2025-03-28 00:18:05,759 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:18:05,760 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:18:05,795 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:18:05,796 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:18:06,435 - INFO - Pipeline completed successfully
+2025-03-28 00:20:01,046 - INFO - Twitter API initialized successfully
+2025-03-28 00:20:02,341 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:20:02,343 - INFO - Starting crypto bot pipeline
+2025-03-28 00:20:02,343 - INFO - Step 1: Collecting data
+2025-03-28 00:20:02,343 - INFO - Starting data collection
+2025-03-28 00:20:02,882 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:20:04,359 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:20:04,362 - INFO - Successfully collected social media data
+2025-03-28 00:20:04,363 - INFO - Data collection completed
+2025-03-28 00:20:04,363 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:20:04,364 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:20:04,596 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:20:04,668 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:20:04,671 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:20:04,672 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:20:04,672 - WARNING - Twitter data file not found
+2025-03-28 00:20:04,672 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:20:04,673 - INFO - Starting market trend analysis
+2025-03-28 00:20:04,673 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:20:04,676 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:20:04,676 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:20:04,677 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:20:04,677 - INFO - Loading market data from file...
+2025-03-28 00:20:04,697 - INFO - Loaded 100 market data points
+2025-03-28 00:20:04,702 - INFO - Calculating price changes...
+2025-03-28 00:20:04,702 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:20:04,703 - ERROR - No market data available for analysis
+2025-03-28 00:20:04,703 - INFO - Step 4: Generating predictions
+2025-03-28 00:20:04,868 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:20:04,869 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:20:04,902 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:20:04,903 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:20:05,392 - INFO - Pipeline completed successfully
+2025-03-28 00:25:49,025 - INFO - Twitter API initialized successfully
+2025-03-28 00:25:49,720 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:25:49,721 - INFO - Starting crypto bot pipeline
+2025-03-28 00:25:49,722 - INFO - Step 1: Collecting data
+2025-03-28 00:25:49,722 - INFO - Starting data collection
+2025-03-28 00:25:50,440 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:25:52,076 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:25:52,077 - INFO - Successfully collected social media data
+2025-03-28 00:25:52,079 - INFO - Data collection completed
+2025-03-28 00:25:52,080 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:25:52,080 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:25:52,303 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:25:52,368 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:25:52,371 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:25:52,371 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:25:52,372 - WARNING - Twitter data file not found
+2025-03-28 00:25:52,372 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:25:52,373 - INFO - Starting market trend analysis
+2025-03-28 00:25:52,374 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:25:52,376 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:25:52,377 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:25:52,378 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:25:52,378 - INFO - Loading market data from file...
+2025-03-28 00:25:52,401 - INFO - Loaded 100 market data points
+2025-03-28 00:25:52,406 - INFO - Calculating price changes...
+2025-03-28 00:25:52,407 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:25:52,408 - ERROR - No market data available for analysis
+2025-03-28 00:25:52,408 - INFO - Step 4: Generating predictions
+2025-03-28 00:25:52,581 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:25:52,582 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:25:52,616 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:25:52,617 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:25:53,612 - INFO - Pipeline completed successfully

@@ -14,13 +14,6 @@ from datetime import datetime
 import os
 import json
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='crypto_bot.log'
-)
-
 @dataclass
 class ModelMetrics:
     accuracy: float

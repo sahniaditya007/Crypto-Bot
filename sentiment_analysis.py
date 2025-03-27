@@ -10,27 +10,29 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Dict, List, Optional, Tuple
 import numpy as np
 from functools import lru_cache
+import os
+from datetime import datetime
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='crypto_bot.log'
-)
-
-# Download required NLTK data
-try:
-    nltk.data.find('tokenizers/punkt')
-    nltk.data.find('corpora/stopwords')
-    nltk.data.find('corpora/wordnet')
-except LookupError:
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
+def setup_nltk():
+    """Download required NLTK data."""
+    try:
+        nltk.data.find('tokenizers/punkt')
+        nltk.data.find('corpora/stopwords')
+        nltk.data.find('corpora/wordnet')
+        nltk.download('punkt_tab')
+        nltk.download('averaged_perceptron_tagger')
+    except LookupError:
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        nltk.download('wordnet')
+        nltk.download('punkt_tab')
+        nltk.download('averaged_perceptron_tagger')
 
 class SentimentAnalyzer:
     def __init__(self, max_workers: int = 4):
         self.max_workers = max_workers
+        self.data_dir = "data"
+        setup_nltk()
         self.stop_words = set(stopwords.words('english'))
         self.lemmatizer = WordNetLemmatizer()
         
@@ -116,13 +118,30 @@ class SentimentAnalyzer:
     def process_news_data(self, file_path: str) -> List[Dict]:
         """Process news data with parallel processing."""
         try:
+            logging.info(f"Processing news data from {file_path}")
             with open(file_path, "r", encoding='utf-8') as file:
                 news_data = json.load(file)
             
             if not isinstance(news_data, list):
                 news_data = [news_data]
             
-            processed_data = self.process_batch(news_data)
+            # Process each article
+            processed_data = []
+            for article in news_data:
+                # Combine title and description for sentiment analysis
+                content = f"{article.get('title', '')} {article.get('description', '')}"
+                sentiment = self.analyze_sentiment(content)
+                
+                processed_article = {
+                    'title': article.get('title', ''),
+                    'description': article.get('description', ''),
+                    'url': article.get('url', ''),
+                    'source': article.get('source', {}).get('name', ''),
+                    'published_at': article.get('publishedAt', ''),
+                    'sentiment': sentiment,
+                    'processed_text': self.preprocess_text(content)
+                }
+                processed_data.append(processed_article)
             
             # Calculate aggregate metrics
             sentiments = [item.get("sentiment", 0) for item in processed_data]
@@ -135,6 +154,13 @@ class SentimentAnalyzer:
                     "total_items": len(sentiments)
                 }
                 logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
+            
+            # Save sentiment data
+            output_file = file_path.replace('_news.json', '_sentiment.json')
+            with open(output_file, 'w', encoding='utf-8') as file:
+                json.dump(processed_data, file, ensure_ascii=False, indent=2)
+            
+            logging.info(f"Saved sentiment data to {output_file}")
             
             return processed_data
             
@@ -151,6 +177,7 @@ class SentimentAnalyzer:
     def process_twitter_data(self, file_path: str) -> List[Dict]:
         """Process Twitter data with parallel processing."""
         try:
+            logging.info(f"Processing Twitter data from {file_path}")
             with open(file_path, "r", encoding='utf-8') as file:
                 twitter_data = json.load(file)
             
@@ -170,6 +197,13 @@ class SentimentAnalyzer:
                     "total_tweets": len(sentiments)
                 }
                 logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
+            
+            # Save sentiment data
+            output_file = file_path.replace('_data.json', '_sentiment.json')
+            with open(output_file, 'w', encoding='utf-8') as file:
+                json.dump(processed_data, file, ensure_ascii=False, indent=2)
+            
+            logging.info(f"Saved sentiment data to {output_file}")
             
             return processed_data
             
@@ -201,16 +235,16 @@ if __name__ == "__main__":
     # Process news data
     news_sources = ['coindesk', 'cryptopanic', 'newsapi']
     for source in news_sources:
-        processed_data = analyzer.process_news_data(f"{source}_news.json")
+        processed_data = analyzer.process_news_data(os.path.join(analyzer.data_dir, f"{source}_news.json"))
         if processed_data:
-            with open(f"{source}_sentiment.json", "w", encoding='utf-8') as file:
+            with open(os.path.join(analyzer.data_dir, f"{source}_sentiment.json"), "w", encoding='utf-8') as file:
                 json.dump(processed_data, file, ensure_ascii=False, indent=2)
             logging.info(f"Processed {source} sentiment")
     
     # Process Twitter data
-    processed_twitter = analyzer.process_twitter_data("twitter_data.json")
+    processed_twitter = analyzer.process_twitter_data(os.path.join(analyzer.data_dir, "twitter_data.json"))
     if processed_twitter:
-        with open("twitter_sentiment.json", "w", encoding='utf-8') as file:
+        with open(os.path.join(analyzer.data_dir, "twitter_sentiment.json"), "w", encoding='utf-8') as file:
             json.dump(processed_twitter, file, ensure_ascii=False, indent=2)
         logging.info("Processed Twitter sentiment")
     
