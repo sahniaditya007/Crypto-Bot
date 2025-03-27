@@ -973,3 +973,85 @@ Feature Importance:
 2025-03-27 22:56:32,565 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
 2025-03-27 22:56:32,578 - INFO - Saved predictions to predictions.json
 2025-03-27 22:56:32,579 - INFO - Pipeline completed successfully
+2025-03-27 22:58:22,522 - INFO - Starting crypto bot pipeline
+2025-03-27 22:58:22,523 - INFO - Step 1: Collecting data
+2025-03-27 22:58:22,523 - INFO - Starting data collection
+2025-03-27 22:58:22,532 - ERROR - Connection error to https://api.coindesk.com/v1/bpi/currentprice.json. Attempt 1/3
+2025-03-27 22:58:23,535 - ERROR - Connection error to https://api.coindesk.com/v1/bpi/currentprice.json. Attempt 2/3
+2025-03-27 22:58:25,537 - ERROR - Connection error to https://api.coindesk.com/v1/bpi/currentprice.json. Attempt 3/3
+2025-03-27 22:58:25,537 - ERROR - Failed to fetch coindesk data: HTTPSConnectionPool(host='api.coindesk.com', port=443): Max retries exceeded with url: /v1/bpi/currentprice.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E3F4927C50>: Failed to resolve 'api.coindesk.com' ([Errno 11001] getaddrinfo failed)"))
+2025-03-27 22:58:25,537 - INFO - Using cached data for cryptopanic
+2025-03-27 22:58:25,539 - INFO - Successfully collected cryptopanic news
+2025-03-27 22:58:25,867 - ERROR - Request error for https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26
+2025-03-27 22:58:27,885 - ERROR - Request error for https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26
+2025-03-27 22:58:30,836 - ERROR - Request error for https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26
+2025-03-27 22:58:30,836 - ERROR - Failed to fetch newsapi data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=5d3efdf3405c86e637926d16c630b32483628a26
+2025-03-27 22:58:31,159 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-27 22:58:31,159 - INFO - Using cached market data
+2025-03-27 22:58:31,172 - INFO - Created historical data file with 30 samples
+2025-03-27 22:58:31,172 - INFO - Data collection completed
+2025-03-27 22:58:31,172 - INFO - Step 2: Performing sentiment analysis
+2025-03-27 22:58:31,173 - ERROR - File not found: coindesk_news.json
+2025-03-27 22:58:31,185 - ERROR - Error in sentiment analysis: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\adity/nltk_data'
+    - 'C:\\Python313\\nltk_data'
+    - 'C:\\Python313\\share\\nltk_data'
+    - 'C:\\Python313\\lib\\nltk_data'
+    - 'C:\\Users\\adity\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-03-27 22:58:31,186 - ERROR - Error processing item: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\adity/nltk_data'
+    - 'C:\\Python313\\nltk_data'
+    - 'C:\\Python313\\share\\nltk_data'
+    - 'C:\\Python313\\lib\\nltk_data'
+    - 'C:\\Users\\adity\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-03-27 22:58:31,186 - INFO - Aggregate metrics for cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-27 22:58:31,187 - ERROR - File not found: newsapi_news.json
+2025-03-27 22:58:31,187 - ERROR - File not found: twitter_data.json
+2025-03-27 22:58:31,187 - INFO - Step 3: Analyzing market trends
+2025-03-27 22:58:31,187 - INFO - Starting market trend analysis
+2025-03-27 22:58:31,187 - ERROR - File not found: coindesk_sentiment.json
+2025-03-27 22:58:31,187 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-27 22:58:31,187 - ERROR - File not found: newsapi_sentiment.json
+2025-03-27 22:58:31,188 - ERROR - File not found: twitter_sentiment.json
+2025-03-27 22:58:31,192 - INFO - Successfully loaded and processed market data
+2025-03-27 22:58:31,196 - INFO - Market trend analysis completed
+2025-03-27 22:58:31,196 - INFO - Step 4: Generating predictions
+2025-03-27 22:58:31,261 - INFO - Loaded model from model_20250327.pkl
+2025-03-27 22:58:31,261 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-27 22:58:31,274 - INFO - Saved predictions to predictions.json
+2025-03-27 22:58:31,274 - INFO - Pipeline completed successfully
