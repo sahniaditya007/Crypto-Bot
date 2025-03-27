@@ -168,7 +168,8 @@ class DataCollector:
             return self._load_from_cache('coingecko')
 
         try:
-            market_data_url = f"{API_CONFIG['coingecko']['url']}/coins/markets?vs_currency=usd&ids={crypto_id}"
+            # Get data for the last 30 days
+            market_data_url = f"{API_CONFIG['coingecko']['url']}/coins/{crypto_id}/market_chart?vs_currency=usd&days=30&interval=daily"
             data = self._fetch_data(market_data_url)
             if data:
                 self._save_to_cache('coingecko', data)
@@ -184,16 +185,24 @@ class DataCollector:
             
             # Load market data
             market_data = self.fetch_market_data("bitcoin")
-            if market_data:
-                for data in market_data:
+            if market_data and 'prices' in market_data:
+                prices = market_data['prices']  # [[timestamp, price], ...]
+                market_caps = market_data['market_caps']  # [[timestamp, market_cap], ...]
+                volumes = market_data['total_volumes']  # [[timestamp, volume], ...]
+                
+                for i in range(1, len(prices)):
+                    price_change = ((prices[i][1] - prices[i-1][1]) / prices[i-1][1]) * 100
+                    market_cap_change = ((market_caps[i][1] - market_caps[i-1][1]) / market_caps[i-1][1]) * 100
+                    volume_change = ((volumes[i][1] - volumes[i-1][1]) / volumes[i-1][1]) * 100 if volumes[i-1][1] != 0 else 0
+                    
                     historical_data.append({
-                        "price": data.get("current_price", 0),
-                        "market_cap": data.get("market_cap", 0),
-                        "volume": data.get("total_volume", 0),
-                        "price_change_24h": data.get("price_change_percentage_24h", 0),
-                        "market_cap_change_24h": data.get("market_cap_change_percentage_24h", 0),
-                        "volume_change_24h": data.get("total_volume_change_percentage_24h", 0),
-                        "target": 1 if data.get("price_change_percentage_24h", 0) > 0 else 0
+                        "price": prices[i][1],
+                        "market_cap": market_caps[i][1],
+                        "volume": volumes[i][1],
+                        "price_change_24h": price_change,
+                        "market_cap_change_24h": market_cap_change,
+                        "volume_change_24h": volume_change,
+                        "target": 1 if price_change > 0 else 0
                     })
             
             # Save historical data

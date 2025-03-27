@@ -5,7 +5,7 @@ from typing import Dict, Any
 import os
 from dotenv import load_dotenv
 
-from data_collection import collect_data
+from data_collection import DataCollector
 from sentiment_analysis import process_news_data, process_twitter_data
 from market_analysis import analyze_market_trends
 from prediction_generation import generate_predictions
@@ -27,6 +27,7 @@ class CryptoBot:
         self.start_time = None
         self.end_time = None
         self.results = {}
+        self.data_collector = DataCollector()
 
     def run_pipeline(self) -> Dict[str, Any]:
         """Run the complete crypto bot pipeline."""
@@ -36,7 +37,7 @@ class CryptoBot:
 
             # Step 1: Data Collection
             logging.info("Step 1: Collecting data")
-            collect_data()
+            self.data_collector.collect_data()
 
             # Step 2: Sentiment Analysis
             logging.info("Step 2: Performing sentiment analysis")
@@ -50,8 +51,8 @@ class CryptoBot:
             # Step 4: Generate Predictions
             logging.info("Step 4: Generating predictions")
             predictions, confidence_scores = generate_predictions()
-            self.results['predictions'] = predictions.tolist()
-            self.results['confidence_scores'] = confidence_scores.tolist()
+            self.results['predictions'] = predictions
+            self.results['confidence_scores'] = confidence_scores
 
             self.end_time = datetime.now()
             self.results['execution_time'] = (self.end_time - self.start_time).total_seconds()

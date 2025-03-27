@@ -196,6 +196,10 @@ def generate_predictions() -> Tuple[np.ndarray, np.ndarray]:
         predictions = np.array([r.prediction for r in results])
         confidence_scores = np.array([r.confidence_score for r in results])
 
+        # Convert numpy types to Python native types
+        predictions = predictions.tolist()
+        confidence_scores = confidence_scores.tolist()
+
         return predictions, confidence_scores
 
     except Exception as e:

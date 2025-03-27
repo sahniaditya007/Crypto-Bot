@@ -183,26 +183,33 @@ class ModelTrainer:
     def save_model(self):
         """Save trained model and related artifacts."""
         try:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            # Use YYYYMMDD format for timestamp
+            timestamp = datetime.now().strftime("%Y%m%d")
             
             # Save model
             model_path = os.path.join(self.model_dir, f"model_{timestamp}.pkl")
             with open(model_path, "wb") as file:
-                pickle.dump(self.best_model, file)
+                pickle.dump(self.model, file)
             
             # Save scaler
             scaler_path = os.path.join(self.model_dir, f"scaler_{timestamp}.pkl")
             with open(scaler_path, "wb") as file:
                 pickle.dump(self.scaler, file)
             
-            # Save feature importance
-            importance_path = os.path.join(self.model_dir, f"feature_importance_{timestamp}.json")
-            self.feature_importance.to_json(importance_path)
+            # Save feature importance if available
+            if hasattr(self.model, 'feature_importances_'):
+                importance_path = os.path.join(self.model_dir, f"feature_importance_{timestamp}.json")
+                feature_importance_dict = {
+                    'feature': list(self.X.columns),
+                    'importance': list(self.model.feature_importances_)
+                }
+                with open(importance_path, 'w') as file:
+                    json.dump(feature_importance_dict, file)
             
             # Save best parameters
             params_path = os.path.join(self.model_dir, f"best_params_{timestamp}.json")
             with open(params_path, "w") as file:
-                json.dump(self.best_params, file)
+                json.dump(self.model.get_params(), file)
             
             logging.info(f"Saved model and artifacts with timestamp: {timestamp}")
             
@@ -215,6 +222,9 @@ class ModelTrainer:
         try:
             # Load data
             X, y = self.load_training_data()
+            
+            # Store feature names
+            self.X = X
             
             # Preprocess data
             X_scaled = self.preprocess_data(X)

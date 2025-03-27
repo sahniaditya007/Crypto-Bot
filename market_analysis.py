@@ -231,18 +231,32 @@ class MarketAnalyzer:
             
             # Create MarketMetrics object for type safety
             market_metrics_obj = MarketMetrics(
-                current_price=analysis_results.get('current_price', 0),
-                price_change_24h=analysis_results.get('price_change_24h', 0),
-                volume_24h=analysis_results.get('volume_24h', 0),
-                volume_change_24h=analysis_results.get('volume_change_24h', 0),
-                market_cap=analysis_results.get('market_cap', 0),
-                market_cap_change_24h=analysis_results.get('market_cap_change_24h', 0),
-                price_volatility=analysis_results.get('price_volatility', 0),
-                volume_volatility=analysis_results.get('volume_volatility', 0),
+                current_price=float(analysis_results.get('current_price', 0)),
+                price_change_24h=float(analysis_results.get('price_change_24h', 0)),
+                volume_24h=float(analysis_results.get('volume_24h', 0)),
+                volume_change_24h=float(analysis_results.get('volume_change_24h', 0)),
+                market_cap=float(analysis_results.get('market_cap', 0)),
+                market_cap_change_24h=float(analysis_results.get('market_cap_change_24h', 0)),
+                price_volatility=float(analysis_results.get('price_volatility', 0)),
+                volume_volatility=float(analysis_results.get('volume_volatility', 0)),
                 price_trend=trends['price_trend'],
                 volume_trend=trends['volume_trend'],
                 sentiment_trend=trends['sentiment_trend']
             )
+            
+            # Create prediction input format
+            prediction_input = {
+                'price': float(market_metrics_obj.current_price),
+                'market_cap': float(market_metrics_obj.market_cap),
+                'volume': float(market_metrics_obj.volume_24h),
+                'price_change_24h': float(market_metrics_obj.price_change_24h),
+                'market_cap_change_24h': float(market_metrics_obj.market_cap_change_24h),
+                'volume_change_24h': float(market_metrics_obj.volume_change_24h)
+            }
+            
+            # Save prediction input to market_trends.json
+            with open('market_trends.json', 'w') as f:
+                json.dump(prediction_input, f)
             
             # Add market metrics object to results
             analysis_results['market_metrics'] = market_metrics_obj.__dict__
@@ -251,7 +265,7 @@ class MarketAnalyzer:
             return analysis_results
             
         except Exception as e:
-            logging.error(f"Error in market trend analysis: {e}")
+            logging.error(f"Error analyzing market trends: {e}")
             raise
 
 def analyze_market_trends() -> Dict[str, Any]:
