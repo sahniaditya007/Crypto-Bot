@@ -84,6 +84,11 @@ class ModelTrainer:
     def train_model(self, X: np.ndarray, y: np.ndarray) -> None:
         """Train the model with cross-validation and hyperparameter tuning."""
         try:
+            # Validate data size
+            n_samples = len(X)
+            if n_samples < 2:
+                raise ValueError(f"Not enough samples for training. Got {n_samples} samples, need at least 2.")
+            
             # Check class distribution
             unique, counts = np.unique(y, return_counts=True)
             logging.info(f"Class distribution: {dict(zip(unique, counts))}")
@@ -100,13 +105,20 @@ class ModelTrainer:
                     X, y, test_size=0.2, random_state=42, stratify=y
                 )
             
+            # Adjust cross-validation based on data size
+            if n_samples < 5:
+                logging.warning("Using Leave-One-Out cross-validation due to small dataset")
+                cv = n_samples
+            else:
+                cv = min(5, n_samples // 2)  # Use at most 5 folds, but ensure enough samples per fold
+            
             # Define parameter grid for Random Forest
             param_grid = {
-                'n_estimators': [100, 200, 300],
-                'max_depth': [10, 20, 30, None],
-                'min_samples_split': [2, 5, 10],
-                'min_samples_leaf': [1, 2, 4],
-                'max_features': ['sqrt', 'log2', None]
+                'n_estimators': [100, 200],
+                'max_depth': [10, 20, None],
+                'min_samples_split': [2, 5],
+                'min_samples_leaf': [1, 2],
+                'max_features': ['sqrt', 'log2']
             }
             
             # Initialize Random Forest model
@@ -116,7 +128,7 @@ class ModelTrainer:
             grid_search = GridSearchCV(
                 estimator=rf_model,
                 param_grid=param_grid,
-                cv=5,
+                cv=cv,
                 n_jobs=-1,
                 scoring='accuracy',
                 verbose=1
@@ -139,7 +151,7 @@ class ModelTrainer:
             
             # Calculate and log feature importance
             feature_importance = pd.DataFrame({
-                'feature': self.feature_names,
+                'feature': X.columns,
                 'importance': self.model.feature_importances_
             }).sort_values('importance', ascending=False)
             

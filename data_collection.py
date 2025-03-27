@@ -177,33 +177,58 @@ class DataCollector:
             logging.error(f"Failed to fetch market data: {e}")
         return None
 
+    def create_historical_data(self):
+        """Create historical data file for model training."""
+        try:
+            historical_data = []
+            
+            # Load market data
+            market_data = self.fetch_market_data("bitcoin")
+            if market_data:
+                for data in market_data:
+                    historical_data.append({
+                        "price": data.get("current_price", 0),
+                        "market_cap": data.get("market_cap", 0),
+                        "volume": data.get("total_volume", 0),
+                        "price_change_24h": data.get("price_change_percentage_24h", 0),
+                        "market_cap_change_24h": data.get("market_cap_change_percentage_24h", 0),
+                        "volume_change_24h": data.get("total_volume_change_percentage_24h", 0),
+                        "target": 1 if data.get("price_change_percentage_24h", 0) > 0 else 0
+                    })
+            
+            # Save historical data
+            if historical_data:
+                with open(os.getenv("HISTORICAL_DATA_FILE", "historical_data.json"), "w") as file:
+                    json.dump(historical_data, file)
+                logging.info(f"Created historical data file with {len(historical_data)} samples")
+            else:
+                logging.warning("No historical data was created")
+                
+        except Exception as e:
+            logging.error(f"Error creating historical data: {e}")
+            raise
+
     def collect_data(self):
         """Collect all required data."""
         logging.info("Starting data collection")
         
-        collector = DataCollector()
-        
         # Collect news data
         for source in ['coindesk', 'cryptopanic', 'newsapi']:
-            data = collector.fetch_news_data(source)
+            data = self.fetch_news_data(source)
             if data:
                 with open(f"{source}_news.json", "w") as file:
                     json.dump(data, file)
                 logging.info(f"Successfully collected {source} news")
         
         # Collect Twitter data
-        twitter_data = collector.fetch_twitter_data(query="cryptocurrency")
+        twitter_data = self.fetch_twitter_data(query="cryptocurrency")
         if twitter_data:
             with open("twitter_data.json", "w") as file:
                 json.dump(twitter_data, file)
             logging.info("Successfully collected Twitter data")
         
-        # Collect market data
-        market_data = collector.fetch_market_data(crypto_id="bitcoin")
-        if market_data:
-            with open("market_data.json", "w") as file:
-                json.dump(market_data, file)
-            logging.info("Successfully collected market data")
+        # Create historical data for model training
+        self.create_historical_data()
         
         logging.info("Data collection completed")
 
