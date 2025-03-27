@@ -1,16 +1,16 @@
 [
   {
     "prediction": 0,
-    "confidence_score": 0.2,
+    "confidence_score": 0.19,
     "confidence_level": "low",
-    "timestamp": "2025-03-27T22:58:31.272712",
+    "timestamp": "2025-03-27T23:04:55.377168",
     "features": {
-      "price": 0.031113092783813506,
-      "market_cap": 0.022089335081249842,
-      "volume": -0.011800756873435741,
-      "price_change_24h": 0.0011913718342800386,
-      "market_cap_change_24h": 0.0007693810561639271,
-      "volume_change_24h": NaN
+      "price": -1.7466624983842827,
+      "market_cap": -1.200942420286729,
+      "volume": -0.02786022451655295,
+      "price_change_24h": 0.0006985053752623808,
+      "market_cap_change_24h": 0.0003988546066851453,
+      "volume_change_24h": -0.009455401809159174
     }
   }
 ]
