@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import logging
 from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any
 from functools import lru_cache
 import os
 from concurrent.futures import ThreadPoolExecutor

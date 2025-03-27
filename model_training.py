@@ -12,6 +12,8 @@ import logging
 from typing import Dict, Tuple, Optional
 from datetime import datetime
 import joblib
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Configure logging
 logging.basicConfig(
@@ -79,15 +81,26 @@ class ModelTrainer:
             logging.error(f"Error preprocessing data: {e}")
             raise
 
-    def train_model(self, X: pd.DataFrame, y: pd.Series) -> RandomForestClassifier:
-        """Train model with hyperparameter tuning."""
+    def train_model(self, X: np.ndarray, y: np.ndarray) -> None:
+        """Train the model with cross-validation and hyperparameter tuning."""
         try:
-            # Split data
-            X_train, X_test, y_train, y_test = train_test_split(
-                X, y, test_size=0.2, random_state=42, stratify=y
-            )
+            # Check class distribution
+            unique, counts = np.unique(y, return_counts=True)
+            logging.info(f"Class distribution: {dict(zip(unique, counts))}")
             
-            # Define parameter grid for GridSearchCV
+            # If any class has less than 2 samples, use simple random split
+            if np.any(counts < 2):
+                logging.warning("Using simple random split due to insufficient class samples")
+                X_train, X_test, y_train, y_test = train_test_split(
+                    X, y, test_size=0.2, random_state=42
+                )
+            else:
+                # Use stratified split if we have enough samples in each class
+                X_train, X_test, y_train, y_test = train_test_split(
+                    X, y, test_size=0.2, random_state=42, stratify=y
+                )
+            
+            # Define parameter grid for Random Forest
             param_grid = {
                 'n_estimators': [100, 200, 300],
                 'max_depth': [10, 20, 30, None],
@@ -96,44 +109,54 @@ class ModelTrainer:
                 'max_features': ['sqrt', 'log2', None]
             }
             
-            # Initialize base model
-            base_model = RandomForestClassifier(random_state=42)
+            # Initialize Random Forest model
+            rf_model = RandomForestClassifier(random_state=42)
             
-            # Perform GridSearchCV
+            # Use GridSearchCV for hyperparameter tuning
             grid_search = GridSearchCV(
-                estimator=base_model,
+                estimator=rf_model,
                 param_grid=param_grid,
                 cv=5,
                 n_jobs=-1,
-                scoring='f1',
+                scoring='accuracy',
                 verbose=1
             )
             
             # Fit the model
             grid_search.fit(X_train, y_train)
             
-            # Get best model and parameters
-            self.best_model = grid_search.best_estimator_
-            self.best_params = grid_search.best_params_
+            # Get best model
+            self.model = grid_search.best_estimator_
             
-            # Calculate feature importance
-            self.feature_importance = pd.DataFrame({
-                'feature': X.columns,
-                'importance': self.best_model.feature_importances_
+            # Log best parameters
+            logging.info(f"Best parameters: {grid_search.best_params_}")
+            logging.info(f"Best cross-validation score: {grid_search.best_score_:.4f}")
+            
+            # Evaluate on test set
+            y_pred = self.model.predict(X_test)
+            accuracy = accuracy_score(y_test, y_pred)
+            logging.info(f"Test set accuracy: {accuracy:.4f}")
+            
+            # Calculate and log feature importance
+            feature_importance = pd.DataFrame({
+                'feature': self.feature_names,
+                'importance': self.model.feature_importances_
             }).sort_values('importance', ascending=False)
             
-            # Evaluate model
-            y_pred = self.best_model.predict(X_test)
-            metrics = self.evaluate_model(y_test, y_pred)
+            logging.info("\nFeature Importance:")
+            for _, row in feature_importance.head(10).iterrows():
+                logging.info(f"{row['feature']}: {row['importance']:.4f}")
             
-            logging.info(f"Best parameters: {self.best_params}")
-            logging.info(f"Model metrics: {metrics}")
-            logging.info(f"Top 5 important features: {self.feature_importance.head()}")
-            
-            return self.best_model
+            # Save feature importance plot
+            plt.figure(figsize=(10, 6))
+            sns.barplot(x='importance', y='feature', data=feature_importance.head(10))
+            plt.title('Top 10 Most Important Features')
+            plt.tight_layout()
+            plt.savefig('feature_importance.png')
+            plt.close()
             
         except Exception as e:
-            logging.error(f"Error training model: {e}")
+            logging.error(f"Error in model training: {e}")
             raise
 
     def evaluate_model(self, y_true: pd.Series, y_pred: pd.Series) -> Dict[str, float]:

@@ -1,5 +1,8 @@
 {
-  "trend_1": 1.2,
-  "trend_2": 0.8,
-  "trend_3": -0.5
-}
+  "cryptopanic_sentiment_mean": 0.0,
+  "cryptopanic_sentiment_std": 0.0,
+  "cryptopanic_sentiment_count": 1,
+  "overall_sentiment_mean": 0.0,
+  "overall_sentiment_std": 0.0,
+  "total_sentiment_count": 1,
+  "current_price": 

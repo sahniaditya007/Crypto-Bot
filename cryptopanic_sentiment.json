@@ -1,0 +1,740 @@
+[
+  {
+    "count": 200,
+    "next": "https://cryptopanic.com/api/free/v1/posts/?auth_token=5d3efdf3405c86e637926d16c630b32483628a26&page=2",
+    "previous": null,
+    "results": [
+      {
+        "kind": "news",
+        "domain": "protos.com",
+        "source": {
+          "title": "Protos.com",
+          "region": "en",
+          "domain": "protos.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "US Treasury could sanction Tornado Cash again if court accepts ‘moot’ notice",
+        "published_at": "2025-03-27T16:48:32Z",
+        "slug": "US-Treasury-could-sanction-Tornado-Cash-again-if-court-accepts-moot-notice",
+        "currencies": [
+          {
+            "code": "GAL",
+            "title": "Galxe",
+            "slug": "project-galaxy",
+            "url": "https://cryptopanic.com/news/project-galaxy/"
+          },
+          {
+            "code": "TORN",
+            "title": "Tornado Cash",
+            "slug": "tornado-cash",
+            "url": "https://cryptopanic.com/news/tornado-cash/"
+          }
+        ],
+        "id": 20884324,
+        "url": "https://cryptopanic.com/news/20884324/US-Treasury-could-sanction-Tornado-Cash-again-if-court-accepts-moot-notice?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:48:32Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "decrypt.co",
+        "source": {
+          "title": "Decrypt",
+          "region": "en",
+          "domain": "decrypt.co",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Wyoming Stablecoin Is Just a State-Issued CBDC by Another Name: Rep. Tom Emmer",
+        "published_at": "2025-03-27T16:44:00Z",
+        "slug": "Wyoming-Stablecoin-Is-Just-a-State-Issued-CBDC-by-Another-Name-Rep-Tom-Emmer",
+        "id": 20884290,
+        "url": "https://cryptopanic.com/news/20884290/Wyoming-Stablecoin-Is-Just-a-State-Issued-CBDC-by-Another-Name-Rep-Tom-Emmer?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:44:00Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "decrypt.co",
+        "source": {
+          "title": "Decrypt",
+          "region": "en",
+          "domain": "decrypt.co",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Elizabeth Warren Slams SEC Chair Nominee for Potential Crypto 'Pre-Bribe'",
+        "published_at": "2025-03-27T16:43:46Z",
+        "slug": "Elizabeth-Warren-Slams-SEC-Chair-Nominee-for-Potential-Crypto-Pre-Bribe",
+        "id": 20884289,
+        "url": "https://cryptopanic.com/news/20884289/Elizabeth-Warren-Slams-SEC-Chair-Nominee-for-Potential-Crypto-Pre-Bribe?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:43:46Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "theblock.co",
+        "source": {
+          "title": "The Block",
+          "region": "en",
+          "domain": "theblock.co",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Senators grill SEC nominee Paul Atkins over FTX ties, agency missteps under Gensler",
+        "published_at": "2025-03-27T16:40:07Z",
+        "slug": "Senators-grill-SEC-nominee-Paul-Atkins-over-FTX-ties-agency-missteps-under-Gensler",
+        "currencies": [
+          {
+            "code": "S",
+            "title": "Sonic (prev. FTM)",
+            "slug": "sonic-3",
+            "url": "https://cryptopanic.com/news/sonic-3/"
+          },
+          {
+            "code": "GAL",
+            "title": "Galxe",
+            "slug": "project-galaxy",
+            "url": "https://cryptopanic.com/news/project-galaxy/"
+          },
+          {
+            "code": "SENATE",
+            "title": "SENATE",
+            "slug": "senate",
+            "url": "https://cryptopanic.com/news/senate/"
+          },
+          {
+            "code": "S",
+            "title": "Agent S",
+            "slug": "agent-s",
+            "url": "https://cryptopanic.com/news/agent-s/"
+          }
+        ],
+        "id": 20884281,
+        "url": "https://cryptopanic.com/news/20884281/Senators-grill-SEC-nominee-Paul-Atkins-over-FTX-ties-agency-missteps-under-Gensler?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:40:07Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "coinpaper.com",
+        "source": {
+          "title": "Coinpaper",
+          "region": "en",
+          "domain": "coinpaper.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Binance Founder Created a Paid Messaging System — Now You Can Talk to Him for $125",
+        "published_at": "2025-03-27T16:39:32Z",
+        "slug": "Binance-Founder-Created-a-Paid-Messaging-System-Now-You-Can-Talk-to-Him-for-125",
+        "id": 20884267,
+        "url": "https://cryptopanic.com/news/20884267/Binance-Founder-Created-a-Paid-Messaging-System-Now-You-Can-Talk-to-Him-for-125?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:39:32Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cryptopolitan.com",
+        "source": {
+          "title": "Feed - Cryptopolitan.Com",
+          "region": "en",
+          "domain": "cryptopolitan.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "US health department to cut a significant workforce under Secretary RFK Jr.",
+        "published_at": "2025-03-27T16:37:18Z",
+        "slug": "US-health-department-to-cut-a-significant-workforce-under-Secretary-RFK-Jr",
+        "currencies": [
+          {
+            "code": "F",
+            "title": "SynFutures",
+            "slug": "synfutures",
+            "url": "https://cryptopanic.com/news/synfutures/"
+          }
+        ],
+        "id": 20884278,
+        "url": "https://cryptopanic.com/news/20884278/US-health-department-to-cut-a-significant-workforce-under-Secretary-RFK-Jr?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:37:18Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "crypto-economy.com",
+        "source": {
+          "title": "Crypto Economy",
+          "region": "en",
+          "domain": "crypto-economy.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "USDC Goes Mainstream: ICE and Circle Partner for Tokenized Market Funds",
+        "published_at": "2025-03-27T16:34:23Z",
+        "slug": "USDC-Goes-Mainstream-ICE-and-Circle-Partner-for-Tokenized-Market-Funds",
+        "currencies": [
+          {
+            "code": "USDC",
+            "title": "USDC",
+            "slug": "usd-coin",
+            "url": "https://cryptopanic.com/news/usd-coin/"
+          },
+          {
+            "code": "USYC",
+            "title": "Hashnote USYC",
+            "slug": "hashnote-usyc",
+            "url": "https://cryptopanic.com/news/hashnote-usyc/"
+          },
+          {
+            "code": "ICE",
+            "title": "Ice Open Network",
+            "slug": "ice",
+            "url": "https://cryptopanic.com/news/ice/"
+          }
+        ],
+        "id": 20884256,
+        "url": "https://cryptopanic.com/news/20884256/USDC-Goes-Mainstream-ICE-and-Circle-Partner-for-Tokenized-Market-Funds?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:34:23Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "theblock.co",
+        "source": {
+          "title": "The Block",
+          "region": "en",
+          "domain": "theblock.co",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "DOJ ‘disrupts Hamas terrorist’ scheme by seizing crypto held in USDT",
+        "published_at": "2025-03-27T16:33:04Z",
+        "slug": "DOJ-disrupts-Hamas-terrorist-scheme-by-seizing-crypto-held-in-USDT",
+        "currencies": [
+          {
+            "code": "USDT",
+            "title": "Tether",
+            "slug": "tether",
+            "url": "https://cryptopanic.com/news/tether/"
+          },
+          {
+            "code": "GAL",
+            "title": "Galxe",
+            "slug": "project-galaxy",
+            "url": "https://cryptopanic.com/news/project-galaxy/"
+          }
+        ],
+        "id": 20884251,
+        "url": "https://cryptopanic.com/news/20884251/DOJ-disrupts-Hamas-terrorist-scheme-by-seizing-crypto-held-in-USDT?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:33:04Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "coincu.com",
+        "source": {
+          "title": "coincu",
+          "region": "en",
+          "domain": "coincu.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "DOJ Seizes $201K in Cryptocurrency Linked to Terrorism",
+        "published_at": "2025-03-27T16:30:49Z",
+        "slug": "DOJ-Seizes-201K-in-Cryptocurrency-Linked-to-Terrorism",
+        "currencies": [
+          {
+            "code": "S",
+            "title": "Sonic (prev. FTM)",
+            "slug": "sonic-3",
+            "url": "https://cryptopanic.com/news/sonic-3/"
+          }
+        ],
+        "id": 20884230,
+        "url": "https://cryptopanic.com/news/20884230/DOJ-Seizes-201K-in-Cryptocurrency-Linked-to-Terrorism?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:30:49Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "feeds2.benzinga.com",
+        "source": {
+          "title": "Benzinga",
+          "region": "en",
+          "domain": "feeds2.benzinga.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Intercontinental Exchange And Circle Sign Memorandum To Explore USDC Integration",
+        "published_at": "2025-03-27T16:30:14Z",
+        "slug": "Intercontinental-Exchange-And-Circle-Sign-Memorandum-To-Explore-USDC-Integration",
+        "currencies": [
+          {
+            "code": "USDC",
+            "title": "USDC",
+            "slug": "usd-coin",
+            "url": "https://cryptopanic.com/news/usd-coin/"
+          },
+          {
+            "code": "ICE",
+            "title": "Ice Open Network",
+            "slug": "ice",
+            "url": "https://cryptopanic.com/news/ice/"
+          }
+        ],
+        "id": 20884285,
+        "url": "https://cryptopanic.com/news/20884285/Intercontinental-Exchange-And-Circle-Sign-Memorandum-To-Explore-USDC-Integration?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:30:14Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cryptonews.com",
+        "source": {
+          "title": "Cryptonews",
+          "region": "en",
+          "domain": "cryptonews.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "XRP ETF 2025 Approval Hits 87% High on Polymarket, Dubbed ‘Easy Bet’",
+        "published_at": "2025-03-27T16:28:39Z",
+        "slug": "XRP-ETF-2025-Approval-Hits-87-High-on-Polymarket-Dubbed-Easy-Bet",
+        "currencies": [
+          {
+            "code": "XRP",
+            "title": "XRP",
+            "slug": "ripple",
+            "url": "https://cryptopanic.com/news/ripple/"
+          }
+        ],
+        "id": 20884261,
+        "url": "https://cryptopanic.com/news/20884261/XRP-ETF-2025-Approval-Hits-87-High-on-Polymarket-Dubbed-Easy-Bet?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:28:39Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "theblock.co",
+        "source": {
+          "title": "The Block",
+          "region": "en",
+          "domain": "theblock.co",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Crypto slumps 4% on Trump’s tariff moves, but US GDP data helps markets recover",
+        "published_at": "2025-03-27T16:26:51Z",
+        "slug": "Crypto-slumps-4-on-Trumps-tariff-moves-but-US-GDP-data-helps-markets-recover",
+        "currencies": [
+          {
+            "code": "S",
+            "title": "Sonic (prev. FTM)",
+            "slug": "sonic-3",
+            "url": "https://cryptopanic.com/news/sonic-3/"
+          }
+        ],
+        "id": 20884226,
+        "url": "https://cryptopanic.com/news/20884226/Crypto-slumps-4-on-Trumps-tariff-moves-but-US-GDP-data-helps-markets-recover?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:26:51Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "thestreet.com",
+        "source": {
+          "title": "The Street Crypto",
+          "region": "en",
+          "domain": "thestreet.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Convicted crypto founder moved to Oklahoma facility",
+        "published_at": "2025-03-27T16:25:29Z",
+        "slug": "Convicted-crypto-founder-moved-to-Oklahoma-facility",
+        "id": 20884314,
+        "url": "https://cryptopanic.com/news/20884314/Convicted-crypto-founder-moved-to-Oklahoma-facility?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:25:29Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cryptopolitan.com",
+        "source": {
+          "title": "Feed - Cryptopolitan.Com",
+          "region": "en",
+          "domain": "cryptopolitan.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Tesla stock surges by over 7% on Trump’s auto tariffs announcement",
+        "published_at": "2025-03-27T16:17:43Z",
+        "slug": "Tesla-stock-surges-by-over-7-on-Trumps-auto-tariffs-announcement",
+        "id": 20884189,
+        "url": "https://cryptopanic.com/news/20884189/Tesla-stock-surges-by-over-7-on-Trumps-auto-tariffs-announcement?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:17:43Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "u.today",
+        "source": {
+          "title": "U.Today",
+          "region": "en",
+          "domain": "u.today",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Litecoin Whales Unleash 107 Million LTC Transactions in 24 Hours",
+        "published_at": "2025-03-27T16:17:00Z",
+        "slug": "Litecoin-Whales-Unleash-107-Million-LTC-Transactions-in-24-Hours",
+        "currencies": [
+          {
+            "code": "LTC",
+            "title": "Litecoin",
+            "slug": "litecoin",
+            "url": "https://cryptopanic.com/news/litecoin/"
+          }
+        ],
+        "id": 20884158,
+        "url": "https://cryptopanic.com/news/20884158/Litecoin-Whales-Unleash-107-Million-LTC-Transactions-in-24-Hours?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:17:00Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cointelegraph.com",
+        "source": {
+          "title": "CoinTelegraph",
+          "region": "en",
+          "domain": "cointelegraph.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Prospective SEC chair pressed on sale of FTX-tied firm",
+        "published_at": "2025-03-27T16:14:42Z",
+        "slug": "Prospective-SEC-chair-pressed-on-sale-of-FTX-tied-firm",
+        "id": 20884127,
+        "url": "https://cryptopanic.com/news/20884127/Prospective-SEC-chair-pressed-on-sale-of-FTX-tied-firm?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:14:42Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cryptonews.com",
+        "source": {
+          "title": "Cryptonews",
+          "region": "en",
+          "domain": "cryptonews.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Stablecoin Issuer Tether to Buy 30% Stake in Italian Media Company Be Water",
+        "published_at": "2025-03-27T16:08:40Z",
+        "slug": "Stablecoin-Issuer-Tether-to-Buy-30-Stake-in-Italian-Media-Company-Be-Water",
+        "currencies": [
+          {
+            "code": "USDT",
+            "title": "Tether",
+            "slug": "tether",
+            "url": "https://cryptopanic.com/news/tether/"
+          }
+        ],
+        "id": 20884259,
+        "url": "https://cryptopanic.com/news/20884259/Stablecoin-Issuer-Tether-to-Buy-30-Stake-in-Italian-Media-Company-Be-Water?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:08:40Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "crypto-economy.com",
+        "source": {
+          "title": "Crypto Economy",
+          "region": "en",
+          "domain": "crypto-economy.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Zeus Network Expands Bitcoin’s Reach with APOLLO and zBTC on Solana",
+        "published_at": "2025-03-27T16:07:59Z",
+        "slug": "Zeus-Network-Expands-Bitcoins-Reach-with-APOLLO-and-zBTC-on-Solana",
+        "currencies": [
+          {
+            "code": "BTC",
+            "title": "Bitcoin",
+            "slug": "bitcoin",
+            "url": "https://cryptopanic.com/news/bitcoin/"
+          },
+          {
+            "code": "SOL",
+            "title": "Solana",
+            "slug": "solana",
+            "url": "https://cryptopanic.com/news/solana/"
+          },
+          {
+            "code": "WBTC",
+            "title": "Wrapped Bitcoin",
+            "slug": "wrapped-bitcoin",
+            "url": "https://cryptopanic.com/news/wrapped-bitcoin/"
+          },
+          {
+            "code": "DEFI",
+            "title": "DeFi",
+            "slug": "de-fi",
+            "url": "https://cryptopanic.com/news/de-fi/"
+          }
+        ],
+        "id": 20884096,
+        "url": "https://cryptopanic.com/news/20884096/Zeus-Network-Expands-Bitcoins-Reach-with-APOLLO-and-zBTC-on-Solana?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:07:59Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cryptopolitan.com",
+        "source": {
+          "title": "Feed - Cryptopolitan.Com",
+          "region": "en",
+          "domain": "cryptopolitan.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "UK gilts reverse gains as investors eye fiscal fragility and global rate risks",
+        "published_at": "2025-03-27T16:05:14Z",
+        "slug": "UK-gilts-reverse-gains-as-investors-eye-fiscal-fragility-and-global-rate-risks",
+        "id": 20884121,
+        "url": "https://cryptopanic.com/news/20884121/UK-gilts-reverse-gains-as-investors-eye-fiscal-fragility-and-global-rate-risks?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:05:14Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      },
+      {
+        "kind": "news",
+        "domain": "cryptonews.com",
+        "source": {
+          "title": "Cryptonews",
+          "region": "en",
+          "domain": "cryptonews.com",
+          "path": null,
+          "type": "feed"
+        },
+        "title": "Coinbase Warns Canada Risks Losing Global Economic Edge Without Crypto Reforms",
+        "published_at": "2025-03-27T16:04:17Z",
+        "slug": "Coinbase-Warns-Canada-Risks-Losing-Global-Economic-Edge-Without-Crypto-Reforms",
+        "currencies": [
+          {
+            "code": "DEFI",
+            "title": "DeFi",
+            "slug": "de-fi",
+            "url": "https://cryptopanic.com/news/de-fi/"
+          }
+        ],
+        "id": 20884258,
+        "url": "https://cryptopanic.com/news/20884258/Coinbase-Warns-Canada-Risks-Losing-Global-Economic-Edge-Without-Crypto-Reforms?mtm_campaign=API-OFA",
+        "created_at": "2025-03-27T16:04:17Z",
+        "votes": {
+          "negative": 0,
+          "positive": 0,
+          "important": 0,
+          "liked": 0,
+          "disliked": 0,
+          "lol": 0,
+          "toxic": 0,
+          "saved": 0,
+          "comments": 0
+        }
+      }
+    ],
+    "sentiment": 0.0
+  }
+]
