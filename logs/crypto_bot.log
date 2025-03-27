@@ -634,3 +634,540 @@
 2025-03-28 00:25:52,616 - INFO - Saved predictions to data\predictions.json
 2025-03-28 00:25:52,617 - INFO - Step 5: Generating investment recommendations
 2025-03-28 00:25:53,612 - INFO - Pipeline completed successfully
+2025-03-28 00:26:56,756 - INFO - Twitter API initialized successfully
+2025-03-28 00:26:57,449 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:26:57,451 - INFO - Starting crypto bot pipeline
+2025-03-28 00:26:57,451 - INFO - Step 1: Collecting data
+2025-03-28 00:26:57,452 - INFO - Starting data collection
+2025-03-28 00:26:57,757 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:26:59,415 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:26:59,417 - INFO - Successfully collected social media data
+2025-03-28 00:26:59,418 - INFO - Data collection completed
+2025-03-28 00:26:59,418 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:26:59,419 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:26:59,642 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:26:59,703 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:26:59,705 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:26:59,706 - WARNING - News file not found: data\newsapi_news.json
+2025-03-28 00:26:59,707 - WARNING - Twitter data file not found
+2025-03-28 00:26:59,707 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:26:59,708 - INFO - Starting market trend analysis
+2025-03-28 00:26:59,708 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:26:59,711 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:26:59,712 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-28 00:26:59,712 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-28 00:26:59,713 - INFO - Loading market data from file...
+2025-03-28 00:26:59,736 - INFO - Loaded 100 market data points
+2025-03-28 00:26:59,743 - INFO - Calculating price changes...
+2025-03-28 00:26:59,744 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:26:59,744 - ERROR - No market data available for analysis
+2025-03-28 00:26:59,745 - INFO - Step 4: Generating predictions
+2025-03-28 00:26:59,904 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:26:59,905 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:26:59,942 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:26:59,943 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:27:00,482 - INFO - Pipeline completed successfully
+2025-03-28 00:30:00,490 - INFO - Twitter API initialized successfully
+2025-03-28 00:30:06,064 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:30:06,066 - INFO - Starting crypto bot pipeline
+2025-03-28 00:30:06,066 - INFO - Step 1: Collecting data
+2025-03-28 00:30:06,067 - INFO - Starting data collection
+2025-03-28 00:30:06,765 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:30:07,796 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:30:09,054 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:30:09,431 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:30:09,745 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:30:10,072 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:30:10,075 - INFO - Successfully collected Twitter data
+2025-03-28 00:30:10,099 - ERROR - Error creating historical data: 'current_price'
+2025-03-28 00:30:10,100 - ERROR - Error in data collection: 'current_price'
+2025-03-28 00:30:10,100 - ERROR - Pipeline failed: 'current_price'
+Traceback (most recent call last):
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\main.py", line 47, in run_pipeline
+    self.data_collector.collect_data()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\data_collection.py", line 347, in collect_data
+    self.create_historical_data()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\data_collection.py", line 240, in create_historical_data
+    price_change = ((current['current_price'] - previous['current_price']) / previous['current_price']) * 100
+                     ~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'current_price'
+2025-03-28 00:30:10,105 - ERROR - Pipeline execution failed: 'current_price'
+Traceback (most recent call last):
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\main.py", line 106, in main
+    results = bot.run_pipeline()
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\main.py", line 47, in run_pipeline
+    self.data_collector.collect_data()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\data_collection.py", line 347, in collect_data
+    self.create_historical_data()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\data_collection.py", line 240, in create_historical_data
+    price_change = ((current['current_price'] - previous['current_price']) / previous['current_price']) * 100
+                     ~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'current_price'
+2025-03-28 00:30:41,578 - INFO - Twitter API initialized successfully
+2025-03-28 00:30:41,912 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:30:41,914 - INFO - Starting crypto bot pipeline
+2025-03-28 00:30:41,914 - INFO - Step 1: Collecting data
+2025-03-28 00:30:41,914 - INFO - Starting data collection
+2025-03-28 00:30:42,204 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:30:43,276 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:30:45,039 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:30:45,369 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:30:45,767 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:30:46,088 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:30:46,089 - WARNING - No Twitter data collected
+2025-03-28 00:30:46,111 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,112 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,112 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,113 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,113 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,114 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,114 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,115 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,115 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,115 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,116 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,116 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,117 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,117 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,117 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,118 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,118 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,119 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,119 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,120 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,120 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,120 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,121 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,121 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,122 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,122 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,122 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,123 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,124 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,124 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,124 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,125 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,125 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,126 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,126 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,127 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,127 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,127 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,128 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,128 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,129 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,129 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,130 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,130 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,130 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,131 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,131 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,131 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,132 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,132 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,132 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,133 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,133 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,133 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,134 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,134 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,135 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,135 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,135 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,136 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,136 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,136 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,137 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,137 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,137 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,138 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,138 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,138 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,139 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,139 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,140 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,140 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,141 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,141 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,142 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,142 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,143 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,144 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,144 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,144 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,145 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,145 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,146 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,146 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,147 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,147 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,147 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,148 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,148 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,149 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,149 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,149 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,150 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,150 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,150 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,151 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,151 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,152 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,152 - WARNING - Skipping data point due to missing field: 'volume'
+2025-03-28 00:30:46,154 - INFO - Successfully created historical data
+2025-03-28 00:30:46,154 - INFO - Data collection completed successfully
+2025-03-28 00:30:46,155 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:30:46,155 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:30:46,372 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:30:46,432 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:30:46,435 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:30:46,444 - INFO - Processing news data from data\newsapi_news.json
+2025-03-28 00:30:46,471 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:30:46,474 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-28 00:30:46,482 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-28 00:30:46,486 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-28 00:30:46,486 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:30:46,487 - INFO - Starting market trend analysis
+2025-03-28 00:30:46,488 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:30:46,490 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:30:46,493 - INFO - Successfully loaded newsapi sentiment data
+2025-03-28 00:30:46,494 - INFO - Successfully loaded twitter sentiment data
+2025-03-28 00:30:46,495 - INFO - Loading market data from file...
+2025-03-28 00:30:46,496 - INFO - Loaded 100 market data points
+2025-03-28 00:30:46,501 - INFO - Calculating price changes...
+2025-03-28 00:30:46,503 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:30:46,504 - ERROR - No market data available for analysis
+2025-03-28 00:30:46,504 - INFO - Step 4: Generating predictions
+2025-03-28 00:30:46,679 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:30:46,680 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:30:46,712 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:30:46,713 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:30:47,506 - INFO - Pipeline completed successfully
+2025-03-28 00:31:15,354 - INFO - Twitter API initialized successfully
+2025-03-28 00:31:16,064 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:31:16,068 - INFO - Starting crypto bot pipeline
+2025-03-28 00:31:16,069 - INFO - Step 1: Collecting data
+2025-03-28 00:31:16,069 - INFO - Starting data collection
+2025-03-28 00:31:16,640 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,641 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,641 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,642 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,642 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,643 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,643 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,644 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,644 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,645 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,645 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,646 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,646 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,646 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,647 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,647 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,648 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,648 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,649 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,650 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,650 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,650 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,651 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,651 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,652 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,652 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,653 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,653 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,654 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,654 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,654 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,655 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,655 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,656 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,656 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,656 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,657 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,657 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,658 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,658 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,658 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,659 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,659 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,659 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,660 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,660 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,661 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,661 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,662 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,662 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,662 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,663 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,663 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,663 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,664 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,665 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,665 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,665 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,666 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,666 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,667 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,667 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,668 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,668 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,669 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,669 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,669 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,670 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,670 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,670 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,671 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,671 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,671 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,672 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,672 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,672 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,673 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,673 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,673 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,674 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,674 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,674 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,675 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,675 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,675 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,675 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,676 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,676 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,677 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,677 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,678 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,678 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,679 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,679 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,679 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,680 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,680 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,681 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,681 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,682 - WARNING - Skipping cryptocurrency due to missing data: 'market_cap_change_24h'
+2025-03-28 00:31:16,685 - INFO - Successfully collected market data for 0 cryptocurrencies
+2025-03-28 00:31:23,678 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:31:25,316 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:31:25,646 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:31:25,985 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:31:27,167 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:31:27,168 - WARNING - No Twitter data collected
+2025-03-28 00:31:27,169 - WARNING - No market data available for creating historical data
+2025-03-28 00:31:27,169 - INFO - Data collection completed successfully
+2025-03-28 00:31:27,170 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:31:27,170 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:31:27,479 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:31:27,538 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:31:27,540 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:31:27,550 - INFO - Processing news data from data\newsapi_news.json
+2025-03-28 00:31:27,573 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:31:27,574 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-28 00:31:27,583 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-28 00:31:27,585 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-28 00:31:27,586 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:31:27,586 - INFO - Starting market trend analysis
+2025-03-28 00:31:27,587 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:31:27,589 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:31:27,591 - INFO - Successfully loaded newsapi sentiment data
+2025-03-28 00:31:27,592 - INFO - Successfully loaded twitter sentiment data
+2025-03-28 00:31:27,593 - INFO - Loading market data from file...
+2025-03-28 00:31:27,593 - ERROR - No market data available
+2025-03-28 00:31:27,594 - ERROR - No market data available for analysis
+2025-03-28 00:31:27,595 - INFO - Step 4: Generating predictions
+2025-03-28 00:31:27,757 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:31:27,758 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:31:27,792 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:31:27,793 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:31:28,497 - INFO - Pipeline completed successfully
+2025-03-28 00:31:54,761 - INFO - Twitter API initialized successfully
+2025-03-28 00:31:55,494 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:31:55,496 - INFO - Starting crypto bot pipeline
+2025-03-28 00:31:55,496 - INFO - Step 1: Collecting data
+2025-03-28 00:31:55,497 - INFO - Starting data collection
+2025-03-28 00:31:56,178 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:31:57,212 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:31:57,725 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:31:58,034 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:31:58,440 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:31:58,768 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:31:58,769 - WARNING - No Twitter data collected
+2025-03-28 00:31:58,801 - INFO - Successfully created historical data
+2025-03-28 00:31:58,802 - INFO - Data collection completed successfully
+2025-03-28 00:31:58,802 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:31:58,803 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:31:59,027 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:31:59,082 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:31:59,085 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:31:59,093 - INFO - Processing news data from data\newsapi_news.json
+2025-03-28 00:31:59,114 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:31:59,116 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-28 00:31:59,125 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-28 00:31:59,126 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-28 00:31:59,128 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:31:59,129 - INFO - Starting market trend analysis
+2025-03-28 00:31:59,129 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:31:59,132 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:31:59,134 - INFO - Successfully loaded newsapi sentiment data
+2025-03-28 00:31:59,135 - INFO - Successfully loaded twitter sentiment data
+2025-03-28 00:31:59,136 - INFO - Loading market data from file...
+2025-03-28 00:31:59,137 - INFO - Loaded 100 market data points
+2025-03-28 00:31:59,142 - INFO - Calculating price changes...
+2025-03-28 00:31:59,143 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:31:59,143 - ERROR - No market data available for analysis
+2025-03-28 00:31:59,144 - INFO - Step 4: Generating predictions
+2025-03-28 00:31:59,307 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:31:59,307 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:31:59,341 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:31:59,342 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:31:59,931 - INFO - Pipeline completed successfully
+2025-03-28 00:33:37,160 - INFO - Twitter API initialized successfully
+2025-03-28 00:33:38,147 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:33:38,148 - INFO - Starting crypto bot pipeline
+2025-03-28 00:33:38,148 - INFO - Step 1: Collecting data
+2025-03-28 00:33:38,149 - INFO - Starting data collection
+2025-03-28 00:33:38,757 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:33:40,384 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:33:42,334 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:33:42,654 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:33:43,045 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:33:43,348 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:33:43,349 - WARNING - No Twitter data collected
+2025-03-28 00:33:43,376 - INFO - Successfully created historical data
+2025-03-28 00:33:43,377 - INFO - Data collection completed successfully
+2025-03-28 00:33:43,377 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:33:43,378 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:33:43,598 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:33:43,664 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:33:43,666 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:33:43,675 - INFO - Processing news data from data\newsapi_news.json
+2025-03-28 00:33:43,697 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:33:43,699 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-28 00:33:43,708 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-28 00:33:43,710 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-28 00:33:43,711 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:33:43,711 - INFO - Starting market trend analysis
+2025-03-28 00:33:43,712 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:33:43,714 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:33:43,716 - INFO - Successfully loaded newsapi sentiment data
+2025-03-28 00:33:43,717 - INFO - Successfully loaded twitter sentiment data
+2025-03-28 00:33:43,718 - INFO - Loading market data from file...
+2025-03-28 00:33:43,719 - INFO - Loaded 100 market data points
+2025-03-28 00:33:43,727 - INFO - Calculating price changes...
+2025-03-28 00:33:43,728 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:33:43,728 - ERROR - No market data available for analysis
+2025-03-28 00:33:43,729 - INFO - Step 4: Generating predictions
+2025-03-28 00:33:43,892 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:33:43,893 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:33:43,925 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:33:43,926 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:33:44,634 - INFO - Pipeline completed successfully
+2025-03-28 00:39:46,296 - INFO - Twitter API initialized successfully
+2025-03-28 00:39:46,880 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:39:46,882 - INFO - Starting crypto bot pipeline
+2025-03-28 00:39:46,882 - INFO - Step 1: Collecting data
+2025-03-28 00:39:46,882 - INFO - Starting data collection
+2025-03-28 00:39:47,385 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:39:48,871 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:39:50,230 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:39:50,585 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:39:50,925 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:39:51,306 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:39:51,307 - WARNING - No Twitter data collected
+2025-03-28 00:39:51,333 - INFO - Successfully created historical data
+2025-03-28 00:39:51,334 - INFO - Data collection completed successfully
+2025-03-28 00:39:51,334 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:39:51,335 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:39:51,553 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:39:51,617 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:39:51,619 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:39:51,625 - INFO - Processing news data from data\newsapi_news.json
+2025-03-28 00:39:51,654 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:39:51,655 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-28 00:39:51,661 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-28 00:39:51,663 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-28 00:39:51,663 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:39:51,663 - INFO - Starting market trend analysis
+2025-03-28 00:39:51,664 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:39:51,667 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:39:51,670 - INFO - Successfully loaded newsapi sentiment data
+2025-03-28 00:39:51,670 - INFO - Successfully loaded twitter sentiment data
+2025-03-28 00:39:51,671 - INFO - Loading market data from file...
+2025-03-28 00:39:51,672 - INFO - Loaded 100 market data points
+2025-03-28 00:39:51,677 - INFO - Calculating price changes...
+2025-03-28 00:39:51,678 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:39:51,678 - ERROR - No market data available for analysis
+2025-03-28 00:39:51,678 - INFO - Step 4: Generating predictions
+2025-03-28 00:39:51,832 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:39:51,833 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:39:51,867 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:39:51,867 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:39:52,159 - INFO - Pipeline completed successfully
+2025-03-28 00:43:02,859 - INFO - Twitter API initialized successfully
+2025-03-28 00:43:03,187 - INFO - CoinMarketCap API initialized successfully
+2025-03-28 00:43:03,189 - INFO - Starting crypto bot pipeline
+2025-03-28 00:43:03,189 - INFO - Step 1: Collecting data
+2025-03-28 00:43:03,189 - INFO - Starting data collection
+2025-03-28 00:43:03,626 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-28 00:43:04,884 - INFO - Successfully collected CryptoPanic news data
+2025-03-28 00:43:06,578 - INFO - Successfully collected NewsAPI data
+2025-03-28 00:43:06,975 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:43:07,308 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:43:07,640 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-28 00:43:07,641 - WARNING - No Twitter data collected
+2025-03-28 00:43:07,671 - INFO - Successfully created historical data
+2025-03-28 00:43:07,671 - INFO - Data collection completed successfully
+2025-03-28 00:43:07,671 - INFO - Step 2: Performing sentiment analysis
+2025-03-28 00:43:07,672 - WARNING - News file not found: data\coindesk_news.json
+2025-03-28 00:43:07,896 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-28 00:43:07,956 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:43:07,958 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-28 00:43:07,965 - INFO - Processing news data from data\newsapi_news.json
+2025-03-28 00:43:07,990 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-28 00:43:07,991 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-28 00:43:07,998 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-28 00:43:07,999 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-28 00:43:07,999 - INFO - Step 3: Analyzing market trends
+2025-03-28 00:43:08,000 - INFO - Starting market trend analysis
+2025-03-28 00:43:08,000 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-28 00:43:08,002 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-28 00:43:08,005 - INFO - Successfully loaded newsapi sentiment data
+2025-03-28 00:43:08,005 - INFO - Successfully loaded twitter sentiment data
+2025-03-28 00:43:08,005 - INFO - Loading market data from file...
+2025-03-28 00:43:08,007 - INFO - Loaded 100 market data points
+2025-03-28 00:43:08,013 - INFO - Calculating price changes...
+2025-03-28 00:43:08,013 - ERROR - Error loading market data: 'current_price'
+2025-03-28 00:43:08,014 - ERROR - No market data available for analysis
+2025-03-28 00:43:08,014 - INFO - Step 4: Generating predictions
+2025-03-28 00:43:08,168 - INFO - Loaded model from model_20250327.pkl
+2025-03-28 00:43:08,169 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-28 00:43:08,201 - INFO - Saved predictions to data\predictions.json
+2025-03-28 00:43:08,201 - INFO - Step 5: Generating investment recommendations
+2025-03-28 00:43:08,744 - INFO - Pipeline completed successfully
