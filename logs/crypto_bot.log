@@ -1171,3 +1171,47 @@ KeyError: 'current_price'
 2025-03-28 00:43:08,201 - INFO - Saved predictions to data\predictions.json
 2025-03-28 00:43:08,201 - INFO - Step 5: Generating investment recommendations
 2025-03-28 00:43:08,744 - INFO - Pipeline completed successfully
+2025-03-30 23:10:54,683 - INFO - Twitter API initialized successfully
+2025-03-30 23:10:56,024 - INFO - CoinMarketCap API initialized successfully
+2025-03-30 23:10:56,025 - INFO - Starting crypto bot pipeline
+2025-03-30 23:10:56,025 - INFO - Step 1: Collecting data
+2025-03-30 23:10:56,026 - INFO - Starting data collection
+2025-03-30 23:10:56,609 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-30 23:10:57,365 - INFO - Successfully collected CryptoPanic news data
+2025-03-30 23:10:58,428 - INFO - Successfully collected NewsAPI data
+2025-03-30 23:10:58,869 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-30 23:10:59,177 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-30 23:10:59,468 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-30 23:10:59,469 - WARNING - No Twitter data collected
+2025-03-30 23:10:59,482 - INFO - Successfully created historical data
+2025-03-30 23:10:59,482 - INFO - Data collection completed successfully
+2025-03-30 23:10:59,483 - INFO - Step 2: Performing sentiment analysis
+2025-03-30 23:10:59,483 - WARNING - News file not found: data\coindesk_news.json
+2025-03-30 23:10:59,687 - INFO - Processing news data from data\cryptopanic_news.json
+2025-03-30 23:10:59,753 - INFO - Aggregate metrics for data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-30 23:10:59,754 - INFO - Saved sentiment data to data\cryptopanic_sentiment.json
+2025-03-30 23:10:59,757 - INFO - Processing news data from data\newsapi_news.json
+2025-03-30 23:10:59,769 - INFO - Aggregate metrics for data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-30 23:10:59,770 - INFO - Saved sentiment data to data\newsapi_sentiment.json
+2025-03-30 23:10:59,773 - INFO - Processing Twitter data from data\twitter_data.json
+2025-03-30 23:10:59,774 - INFO - Saved sentiment data to data\twitter_sentiment.json
+2025-03-30 23:10:59,774 - INFO - Step 3: Analyzing market trends
+2025-03-30 23:10:59,774 - INFO - Starting market trend analysis
+2025-03-30 23:10:59,774 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-30 23:10:59,775 - INFO - Successfully loaded cryptopanic sentiment data
+2025-03-30 23:10:59,776 - INFO - Successfully loaded newsapi sentiment data
+2025-03-30 23:10:59,776 - INFO - Successfully loaded twitter sentiment data
+2025-03-30 23:10:59,777 - INFO - Loading market data from file...
+2025-03-30 23:10:59,777 - INFO - Loaded 100 market data points
+2025-03-30 23:10:59,783 - INFO - Calculating price changes...
+2025-03-30 23:10:59,784 - ERROR - Error loading market data: 'current_price'
+2025-03-30 23:10:59,784 - ERROR - No market data available for analysis
+2025-03-30 23:10:59,784 - INFO - Step 4: Generating predictions
+2025-03-30 23:11:00,357 - INFO - Loaded model from model_20250327.pkl
+2025-03-30 23:11:00,357 - INFO - Model features: ['price', 'market_cap', 'volume', 'price_change_24h', 'market_cap_change_24h', 'volume_change_24h']
+2025-03-30 23:11:00,372 - INFO - Saved predictions to data\predictions.json
+2025-03-30 23:11:00,373 - INFO - Step 5: Generating investment recommendations
+2025-03-30 23:11:04,076 - INFO - Pipeline completed successfully

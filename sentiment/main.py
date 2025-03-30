@@ -5,12 +5,12 @@ from typing import Dict, Any
 import os
 from dotenv import load_dotenv
 
-from data_collection import DataCollector
-from sentiment_analysis import process_news_data, process_twitter_data
-from market_analysis import analyze_market_trends
-from prediction_generation import generate_predictions
-from evaluation_metrics import evaluate_model
-from recommendation_system import CryptoRecommender
+from sentiment.data_collection import DataCollector
+from sentiment.sentiment_analysis import process_news_data, process_twitter_data
+from sentiment.market_analysis import analyze_market_trends
+from sentiment.prediction_generation import generate_predictions
+from sentiment.evaluation_metrics import evaluate_model
+from sentiment.recommendation_system import CryptoRecommender
 
 # Configure logging
 logging.basicConfig(

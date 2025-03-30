@@ -2,291 +2,291 @@
   {
     "symbol": "BTC",
     "name": "Bitcoin",
-    "score": -0.009375387855,
-    "confidence": 0.009375387855,
-    "risk_level": "Low",
+    "score": -0.04604831085,
+    "confidence": 0.04604831085,
+    "risk_level": "Medium",
     "potential": "High",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 87195.45742031302,
-      "volume_24h": 26380137635.76748,
-      "market_cap": 1730203592018.0208,
-      "percent_change_24h": 1.35484143,
-      "volume_change_24h": -7.6051,
+      "price": 82438.61107388735,
+      "volume_24h": 13686718946.76289,
+      "market_cap": 1635922350292.438,
+      "percent_change_24h": 0.0768261,
+      "volume_change_24h": -30.7757,
       "name": "Bitcoin"
     },
     "sentiment_scores": {
-      "market": -0.03125129285,
+      "market": -0.1534943695,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.07605100000000001,
-      "potential_return": 0.7533871035749999,
-      "market_dominance": 0.6236005788114927,
-      "volume_stability": 0.923949,
-      "price_stability": 0.9864515857
+      "risk_score": 0.307757,
+      "potential_return": 0.75019206525,
+      "market_dominance": 0.6296443733821968,
+      "volume_stability": 0.6922429999999999,
+      "price_stability": 0.999231739
     }
   },
   {
-    "symbol": "ETH",
-    "name": "Ethereum",
-    "score": -0.006597074805,
-    "confidence": 0.006597074805,
+    "symbol": "ICP",
+    "name": "Internet Computer",
+    "score": -0.00024006252000000002,
+    "confidence": 0.00024006252000000002,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 2006.7850390554818,
-      "volume_24h": 12083309982.782568,
-      "market_cap": 242112440124.90118,
-      "percent_change_24h": 0.86825013,
-      "volume_change_24h": -5.2663,
-      "name": "Ethereum"
+      "price": 5.321691214684118,
+      "volume_24h": 54247864.85912531,
+      "market_cap": 2565467974.441089,
+      "percent_change_24h": -0.53404168,
+      "volume_change_24h": 0.374,
+      "name": "Internet Computer"
     },
     "sentiment_scores": {
-      "market": -0.02199024935,
+      "market": -0.0008002084000000001,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.052663,
-      "potential_return": 0.3221370851225183,
-      "market_dominance": 0.08726224965424688,
-      "volume_stability": 0.947337,
-      "price_stability": 0.9913174987
+      "risk_score": 0.00374,
+      "potential_return": 0.24944900024541652,
+      "market_dominance": 0.0009874139044009612,
+      "volume_stability": 0.99626,
+      "price_stability": 0.9946595832
     }
   },
   {
-    "symbol": "USDT",
-    "name": "Tether USDt",
-    "score": -0.004457539905,
-    "confidence": 0.004457539905,
+    "symbol": "PI",
+    "name": "Pi",
+    "score": -0.007240169354999999,
+    "confidence": 0.007240169354999999,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 0.9998916847713382,
-      "volume_24h": 58290304678.69906,
-      "market_cap": 144155366930.84766,
-      "percent_change_24h": -0.02449327,
-      "volume_change_24h": -2.9472,
-      "name": "Tether USDt"
+      "price": 0.7688956153776324,
+      "volume_24h": 161076961.43031037,
+      "market_cap": 5208357318.592261,
+      "percent_change_24h": -3.28977957,
+      "volume_change_24h": -1.537,
+      "name": "Pi"
     },
     "sentiment_scores": {
-      "market": -0.01485846635,
+      "market": -0.02413389785,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.029472,
-      "potential_return": 0.29159726516469897,
-      "market_dominance": 0.05195652735410771,
-      "volume_stability": 0.970528,
-      "price_stability": 0.9997550673
+      "risk_score": 0.01537,
+      "potential_return": 0.24336742287675797,
+      "market_dominance": 0.0020046262462453516,
+      "volume_stability": 0.98463,
+      "price_stability": 0.9671022043
     }
   },
   {
-    "symbol": "XRP",
-    "name": "XRP",
-    "score": 0.00668592993,
-    "confidence": 0.00668592993,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "CAUTIOUS BUY",
-    "metrics": {
-      "price": 2.348398148237756,
-      "volume_24h": 3096535346.8229227,
-      "market_cap": 136690151939.3824,
-      "percent_change_24h": -0.71651338,
-      "volume_change_24h": 5.1738,
-      "name": "XRP"
-    },
-    "sentiment_scores": {
-      "market": 0.0222864331,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.051738,
-      "potential_return": 0.28770989218331205,
-      "market_dominance": 0.04926591197733564,
-      "volume_stability": 0.948262,
-      "price_stability": 0.9928348662
-    }
-  },
-  {
-    "symbol": "LINK",
-    "name": "Chainlink",
-    "score": 0.0031797402749999997,
-    "confidence": 0.0031797402749999997,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "CAUTIOUS BUY",
-    "metrics": {
-      "price": 15.491221745711858,
-      "volume_24h": 357847663.1744988,
-      "market_cap": 10179281351.384829,
-      "percent_change_24h": 3.07802685,
-      "volume_change_24h": -0.9582,
-      "name": "Chainlink"
-    },
-    "sentiment_scores": {
-      "market": 0.01059913425,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.009582,
-      "potential_return": 0.2606367097728205,
-      "market_dominance": 0.0036688201156748596,
-      "volume_stability": 0.990418,
-      "price_stability": 0.9692197315
-    }
-  },
-  {
-    "symbol": "ONDO",
-    "name": "Ondo",
-    "score": 0.0026804397449999994,
-    "confidence": 0.0026804397449999994,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "CAUTIOUS BUY",
-    "metrics": {
-      "price": 0.9122120673240022,
-      "volume_24h": 119351033.89771767,
-      "market_cap": 2881776009.9279103,
-      "percent_change_24h": 2.01115983,
-      "volume_change_24h": -0.2242,
-      "name": "Ondo"
-    },
-    "sentiment_scores": {
-      "market": 0.008934799149999999,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.002242,
-      "potential_return": 0.2558606848099927,
-      "market_dominance": 0.0010386507091342356,
-      "volume_stability": 0.997758,
-      "price_stability": 0.9798884017
-    }
-  },
-  {
-    "symbol": "WLD",
-    "name": "Worldcoin",
-    "score": 0.00138821388,
-    "confidence": 0.00138821388,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "CAUTIOUS BUY",
-    "metrics": {
-      "price": 0.9368698183320952,
-      "volume_24h": 129547699.81355593,
-      "market_cap": 1129032097.170076,
-      "percent_change_24h": 0.90637592,
-      "volume_change_24h": 0.0191,
-      "name": "Worldcoin"
-    },
-    "sentiment_scores": {
-      "market": 0.0046273796,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.00019099999999999998,
-      "potential_return": 0.2525922112579887,
-      "market_dominance": 0.0004069261401028693,
-      "volume_stability": 0.999809,
-      "price_stability": 0.9909362408
-    }
-  },
-  {
-    "symbol": "ETC",
-    "name": "Ethereum Classic",
-    "score": -0.00037599651,
-    "confidence": 0.00037599651,
+    "symbol": "THETA",
+    "name": "Theta Network",
+    "score": -0.0004603286849999999,
+    "confidence": 0.0004603286849999999,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 17.854723228265197,
-      "volume_24h": 87505817.4193916,
-      "market_cap": 2701151973.9147882,
-      "percent_change_24h": -0.08756434,
-      "volume_change_24h": -0.1631,
-      "name": "Ethereum Classic"
+      "price": 0.816070825151616,
+      "volume_24h": 12142000.35341791,
+      "market_cap": 816070825.151616,
+      "percent_change_24h": -2.35008579,
+      "volume_change_24h": 2.0432,
+      "name": "Theta Network"
     },
     "sentiment_scores": {
-      "market": -0.0012533217,
+      "market": -0.0015344289499999997,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.0016309999999999999,
-      "potential_return": 0.2505616770491282,
-      "market_dominance": 0.0009735501314191723,
-      "volume_stability": 0.998369,
-      "price_stability": 0.9991243566
+      "risk_score": 0.020432000000000002,
+      "potential_return": 0.24437420776224916,
+      "market_dominance": 0.00031409461656063827,
+      "volume_stability": 0.979568,
+      "price_stability": 0.9764991421
     }
   },
   {
-    "symbol": "NEAR",
-    "name": "NEAR Protocol",
-    "score": 0.0008422453949999997,
-    "confidence": 0.0008422453949999997,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "CAUTIOUS BUY",
-    "metrics": {
-      "price": 3.019888968959914,
-      "volume_24h": 157837554.00130856,
-      "market_cap": 3616941148.703156,
-      "percent_change_24h": 2.65689693,
-      "volume_change_24h": -2.0954,
-      "name": "NEAR Protocol"
-    },
-    "sentiment_scores": {
-      "market": 0.002807484649999999,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.020954,
-      "potential_return": 0.2576874780317657,
-      "market_dominance": 0.0013036191834671102,
-      "volume_stability": 0.979046,
-      "price_stability": 0.9734310307
-    }
-  },
-  {
-    "symbol": "SOL",
-    "name": "Solana",
-    "score": -0.007079235674999999,
-    "confidence": 0.007079235674999999,
+    "symbol": "NEXO",
+    "name": "Nexo",
+    "score": -0.004744733595,
+    "confidence": 0.004744733595,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 138.80431994169936,
-      "volume_24h": 2870806917.4249377,
-      "market_cap": 70992264269.22086,
-      "percent_change_24h": 1.69790955,
-      "volume_change_24h": -6.4174,
-      "name": "Solana"
+      "price": 1.0702653780678222,
+      "volume_24h": 13300222.98996681,
+      "market_cap": 691547521.2793504,
+      "percent_change_24h": -0.15545573,
+      "volume_change_24h": -3.0077,
+      "name": "Nexo"
     },
     "sentiment_scores": {
-      "market": -0.023597452249999998,
+      "market": -0.01581577865,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.064174,
-      "potential_return": 0.2747603549883241,
-      "market_dominance": 0.025587056513846077,
-      "volume_stability": 0.935826,
-      "price_stability": 0.9830209045
+      "risk_score": 0.030077,
+      "potential_return": 0.2498227238613871,
+      "market_dominance": 0.00026616728209753385,
+      "volume_stability": 0.969923,
+      "price_stability": 0.9984454427
+    }
+  },
+  {
+    "symbol": "ZEC",
+    "name": "Zcash",
+    "score": -0.005291454525,
+    "confidence": 0.005291454525,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 35.96914893644664,
+      "volume_24h": 61757897.4771114,
+      "market_cap": 571435430.6756682,
+      "percent_change_24h": -0.08183635,
+      "volume_change_24h": -3.4458,
+      "name": "Zcash"
+    },
+    "sentiment_scores": {
+      "market": -0.017638181750000002,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.034458,
+      "potential_return": 0.24997006149483084,
+      "market_dominance": 0.000219937763923727,
+      "volume_stability": 0.965542,
+      "price_stability": 0.9991816365
+    }
+  },
+  {
+    "symbol": "FET",
+    "name": "Artificial Superintelligence Alliance",
+    "score": -0.00643656822,
+    "confidence": 0.00643656822,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 0.4691747338850834,
+      "volume_24h": 80106506.64642997,
+      "market_cap": 1123328776.4816418,
+      "percent_change_24h": -0.49764548,
+      "volume_change_24h": -3.7934,
+      "name": "Artificial Superintelligence Alliance"
+    },
+    "sentiment_scores": {
+      "market": -0.021455227400000002,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.037934,
+      "potential_return": 0.24909921823634798,
+      "market_dominance": 0.00043235404384782465,
+      "volume_stability": 0.962066,
+      "price_stability": 0.9950235452
+    }
+  },
+  {
+    "symbol": "PEPE",
+    "name": "Pepe",
+    "score": -0.010774793984999998,
+    "confidence": 0.010774793984999998,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 6.9561834953892315e-06,
+      "volume_24h": 413304974.07824546,
+      "market_cap": 2926396136.6469316,
+      "percent_change_24h": -4.07259599,
+      "volume_change_24h": -3.1106,
+      "name": "Pepe"
+    },
+    "sentiment_scores": {
+      "market": -0.035915979949999996,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.031105999999999998,
+      "potential_return": 0.24071292782426898,
+      "market_dominance": 0.0011263302695251746,
+      "volume_stability": 0.968894,
+      "price_stability": 0.9592740401
+    }
+  },
+  {
+    "symbol": "XMR",
+    "name": "Monero",
+    "score": -0.005848634310000001,
+    "confidence": 0.005848634310000001,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 216.76749767261066,
+      "volume_24h": 44456224.83758828,
+      "market_cap": 3998654553.0650797,
+      "percent_change_24h": 1.07271046,
+      "volume_change_24h": -4.9718,
+      "name": "Monero"
+    },
+    "sentiment_scores": {
+      "market": -0.0194954477,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.049718,
+      "potential_return": 0.25390391684400976,
+      "market_dominance": 0.0015390280229293646,
+      "volume_stability": 0.950282,
+      "price_stability": 0.9892728954
+    }
+  },
+  {
+    "symbol": "AVAX",
+    "name": "Avalanche",
+    "score": -0.012919917675,
+    "confidence": 0.012919917675,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 19.09174378824185,
+      "volume_24h": 223793403.71535382,
+      "market_cap": 7920170654.1136265,
+      "percent_change_24h": -4.22207845,
+      "volume_change_24h": -4.3912,
+      "name": "Avalanche"
+    },
+    "sentiment_scores": {
+      "market": -0.04306639225,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.04391200000000001,
+      "potential_return": 0.2418655088224866,
+      "market_dominance": 0.003048366499606769,
+      "volume_stability": 0.956088,
+      "price_stability": 0.9577792155
     }
   }
 ]
