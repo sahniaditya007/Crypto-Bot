@@ -13,21 +13,22 @@ from functools import lru_cache
 from typing import Dict, Optional, List, Any
 
 # Define base directory
-BASE_DIR = Path(__file__).parent
-CACHE_DIR = BASE_DIR / "cache"
-DATA_DIR = BASE_DIR / "data"
+PROJECT_ROOT = Path(__file__).parent.parent
+CACHE_DIR = PROJECT_ROOT / "cache"
+DATA_DIR = PROJECT_ROOT / "data"
+LOG_DIR = PROJECT_ROOT / "logs"
 
 # Create necessary directories
-for directory in [CACHE_DIR, DATA_DIR]:
+for directory in [CACHE_DIR, DATA_DIR, LOG_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
 
 # Load environment variables
-load_dotenv(BASE_DIR / '.env')
+load_dotenv(PROJECT_ROOT / '.env.sentiment')
 
 # API Configuration
 API_CONFIG = {
     'newsapi': {
-        'base_url': os.getenv("NEWSAPI_URL"),  # Using direct NewsAPI URL
+        'base_url': os.getenv("NEWSAPI_URL"),
         'sources': ['bbc-news', 'cnn', 'fox-news', 'google-news'],
         'cache_ttl': 1800  # 30 minutes
     },
@@ -45,41 +46,64 @@ class DataCollector:
     def __init__(self):
         self.cache_dir = CACHE_DIR
         self.data_dir = DATA_DIR
+        self.log_dir = LOG_DIR
         self._setup_cache_dir()
+        self.setup_logging()
+        self.setup_apis()
         self._setup_twitter_api()
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'CryptoBot/1.0',
             'Accept': 'application/json'
         })
-        self.setup_logging()
-        self.setup_apis()
 
     def _setup_cache_dir(self):
         """Create cache directory if it doesn't exist."""
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-
-    def _setup_twitter_api(self):
-        """Initialize Twitter API client."""
-        try:
-            auth = tweepy.OAuth1UserHandler(
-                os.getenv("TWITTER_API_KEY"),
-                os.getenv("TWITTER_API_SECRET_KEY"),
-                os.getenv("TWITTER_ACCESS_TOKEN"),
-                os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
-            )
-            self.twitter_api = tweepy.API(auth)
-            logging.info("Twitter API initialized successfully")
-        except Exception as e:
-            logging.error(f"Failed to initialize Twitter API: {e}")
-            self.twitter_api = None
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.log_dir.mkdir(parents=True, exist_ok=True)
 
     def setup_logging(self):
+        """Set up logging configuration."""
+        log_file = self.log_dir / 'crypto_bot.log'
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
-            filename='logs/crypto_bot.log'
+            handlers=[
+                logging.FileHandler(log_file),
+                logging.StreamHandler()
+            ]
         )
+
+    def _setup_twitter_api(self):
+        """Initialize Twitter API client with better error handling."""
+        try:
+            api_key = os.getenv("TWITTER_API_KEY")
+            api_secret = os.getenv("TWITTER_API_SECRET_KEY")
+            access_token = os.getenv("TWITTER_ACCESS_TOKEN")
+            access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+
+            if not all([api_key, api_secret, access_token, access_token_secret]):
+                raise ValueError("Missing Twitter API credentials")
+
+            auth = tweepy.OAuth1UserHandler(
+                api_key,
+                api_secret,
+                access_token,
+                access_token_secret
+            )
+            self.twitter_api = tweepy.API(auth)
+            self.twitter_api.verify_credentials()
+            logging.info("Twitter API initialized successfully")
+        except tweepy.TweepError as e:
+            logging.error(f"Twitter API authentication failed: {e}")
+            self.twitter_api = None
+        except ValueError as e:
+            logging.error(f"Twitter API setup failed: {e}")
+            self.twitter_api = None
+        except Exception as e:
+            logging.error(f"Unexpected error initializing Twitter API: {e}")
+            self.twitter_api = None
 
     def setup_apis(self):
         """Initialize API connections and verify credentials."""
@@ -199,7 +223,18 @@ class DataCollector:
     def _fetch_news_data(self, source: str) -> Optional[Dict]:
         """Fetch news data from various sources."""
         try:
-            url = f"{API_CONFIG['newsapi']['base_url']}/everything/{source}.json"
+            if source == 'cryptopanic':
+                url = os.getenv('CRYPTOPANIC_API_URL')
+            elif source == 'newsapi':
+                url = os.getenv('NEWSAPI_URL')
+            else:
+                logging.error(f"Unknown news source: {source}")
+                return None
+
+            if not url:
+                logging.error(f"Missing API URL for source: {source}")
+                return None
+
             response = requests.get(url, timeout=10)
             response.raise_for_status()
             return response.json()
@@ -244,69 +279,83 @@ class DataCollector:
             if 'data' not in data:
                 raise ValueError("Invalid response format from CoinMarketCap API")
             
+            current_time = datetime.now().isoformat()
             market_data = []
             for crypto in data['data']:
                 try:
                     quote = crypto['quote']['USD']
                     market_data.append({
-                        'timestamp': datetime.now().isoformat(),
-                        'symbol': crypto['symbol'],
+                        'id': crypto['id'],
                         'name': crypto['name'],
-                        'price': quote['price'],
-                        'market_cap': quote['market_cap'],
-                        'volume': quote['volume_24h'],
-                        'percent_change_24h': quote['percent_change_24h'],
-                        'volume_change_24h': quote.get('volume_change_24h', 0),
-                        'market_cap_change_24h': quote.get('market_cap_change_24h', 0)
+                        'symbol': crypto['symbol'],
+                        'timestamp': current_time,
+                        'metrics': {
+                            'price': quote['price'],
+                            'volume_24h': quote['volume_24h'],
+                            'volume_change_24h': quote['volume_change_24h'],
+                            'percent_change_1h': quote['percent_change_1h'],
+                            'percent_change_24h': quote['percent_change_24h'],
+                            'percent_change_7d': quote['percent_change_7d'],
+                            'market_cap': quote['market_cap'],
+                            'market_cap_dominance': quote['market_cap_dominance'],
+                            'last_updated': quote['last_updated']
+                        }
                     })
-                except KeyError as e:
-                    logging.warning(f"Skipping cryptocurrency due to missing data: {e}")
+                except (KeyError, TypeError) as e:
+                    logging.warning(f"Error processing crypto data for {crypto.get('name', 'Unknown')}: {e}")
                     continue
             
-            # Save market data
-            with open(os.path.join(self.data_dir, "market_data.json"), "w") as f:
-                json.dump(market_data, f)
+            return market_data
             
-            logging.info(f"Successfully collected market data for {len(market_data)} cryptocurrencies")
-            
+        except requests.exceptions.RequestException as e:
+            logging.error(f"Error fetching market data: {e}")
+            return None
+        except ValueError as e:
+            logging.error(f"Error processing market data: {e}")
+            return None
         except Exception as e:
-            logging.error(f"Error collecting market data: {e}")
-            raise
+            logging.error(f"Unexpected error in market data collection: {e}")
+            return None
 
     def create_historical_data(self):
-        """Create historical data file for model training."""
+        """Create historical data from collected market data."""
         try:
-            # Load market data
-            with open(os.path.join(self.data_dir, "market_data.json"), "r") as file:
-                market_data = json.load(file)
+            market_data_file = self.data_dir / "market_data.json"
+            if not market_data_file.exists():
+                logging.error("Market data file not found")
+                return
+
+            with open(market_data_file, 'r') as f:
+                market_data = json.load(f)
 
             if not market_data:
-                logging.warning("No market data available for creating historical data")
+                logging.error("No market data available")
                 return
 
             historical_data = []
-            for i in range(1, len(market_data)):
-                current = market_data[i]
-                previous = market_data[i-1]
-
+            for crypto in market_data:
                 try:
-                    historical_data.append({
-                        'timestamp': current['timestamp'],
-                        'price': current['price'],
-                        'market_cap': current['market_cap'],
-                        'volume': current['volume'],
-                        'price_change_24h': current['percent_change_24h'],
-                        'market_cap_change_24h': current['market_cap_change_24h'],
-                        'volume_change_24h': current['volume_change_24h']
-                    })
+                    historical_entry = {
+                        'timestamp': crypto['timestamp'],
+                        'symbol': crypto['symbol'],
+                        'name': crypto['name'],
+                        'price': crypto['metrics']['price'],
+                        'market_cap': crypto['metrics']['market_cap'],
+                        'volume_24h': crypto['metrics']['volume_24h'],
+                        'percent_change_24h': crypto['metrics']['percent_change_24h']
+                    }
+                    historical_data.append(historical_entry)
                 except KeyError as e:
-                    logging.warning(f"Skipping data point due to missing field: {e}")
+                    logging.warning(f"Missing data for historical entry: {e}")
                     continue
 
-            # Save historical data
-            with open(os.path.join(self.data_dir, "historical_data.json"), "w") as f:
-                json.dump(historical_data, f)
-            logging.info("Successfully created historical data")
+            if historical_data:
+                historical_file = self.data_dir / "historical_data.json"
+                with open(historical_file, 'w') as f:
+                    json.dump(historical_data, f, indent=4)
+                logging.info("Successfully created historical data")
+            else:
+                logging.warning("No valid historical data entries created")
 
         except Exception as e:
             logging.error(f"Error creating historical data: {e}")
@@ -385,26 +434,52 @@ class DataCollector:
                 json.dump([], f)
 
     def collect_data(self):
-        """Main method to collect all data."""
+        """Collect all required data and store it in the data directory."""
+        logging.info("Starting data collection")
+        
         try:
-            logging.info("Starting data collection")
-            
             # Collect market data
-            self.collect_market_data()
+            market_data = self.collect_market_data()
+            if market_data:
+                market_data_file = self.data_dir / "market_data.json"
+                with open(market_data_file, 'w') as f:
+                    json.dump(market_data, f, indent=4)
+                logging.info(f"Successfully collected market data for {len(market_data)} cryptocurrencies")
             
-            # Collect news data
-            self.collect_news_data()
+            # Collect news data from different sources
+            news_sources = {
+                'cryptopanic': self._fetch_news_data('cryptopanic'),
+                'newsapi': self._fetch_news_data('newsapi')
+            }
             
-            # Collect social data
-            self.collect_social_data()
+            for source, data in news_sources.items():
+                if data:
+                    news_file = self.data_dir / f"{source}_news.json"
+                    with open(news_file, 'w') as f:
+                        json.dump(data, f, indent=4)
+                    logging.info(f"Successfully collected {source} news data")
+            
+            # Collect Twitter data for major cryptocurrencies
+            crypto_queries = ["bitcoin", "ethereum", "cryptocurrency"]
+            twitter_data = []
+            for query in crypto_queries:
+                tweets = self.fetch_twitter_data(query)
+                twitter_data.extend(tweets)
+            
+            if twitter_data:
+                twitter_file = self.data_dir / "twitter_data.json"
+                with open(twitter_file, 'w') as f:
+                    json.dump(twitter_data, f, indent=4)
+                logging.info(f"Successfully collected {len(twitter_data)} tweets")
             
             # Create historical data
             self.create_historical_data()
+            logging.info("Successfully created historical data")
             
             logging.info("Data collection completed successfully")
             
         except Exception as e:
-            logging.error(f"Error in data collection: {e}")
+            logging.error(f"Error in data collection: {str(e)}", exc_info=True)
             raise
 
 if __name__ == "__main__":

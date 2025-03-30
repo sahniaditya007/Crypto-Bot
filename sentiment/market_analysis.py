@@ -355,10 +355,69 @@ class MarketAnalyzer:
                 'sentiment_trend': TrendDirection.NEUTRAL.value
             }
 
-def analyze_market_trends() -> Dict[str, Any]:
-    """Wrapper function for market trend analysis."""
-    analyzer = MarketAnalyzer()
-    return analyzer.analyze_market_trends()
+def analyze_market_trends():
+    """Analyze market trends using historical and sentiment data."""
+    try:
+        # Load sentiment data
+        sentiment_sources = ['coindesk', 'cryptopanic', 'newsapi', 'twitter']
+        sentiment_data = {}
+        for source in sentiment_sources:
+            try:
+                with open(f"data/{source}_sentiment.json", "r") as f:
+                    sentiment_data[source] = json.load(f)
+            except FileNotFoundError:
+                logging.error(f"File not found: {os.path.abspath(f'data/{source}_sentiment.json')}")
+                sentiment_data[source] = None
+
+        # Load market data
+        logging.info("Loading market data from file...")
+        try:
+            with open("data/market_data.json", "r") as f:
+                market_data = json.load(f)
+                logging.info(f"Loaded {len(market_data)} market data points")
+        except FileNotFoundError:
+            logging.error("Market data file not found")
+            return None
+        except json.JSONDecodeError:
+            logging.error("Error decoding market data file")
+            return None
+
+        if not market_data:
+            logging.error("No market data available for analysis")
+            return None
+
+        # Calculate price changes and trends
+        logging.info("Calculating price changes...")
+        trends = []
+        for crypto in market_data:
+            try:
+                trend = {
+                    'symbol': crypto['symbol'],
+                    'name': crypto['name'],
+                    'current_price': crypto['metrics']['price'],
+                    'market_cap': crypto['metrics']['market_cap'],
+                    'volume_24h': crypto['metrics']['volume_24h'],
+                    'price_change_24h': crypto['metrics']['percent_change_24h'],
+                    'timestamp': crypto['timestamp']
+                }
+                trends.append(trend)
+            except KeyError as e:
+                logging.error(f"Error loading market data: {e}")
+                continue
+
+        if not trends:
+            logging.error("No market data available for analysis")
+            return None
+
+        # Save market trends
+        with open("data/market_trends.json", "w") as f:
+            json.dump(trends, f, indent=4)
+
+        return trends
+
+    except Exception as e:
+        logging.error(f"Error in market trend analysis: {e}")
+        return None
 
 def load_market_data() -> List[Dict]:
     """Load market data from file."""

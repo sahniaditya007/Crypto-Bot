@@ -917,3 +917,223 @@ Traceback (most recent call last):
     with open(os.path.join("data", "market_trends.json"), "r") as file:
          ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'data\\market_trends.json'
+2025-03-31 00:08:17,427 - INFO - Twitter API initialized successfully
+2025-03-31 00:08:18,205 - INFO - CoinMarketCap API initialized successfully
+2025-03-31 00:08:18,205 - INFO - Starting crypto bot pipeline
+2025-03-31 00:08:18,205 - INFO - Step 1: Collecting data
+2025-03-31 00:08:18,205 - INFO - Starting data collection
+2025-03-31 00:08:18,802 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-31 00:08:19,601 - INFO - Successfully collected CryptoPanic news data
+2025-03-31 00:08:21,720 - INFO - Successfully collected NewsAPI data
+2025-03-31 00:08:22,024 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:08:22,307 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:08:22,668 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:08:22,670 - WARNING - No Twitter data collected
+2025-03-31 00:08:22,681 - INFO - Successfully created historical data
+2025-03-31 00:08:22,682 - INFO - Data collection completed successfully
+2025-03-31 00:08:22,682 - INFO - Step 2: Performing sentiment analysis
+2025-03-31 00:08:22,682 - WARNING - News file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_news.json
+2025-03-31 00:08:22,894 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json
+2025-03-31 00:08:22,945 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-31 00:08:22,946 - INFO - Saved sentiment data to C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news_sentiment.json
+2025-03-31 00:08:22,950 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json
+2025-03-31 00:08:22,962 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-31 00:08:22,962 - INFO - Saved sentiment data to C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news_sentiment.json
+2025-03-31 00:08:22,963 - WARNING - Twitter data file not found
+2025-03-31 00:08:22,963 - INFO - Step 3: Analyzing market trends
+2025-03-31 00:08:22,963 - INFO - Starting market trend analysis
+2025-03-31 00:08:22,963 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_sentiment.json
+2025-03-31 00:08:22,963 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_sentiment.json
+2025-03-31 00:08:22,963 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_sentiment.json
+2025-03-31 00:08:22,963 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\twitter_sentiment.json
+2025-03-31 00:08:22,964 - INFO - Loading market data from file...
+2025-03-31 00:08:22,964 - ERROR - Error loading market data: [Errno 2] No such file or directory: 'data\\market_data.json'
+2025-03-31 00:08:22,964 - ERROR - No market data available for analysis
+2025-03-31 00:08:22,964 - INFO - Step 4: Generating predictions
+2025-03-31 00:08:22,964 - ERROR - Error in prediction generation: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\market_trends.json
+2025-03-31 00:08:22,965 - INFO - Step 5: Generating investment recommendations
+2025-03-31 00:08:23,654 - ERROR - Error generating recommendations: [Errno 2] No such file or directory: 'data\\recommendations.json'
+2025-03-31 00:08:23,654 - INFO - Pipeline completed successfully
+2025-03-31 00:11:25,165 - INFO - CoinMarketCap API initialized successfully
+2025-03-31 00:11:25,469 - INFO - Twitter API initialized successfully
+2025-03-31 00:11:25,471 - INFO - Starting crypto bot pipeline
+2025-03-31 00:11:25,471 - INFO - Step 1: Collecting data
+2025-03-31 00:11:25,471 - INFO - Starting data collection
+2025-03-31 00:11:25,960 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-31 00:11:26,232 - ERROR - Error fetching cryptopanic data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/cryptopanic.json
+2025-03-31 00:11:27,370 - ERROR - Error fetching newsapi data: 401 Client Error: Unauthorized for url: https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=dc9d3c1ce2194461851bbbdbe31f52cd/everything/newsapi.json
+2025-03-31 00:11:27,663 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:11:28,036 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:11:28,306 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:11:28,317 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,317 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,317 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,318 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,319 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,320 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,321 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,322 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,323 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,325 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,326 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,327 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,328 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,329 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,330 - WARNING - Skipping data point due to missing field: 'timestamp'
+2025-03-31 00:11:28,330 - INFO - Successfully created historical data
+2025-03-31 00:11:28,330 - INFO - Successfully created historical data
+2025-03-31 00:11:28,331 - INFO - Data collection completed successfully
+2025-03-31 00:11:28,331 - INFO - Step 2: Performing sentiment analysis
+2025-03-31 00:11:28,331 - WARNING - News file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_news.json
+2025-03-31 00:11:28,451 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json
+2025-03-31 00:11:28,465 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-31 00:11:28,465 - INFO - Saved sentiment data to C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news_sentiment.json
+2025-03-31 00:11:28,470 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json
+2025-03-31 00:11:28,470 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-31 00:11:28,472 - INFO - Saved sentiment data to C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news_sentiment.json
+2025-03-31 00:11:28,472 - WARNING - Twitter data file not found
+2025-03-31 00:11:28,472 - INFO - Step 3: Analyzing market trends
+2025-03-31 00:11:28,472 - INFO - Starting market trend analysis
+2025-03-31 00:11:28,473 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_sentiment.json
+2025-03-31 00:11:28,473 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_sentiment.json
+2025-03-31 00:11:28,473 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_sentiment.json
+2025-03-31 00:11:28,473 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\twitter_sentiment.json
+2025-03-31 00:11:28,473 - INFO - Loading market data from file...
+2025-03-31 00:11:28,474 - INFO - Loaded 100 market data points
+2025-03-31 00:11:28,477 - ERROR - Error loading market data: 'timestamp'
+2025-03-31 00:11:28,477 - ERROR - No market data available for analysis
+2025-03-31 00:11:28,477 - INFO - Step 4: Generating predictions
+2025-03-31 00:11:28,478 - ERROR - Error in prediction generation: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\market_trends.json
+2025-03-31 00:11:28,478 - INFO - Step 5: Generating investment recommendations
+2025-03-31 00:11:28,976 - INFO - Pipeline completed successfully
+2025-03-31 00:12:55,349 - INFO - CoinMarketCap API initialized successfully
+2025-03-31 00:12:55,665 - INFO - Twitter API initialized successfully
+2025-03-31 00:12:55,666 - INFO - Starting crypto bot pipeline
+2025-03-31 00:12:55,666 - INFO - Step 1: Collecting data
+2025-03-31 00:12:55,666 - INFO - Starting data collection
+2025-03-31 00:12:56,275 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-31 00:12:58,465 - INFO - Successfully collected cryptopanic news data
+2025-03-31 00:12:58,469 - INFO - Successfully collected newsapi news data
+2025-03-31 00:12:58,750 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:12:59,024 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:12:59,296 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-31 00:12:59,311 - INFO - Successfully created historical data
+2025-03-31 00:12:59,311 - INFO - Successfully created historical data
+2025-03-31 00:12:59,311 - INFO - Data collection completed successfully
+2025-03-31 00:12:59,311 - INFO - Step 2: Performing sentiment analysis
+2025-03-31 00:12:59,312 - WARNING - News file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_news.json
+2025-03-31 00:12:59,429 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json
+2025-03-31 00:12:59,442 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-31 00:12:59,444 - INFO - Saved sentiment data to C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news_sentiment.json
+2025-03-31 00:12:59,447 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json
+2025-03-31 00:12:59,447 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-31 00:12:59,449 - INFO - Saved sentiment data to C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news_sentiment.json
+2025-03-31 00:12:59,449 - WARNING - Twitter data file not found
+2025-03-31 00:12:59,450 - INFO - Step 3: Analyzing market trends
+2025-03-31 00:12:59,450 - INFO - Starting market trend analysis
+2025-03-31 00:12:59,450 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_sentiment.json
+2025-03-31 00:12:59,450 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_sentiment.json
+2025-03-31 00:12:59,450 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_sentiment.json
+2025-03-31 00:12:59,450 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\twitter_sentiment.json
+2025-03-31 00:12:59,451 - INFO - Loading market data from file...
+2025-03-31 00:12:59,451 - INFO - Loaded 100 market data points
+2025-03-31 00:12:59,470 - INFO - Calculating price changes...
+2025-03-31 00:12:59,471 - ERROR - Error loading market data: 'current_price'
+2025-03-31 00:12:59,471 - ERROR - No market data available for analysis
+2025-03-31 00:12:59,471 - INFO - Step 4: Generating predictions
+2025-03-31 00:12:59,471 - ERROR - Error in prediction generation: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\market_trends.json
+2025-03-31 00:12:59,471 - INFO - Step 5: Generating investment recommendations
+2025-03-31 00:13:00,060 - INFO - Pipeline completed successfully
