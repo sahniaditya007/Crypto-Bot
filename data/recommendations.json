@@ -2,291 +2,291 @@
   {
     "symbol": "BTC",
     "name": "Bitcoin",
-    "score": -0.04604831085,
-    "confidence": 0.04604831085,
+    "score": -0.0453900987,
+    "confidence": 0.0453900987,
     "risk_level": "Medium",
     "potential": "High",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 82438.61107388735,
-      "volume_24h": 13686718946.76289,
-      "market_cap": 1635922350292.438,
-      "percent_change_24h": 0.0768261,
-      "volume_change_24h": -30.7757,
+      "price": 82282.50847625511,
+      "volume_24h": 13657945610.101454,
+      "market_cap": 1632826111449.044,
+      "percent_change_24h": 0.0822342,
+      "volume_change_24h": -30.3423,
       "name": "Bitcoin"
     },
     "sentiment_scores": {
-      "market": -0.1534943695,
+      "market": -0.151300329,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.307757,
-      "potential_return": 0.75019206525,
-      "market_dominance": 0.6296443733821968,
-      "volume_stability": 0.6922429999999999,
-      "price_stability": 0.999231739
+      "risk_score": 0.303423,
+      "potential_return": 0.7502055855,
+      "market_dominance": 0.6295668849981076,
+      "volume_stability": 0.696577,
+      "price_stability": 0.999177658
     }
   },
   {
     "symbol": "ICP",
     "name": "Internet Computer",
-    "score": -0.00024006252000000002,
-    "confidence": 0.00024006252000000002,
+    "score": -0.0005987918700000001,
+    "confidence": 0.0005987918700000001,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 5.321691214684118,
-      "volume_24h": 54247864.85912531,
-      "market_cap": 2565467974.441089,
-      "percent_change_24h": -0.53404168,
-      "volume_change_24h": 0.374,
+      "price": 5.308142041198193,
+      "volume_24h": 53937874.98695482,
+      "market_cap": 2558933002.9176955,
+      "percent_change_24h": -0.18229458,
+      "volume_change_24h": -0.2169,
       "name": "Internet Computer"
     },
     "sentiment_scores": {
-      "market": -0.0008002084000000001,
+      "market": -0.0019959729000000002,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.00374,
-      "potential_return": 0.24944900024541652,
-      "market_dominance": 0.0009874139044009612,
-      "volume_stability": 0.99626,
-      "price_stability": 0.9946595832
-    }
-  },
-  {
-    "symbol": "PI",
-    "name": "Pi",
-    "score": -0.007240169354999999,
-    "confidence": 0.007240169354999999,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "HOLD",
-    "metrics": {
-      "price": 0.7688956153776324,
-      "volume_24h": 161076961.43031037,
-      "market_cap": 5208357318.592261,
-      "percent_change_24h": -3.28977957,
-      "volume_change_24h": -1.537,
-      "name": "Pi"
-    },
-    "sentiment_scores": {
-      "market": -0.02413389785,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.01537,
-      "potential_return": 0.24336742287675797,
-      "market_dominance": 0.0020046262462453516,
-      "volume_stability": 0.98463,
-      "price_stability": 0.9671022043
+      "risk_score": 0.002169,
+      "potential_return": 0.25032785372686417,
+      "market_dominance": 0.0009866448535270271,
+      "volume_stability": 0.997831,
+      "price_stability": 0.9981770542
     }
   },
   {
     "symbol": "THETA",
     "name": "Theta Network",
-    "score": -0.0004603286849999999,
-    "confidence": 0.0004603286849999999,
+    "score": 0.00030194803499999993,
+    "confidence": 0.00030194803499999993,
     "risk_level": "Low",
     "potential": "Low",
-    "recommendation": "HOLD",
+    "recommendation": "CAUTIOUS BUY",
     "metrics": {
-      "price": 0.816070825151616,
-      "volume_24h": 12142000.35341791,
-      "market_cap": 816070825.151616,
-      "percent_change_24h": -2.35008579,
-      "volume_change_24h": 2.0432,
+      "price": 0.8154995358440098,
+      "volume_24h": 12164937.07507882,
+      "market_cap": 815499535.8440098,
+      "percent_change_24h": -1.70030131,
+      "volume_change_24h": 1.9016,
       "name": "Theta Network"
     },
     "sentiment_scores": {
-      "market": -0.0015344289499999997,
+      "market": 0.0010064934499999997,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.020432000000000002,
-      "potential_return": 0.24437420776224916,
-      "market_dominance": 0.00031409461656063827,
-      "volume_stability": 0.979568,
-      "price_stability": 0.9764991421
+      "risk_score": 0.019015999999999998,
+      "potential_return": 0.24599896698918672,
+      "market_dominance": 0.00031443121768985627,
+      "volume_stability": 0.980984,
+      "price_stability": 0.9829969869
+    }
+  },
+  {
+    "symbol": "PI",
+    "name": "Pi",
+    "score": -0.008047016025,
+    "confidence": 0.008047016025,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 0.7689170179911333,
+      "volume_24h": 160727725.56584528,
+      "market_cap": 5208505924.618737,
+      "percent_change_24h": -3.45077735,
+      "volume_change_24h": -1.9139,
+      "name": "Pi"
+    },
+    "sentiment_scores": {
+      "market": -0.026823386749999997,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.019139,
+      "potential_return": 0.24296799251195628,
+      "market_dominance": 0.0020082376362455293,
+      "volume_stability": 0.980861,
+      "price_stability": 0.9654922265
     }
   },
   {
     "symbol": "NEXO",
     "name": "Nexo",
-    "score": -0.004744733595,
-    "confidence": 0.004744733595,
+    "score": -0.004816401915,
+    "confidence": 0.004816401915,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 1.0702653780678222,
-      "volume_24h": 13300222.98996681,
-      "market_cap": 691547521.2793504,
-      "percent_change_24h": -0.15545573,
-      "volume_change_24h": -3.0077,
+      "price": 1.0678267628735998,
+      "volume_24h": 13311509.7060503,
+      "market_cap": 689971820.2172799,
+      "percent_change_24h": -0.24033461,
+      "volume_change_24h": -2.9706,
       "name": "Nexo"
     },
     "sentiment_scores": {
-      "market": -0.01581577865,
+      "market": -0.01605467305,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.030077,
-      "potential_return": 0.2498227238613871,
-      "market_dominance": 0.00026616728209753385,
-      "volume_stability": 0.969923,
-      "price_stability": 0.9984454427
+      "risk_score": 0.029706,
+      "potential_return": 0.24961044495052861,
+      "market_dominance": 0.00026603164081273525,
+      "volume_stability": 0.970294,
+      "price_stability": 0.9975966539
     }
   },
   {
     "symbol": "ZEC",
     "name": "Zcash",
-    "score": -0.005291454525,
-    "confidence": 0.005291454525,
+    "score": -0.00488811807,
+    "confidence": 0.00488811807,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 35.96914893644664,
-      "volume_24h": 61757897.4771114,
-      "market_cap": 571435430.6756682,
-      "percent_change_24h": -0.08183635,
-      "volume_change_24h": -3.4458,
+      "price": 36.08512388497894,
+      "volume_24h": 61802273.40019534,
+      "market_cap": 573277903.923485,
+      "percent_change_24h": 0.58855462,
+      "volume_change_24h": -3.8473,
       "name": "Zcash"
     },
     "sentiment_scores": {
-      "market": -0.017638181750000002,
+      "market": -0.0162937269,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.034458,
-      "potential_return": 0.24997006149483084,
-      "market_dominance": 0.000219937763923727,
-      "volume_stability": 0.965542,
-      "price_stability": 0.9991816365
-    }
-  },
-  {
-    "symbol": "FET",
-    "name": "Artificial Superintelligence Alliance",
-    "score": -0.00643656822,
-    "confidence": 0.00643656822,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "HOLD",
-    "metrics": {
-      "price": 0.4691747338850834,
-      "volume_24h": 80106506.64642997,
-      "market_cap": 1123328776.4816418,
-      "percent_change_24h": -0.49764548,
-      "volume_change_24h": -3.7934,
-      "name": "Artificial Superintelligence Alliance"
-    },
-    "sentiment_scores": {
-      "market": -0.021455227400000002,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.037934,
-      "potential_return": 0.24909921823634798,
-      "market_dominance": 0.00043235404384782465,
-      "volume_stability": 0.962066,
-      "price_stability": 0.9950235452
-    }
-  },
-  {
-    "symbol": "PEPE",
-    "name": "Pepe",
-    "score": -0.010774793984999998,
-    "confidence": 0.010774793984999998,
-    "risk_level": "Low",
-    "potential": "Low",
-    "recommendation": "HOLD",
-    "metrics": {
-      "price": 6.9561834953892315e-06,
-      "volume_24h": 413304974.07824546,
-      "market_cap": 2926396136.6469316,
-      "percent_change_24h": -4.07259599,
-      "volume_change_24h": -3.1106,
-      "name": "Pepe"
-    },
-    "sentiment_scores": {
-      "market": -0.035915979949999996,
-      "news": 0.0,
-      "social": 0.0
-    },
-    "analysis": {
-      "risk_score": 0.031105999999999998,
-      "potential_return": 0.24071292782426898,
-      "market_dominance": 0.0011263302695251746,
-      "volume_stability": 0.968894,
-      "price_stability": 0.9592740401
+      "risk_score": 0.038473,
+      "potential_return": 0.2516469343011977,
+      "market_dominance": 0.0002210381017799005,
+      "volume_stability": 0.961527,
+      "price_stability": 0.9941144538
     }
   },
   {
     "symbol": "XMR",
     "name": "Monero",
-    "score": -0.005848634310000001,
-    "confidence": 0.005848634310000001,
+    "score": -0.005106783614999999,
+    "confidence": 0.005106783614999999,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 216.76749767261066,
-      "volume_24h": 44456224.83758828,
-      "market_cap": 3998654553.0650797,
-      "percent_change_24h": 1.07271046,
-      "volume_change_24h": -4.9718,
+      "price": 216.76550441552885,
+      "volume_24h": 44454226.34992635,
+      "market_cap": 3998617783.961818,
+      "percent_change_24h": 1.26407759,
+      "volume_change_24h": -4.6686,
       "name": "Monero"
     },
     "sentiment_scores": {
-      "market": -0.0194954477,
+      "market": -0.017022612049999997,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.049718,
-      "potential_return": 0.25390391684400976,
-      "market_dominance": 0.0015390280229293646,
-      "volume_stability": 0.950282,
-      "price_stability": 0.9892728954
+      "risk_score": 0.046686,
+      "potential_return": 0.25438464088821516,
+      "market_dominance": 0.0015417424579968443,
+      "volume_stability": 0.953314,
+      "price_stability": 0.9873592241
+    }
+  },
+  {
+    "symbol": "FET",
+    "name": "Artificial Superintelligence Alliance",
+    "score": -0.006194054835,
+    "confidence": 0.006194054835,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 0.4685120324954858,
+      "volume_24h": 79816348.27115835,
+      "market_cap": 1121742093.552267,
+      "percent_change_24h": 0.19413011,
+      "volume_change_24h": -4.3235,
+      "name": "Artificial Superintelligence Alliance"
+    },
+    "sentiment_scores": {
+      "market": -0.02064684945,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.043235,
+      "potential_return": 0.25082882238277127,
+      "market_dominance": 0.0004325088082908182,
+      "volume_stability": 0.956765,
+      "price_stability": 0.9980586989
+    }
+  },
+  {
+    "symbol": "PEPE",
+    "name": "Pepe",
+    "score": -0.0112339977,
+    "confidence": 0.0112339977,
+    "risk_level": "Low",
+    "potential": "Low",
+    "recommendation": "HOLD",
+    "metrics": {
+      "price": 6.944873502606765e-06,
+      "volume_24h": 411273341.26370955,
+      "market_cap": 2921638136.918194,
+      "percent_change_24h": -3.6355318,
+      "volume_change_24h": -3.8538,
+      "name": "Pepe"
+    },
+    "sentiment_scores": {
+      "market": -0.037446659,
+      "news": 0.0,
+      "social": 0.0
+    },
+    "analysis": {
+      "risk_score": 0.038538,
+      "potential_return": 0.24180582735183265,
+      "market_dominance": 0.0011264926547009495,
+      "volume_stability": 0.961462,
+      "price_stability": 0.963644682
     }
   },
   {
     "symbol": "AVAX",
     "name": "Avalanche",
-    "score": -0.012919917675,
-    "confidence": 0.012919917675,
+    "score": -0.013087150785,
+    "confidence": 0.013087150785,
     "risk_level": "Low",
     "potential": "Low",
     "recommendation": "HOLD",
     "metrics": {
-      "price": 19.09174378824185,
-      "volume_24h": 223793403.71535382,
-      "market_cap": 7920170654.1136265,
-      "percent_change_24h": -4.22207845,
-      "volume_change_24h": -4.3912,
+      "price": 19.051215715477664,
+      "volume_24h": 223146851.3330332,
+      "market_cap": 7903384558.892687,
+      "percent_change_24h": -3.88716719,
+      "volume_change_24h": -4.8376,
       "name": "Avalanche"
     },
     "sentiment_scores": {
-      "market": -0.04306639225,
+      "market": -0.04362383595,
       "news": 0.0,
       "social": 0.0
     },
     "analysis": {
-      "risk_score": 0.04391200000000001,
-      "potential_return": 0.2418655088224866,
-      "market_dominance": 0.003048366499606769,
-      "volume_stability": 0.956088,
-      "price_stability": 0.9577792155
+      "risk_score": 0.048376,
+      "potential_return": 0.2427022370260365,
+      "market_dominance": 0.0030472988904302503,
+      "volume_stability": 0.951624,
+      "price_stability": 0.9611283281
     }
   }
 ]
