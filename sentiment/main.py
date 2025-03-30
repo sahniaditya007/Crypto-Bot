@@ -6,12 +6,12 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-from sentiment.data_collection import DataCollector
-from sentiment.sentiment_analysis import process_news_data, process_twitter_data
-from sentiment.market_analysis import analyze_market_trends
-from sentiment.prediction_generation import generate_predictions
-from sentiment.evaluation_metrics import evaluate_model
-from sentiment.recommendation_system import CryptoRecommender
+from data_collection import DataCollector
+from sentiment_analysis import process_news_data, process_twitter_data
+from market_analysis import analyze_market_trends
+from prediction_generation import generate_predictions
+from evaluation_metrics import evaluate_model
+from recommendation_system import CryptoRecommender
 
 # Define base directory
 BASE_DIR = Path(__file__).parent
