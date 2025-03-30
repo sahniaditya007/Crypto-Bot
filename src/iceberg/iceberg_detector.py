@@ -19,9 +19,14 @@ MODEL_PATH = PROJECT_ROOT / "models" / "iceberg" / "iceberg_detector.h5"
 DATA_DIR = PROJECT_ROOT / "data"
 LOG_DIR = PROJECT_ROOT / "logs"
 
-# Create necessary directories
+# Create necessary directories with error handling
 for directory in [DATA_DIR, LOG_DIR, MODEL_PATH.parent]:
-    directory.mkdir(parents=True, exist_ok=True)
+    try:
+        directory.mkdir(parents=True, exist_ok=True)
+        logging.info(f"Directory created/verified: {directory}")
+    except Exception as e:
+        logging.error(f"Error creating directory {directory}: {e}")
+        raise
 
 # Configure logging
 logging.basicConfig(

@@ -7,13 +7,15 @@ import os
 from dotenv import load_dotenv
 import requests
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 # Load environment variables
 load_dotenv('.env')
 
 class CryptoRecommender:
     def __init__(self):
-        self.data_dir = "data"
+        # Update data directory to point to the root data folder
+        self.data_dir = Path(__file__).parent.parent.parent / "data"
         self.sentiment_weights = {
             'news': 0.4,
             'social': 0.3,
@@ -25,10 +27,14 @@ class CryptoRecommender:
         self.setup_logging()
 
     def setup_logging(self):
+        # Create logs directory if it doesn't exist
+        log_dir = Path(__file__).parent.parent.parent / "logs"
+        log_dir.mkdir(exist_ok=True)
+        
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
-            filename='logs/recommendations.log'
+            filename=log_dir / 'recommendations.log'
         )
 
     def get_market_data(self) -> Dict:
@@ -50,42 +56,54 @@ class CryptoRecommender:
     def get_social_sentiment(self) -> Dict:
         """Aggregate sentiment from social media sources."""
         try:
-            # Load sentiment data from various sources
             sentiment_data = {}
             
             # Load Twitter sentiment
-            twitter_file = os.path.join(self.data_dir, "twitter_sentiment.json")
-            if os.path.exists(twitter_file):
+            twitter_file = self.data_dir / "twitter_sentiment.json"
+            if twitter_file.exists():
                 with open(twitter_file, 'r') as f:
                     sentiment_data['twitter'] = json.load(f)
+                    logging.info(f"Loaded Twitter sentiment data from {twitter_file}")
+            else:
+                logging.warning(f"Twitter sentiment file not found: {twitter_file}")
+                sentiment_data['twitter'] = []
 
             # Load Reddit sentiment
-            reddit_file = os.path.join(self.data_dir, "reddit_sentiment.json")
-            if os.path.exists(reddit_file):
+            reddit_file = self.data_dir / "reddit_sentiment.json"
+            if reddit_file.exists():
                 with open(reddit_file, 'r') as f:
                     sentiment_data['reddit'] = json.load(f)
+                    logging.info(f"Loaded Reddit sentiment data from {reddit_file}")
+            else:
+                logging.warning(f"Reddit sentiment file not found: {reddit_file}")
+                sentiment_data['reddit'] = []
 
             return sentiment_data
         except Exception as e:
             logging.error(f"Error getting social sentiment: {e}")
-            return {}
+            return {'twitter': [], 'reddit': []}
 
     def get_news_sentiment(self) -> Dict:
         """Aggregate sentiment from news sources."""
         try:
             news_sentiment = {}
-            news_sources = ['coindesk', 'cryptopanic', 'newsapi']
+            news_sources = ['cryptopanic', 'newsapi']
             
             for source in news_sources:
-                file_path = os.path.join(self.data_dir, f"{source}_sentiment.json")
-                if os.path.exists(file_path):
+                file_path = self.data_dir / f"{source}_news_sentiment.json"
+                if file_path.exists():
                     with open(file_path, 'r') as f:
                         news_sentiment[source] = json.load(f)
-
+                        logging.info(f"Loaded sentiment data from {file_path}")
+                else:
+                    logging.warning(f"Sentiment file not found: {file_path}")
+                    # Create empty sentiment data for missing files
+                    news_sentiment[source] = []
+            
             return news_sentiment
         except Exception as e:
             logging.error(f"Error getting news sentiment: {e}")
-            return {}
+            return {source: [] for source in news_sources}
 
     def calculate_aggregate_sentiment(self, sentiment_data: Dict) -> float:
         """Calculate weighted aggregate sentiment score."""
@@ -136,6 +154,12 @@ class CryptoRecommender:
             social_sentiment = self.get_social_sentiment()
             news_sentiment = self.get_news_sentiment()
             market_metrics = self.analyze_market_metrics(market_data)
+
+            # Save market trends data
+            market_trends_file = self.data_dir / "market_trends.json"
+            with open(market_trends_file, 'w') as f:
+                json.dump(market_metrics, f, indent=2)
+            logging.info(f"Saved market trends to {market_trends_file}")
 
             all_candidates = []
             

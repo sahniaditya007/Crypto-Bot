@@ -12,18 +12,14 @@ from ratelimit import limits, sleep_and_retry
 from functools import lru_cache
 from typing import Dict, Optional, List, Any
 
-# Define base directory
-PROJECT_ROOT = Path(__file__).parent.parent
+# Define project root directory (two levels up from this file)
+PROJECT_ROOT = Path(__file__).parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 DATA_DIR = PROJECT_ROOT / "data"
 LOG_DIR = PROJECT_ROOT / "logs"
 
-# Create necessary directories
-for directory in [CACHE_DIR, DATA_DIR, LOG_DIR]:
-    directory.mkdir(parents=True, exist_ok=True)
-
 # Load environment variables
-load_dotenv(PROJECT_ROOT / '.env.sentiment')
+load_dotenv(PROJECT_ROOT / 'config' / '.env.sentiment')
 
 # API Configuration
 API_CONFIG = {
@@ -47,21 +43,16 @@ class DataCollector:
         self.cache_dir = CACHE_DIR
         self.data_dir = DATA_DIR
         self.log_dir = LOG_DIR
-        self._setup_cache_dir()
-        self.setup_logging()
-        self.setup_apis()
-        self._setup_twitter_api()
+        # Initialize session first
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'CryptoBot/1.0',
             'Accept': 'application/json'
         })
-
-    def _setup_cache_dir(self):
-        """Create cache directory if it doesn't exist."""
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
-        self.data_dir.mkdir(parents=True, exist_ok=True)
-        self.log_dir.mkdir(parents=True, exist_ok=True)
+        # Then setup other components
+        self.setup_logging()
+        self.setup_apis()
+        self._setup_twitter_api()
 
     def setup_logging(self):
         """Set up logging configuration."""
@@ -84,50 +75,44 @@ class DataCollector:
             access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 
             if not all([api_key, api_secret, access_token, access_token_secret]):
-                raise ValueError("Missing Twitter API credentials")
+                logging.warning("Missing Twitter API credentials - Twitter functionality will be disabled")
+                self.twitter_api = None
+                return
 
-            auth = tweepy.OAuth1UserHandler(
-                api_key,
-                api_secret,
-                access_token,
-                access_token_secret
+            # Use Tweepy v2 API
+            client = tweepy.Client(
+                consumer_key=api_key,
+                consumer_secret=api_secret,
+                access_token=access_token,
+                access_token_secret=access_token_secret
             )
-            self.twitter_api = tweepy.API(auth)
-            self.twitter_api.verify_credentials()
+            self.twitter_api = client
             logging.info("Twitter API initialized successfully")
-        except tweepy.TweepError as e:
-            logging.error(f"Twitter API authentication failed: {e}")
-            self.twitter_api = None
-        except ValueError as e:
-            logging.error(f"Twitter API setup failed: {e}")
-            self.twitter_api = None
         except Exception as e:
-            logging.error(f"Unexpected error initializing Twitter API: {e}")
+            logging.error(f"Twitter API authentication failed: {e}")
             self.twitter_api = None
 
     def setup_apis(self):
-        """Initialize API connections and verify credentials."""
+        """Set up API configurations with proper URL formatting."""
         try:
             # CoinMarketCap API setup
-            self.cmc_headers = {
-                'X-CMC_PRO_API_KEY': os.getenv('COINMARKETCAP_API_KEY'),
-                'Accept': 'application/json'
-            }
+            coinmarketcap_api_key = os.getenv("COINMARKETCAP_API_KEY")
+            coinmarketcap_base_url = os.getenv("COINMARKETCAP_API_URL", "https://pro-api.coinmarketcap.com/v1")
             
-            # Verify CoinMarketCap API
-            response = requests.get(
-                f"{os.getenv('COINMARKETCAP_API_URL')}/cryptocurrency/listings/latest",
-                headers=self.cmc_headers
-            )
-            if response.status_code == 200:
-                logging.info("CoinMarketCap API initialized successfully")
+            if coinmarketcap_api_key:
+                self.session.headers.update({
+                    'X-CMC_PRO_API_KEY': coinmarketcap_api_key
+                })
+                logging.info("CoinMarketCap API configured successfully")
             else:
-                logging.error(f"CoinMarketCap API initialization failed: {response.status_code}")
+                logging.warning("CoinMarketCap API key not found - some features will be disabled")
 
-            # Other API setups can be added here
-            
+            # Other API configurations remain the same
+            self.api_config = API_CONFIG
+            logging.info("API configurations set up successfully")
         except Exception as e:
             logging.error(f"Error setting up APIs: {e}")
+            raise
 
     @sleep_and_retry
     @limits(calls=50, period=60)
@@ -272,7 +257,7 @@ class DataCollector:
                 'convert': 'USD'
             }
             
-            response = requests.get(url, headers=self.cmc_headers, params=params)
+            response = self.session.get(url, params=params)
             response.raise_for_status()
             data = response.json()
             

@@ -120,6 +120,82 @@ class SentimentAnalyzer:
                     logging.error(f"Error processing batch item: {e}")
         return processed_items
 
+    def process_news_file(self, file_path: Path) -> None:
+        """Process a news data file and save sentiment analysis results."""
+        try:
+            if not file_path.exists():
+                logging.warning(f"News file not found: {file_path}")
+                return
+
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            processed_data = []
+            if 'articles' in data:  # NewsAPI format
+                for article in data['articles']:
+                    try:
+                        # Combine title and description for sentiment analysis
+                        content = f"{article['title']} {article['description']}"
+                        sentiment = self.analyze_sentiment(content)
+                        processed_data.append({
+                            'title': article['title'],
+                            'description': article['description'],
+                            'url': article['url'],
+                            'published_at': article['publishedAt'],
+                            'source': article['source']['name'],
+                            'sentiment': sentiment,
+                        })
+                    except Exception as e:
+                        logging.warning(f"Error processing article: {e}")
+                        continue
+
+            elif 'results' in data:  # CryptoPanic format
+                for result in data['results']:
+                    try:
+                        content = result['title']
+                        sentiment = self.analyze_sentiment(content)
+                        processed_data.append({
+                            'title': result['title'],
+                            'url': result['url'],
+                            'published_at': result['published_at'],
+                            'source': result['source']['title'],
+                            'sentiment': sentiment,
+                        })
+                    except Exception as e:
+                        logging.warning(f"Error processing result: {e}")
+                        continue
+
+            # Calculate aggregate metrics
+            sentiments = [item.get("sentiment", 0) for item in processed_data]
+            if sentiments:
+                aggregate_metrics = {
+                    "mean_sentiment": np.mean(sentiments),
+                    "std_sentiment": np.std(sentiments),
+                    "max_sentiment": max(sentiments),
+                    "min_sentiment": min(sentiments),
+                    "total_items": len(sentiments)
+                }
+            else:
+                aggregate_metrics = {
+                    "mean_sentiment": 0.0,
+                    "std_sentiment": 0.0,
+                    "max_sentiment": 0.0,
+                    "min_sentiment": 0.0,
+                    "total_items": 0
+                }
+
+            # Save sentiment data
+            output_file = file_path.parent / f"{file_path.stem}_sentiment{file_path.suffix}"
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(aggregate_metrics, f, indent=4)
+
+            logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
+            logging.info(f"Saved sentiment data to {output_file}")
+
+        except Exception as e:
+            logging.error(f"Error processing news file {file_path}: {e}")
+            raise
+
     def process_news_data(self, file_path: str) -> List[Dict]:
         """Process news data from file."""
         file_path = Path(file_path)

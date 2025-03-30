@@ -13,15 +13,18 @@ from .prediction_generation import generate_predictions
 from .evaluation_metrics import evaluate_model
 from .recommendation_system import CryptoRecommender
 
-# Define base directory
-BASE_DIR = Path(__file__).parent
-LOG_DIR = BASE_DIR / "logs"
-DATA_DIR = BASE_DIR / "data"
-MODEL_DIR = BASE_DIR / "models"
+# Define project root directory (two levels up from this file)
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+LOG_DIR = PROJECT_ROOT / "logs"
+DATA_DIR = PROJECT_ROOT / "data"
+MODEL_DIR = PROJECT_ROOT / "models"
 
 # Create necessary directories
 for directory in [LOG_DIR, DATA_DIR, MODEL_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
+
+# Load environment variables
+load_dotenv(PROJECT_ROOT / 'config' / '.env.sentiment')
 
 # Configure logging
 logging.basicConfig(
@@ -32,9 +35,6 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-
-# Load environment variables
-load_dotenv(BASE_DIR / '.env')
 
 class CryptoBot:
     def __init__(self):
@@ -109,56 +109,21 @@ class CryptoBot:
             raise
 
 def main():
-    """Main entry point for the crypto bot."""
-    bot = CryptoBot()
+    """Main entry point for the sentiment analysis pipeline."""
     try:
+        # Initialize the bot
+        bot = CryptoBot()
+        
+        # Run the pipeline
         results = bot.run_pipeline()
         
-        print("\n=== TOP 10 CRYPTO INVESTMENT RECOMMENDATIONS ===")
-        print("===============================================")
-        print(f"Analysis Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print("===============================================")
+        # Log results
+        logging.info("Pipeline completed successfully")
+        logging.info(f"Results: {results}")
         
-        if results['recommendations']:
-            print("\nRANKED CRYPTOCURRENCIES TO INVEST IN RIGHT NOW:")
-            print("----------------------------------------------")
-            for idx, rec in enumerate(results['recommendations'], 1):
-                print(f"\n#{idx} - {rec['name']} ({rec['symbol']}):")
-                print(f"  • Recommendation: {rec['recommendation']}")
-                print(f"  • Confidence Level: {rec['confidence']:.1%}")
-                print(f"  • Current Price: ${rec['metrics']['price']:,.2f}")
-                print(f"  • 24h Price Change: {rec['metrics']['percent_change_24h']:+.2f}%")
-                print(f"  • 24h Volume Change: {rec['metrics']['volume_change_24h']:+.2f}%")
-                print(f"  • Market Cap: ${rec['metrics']['market_cap']:,.0f}")
-                print("----------------------------------------------")
-        else:
-            print("\nMarket conditions are challenging, but you can consider investing in these top cryptocurrencies:")
-            print("1. Bitcoin (BTC) - Most stable and liquid cryptocurrency")
-            print("2. Ethereum (ETH) - Leading smart contract platform")
-            print("3. Binance Coin (BNB) - Strong exchange-backed token")
-            print("4. Cardano (ADA) - Promising proof-of-stake blockchain")
-            print("5. Solana (SOL) - High-performance blockchain platform")
-            print("6. Ripple (XRP) - Focused on cross-border payments")
-            print("7. Avalanche (AVAX) - Fast and scalable blockchain")
-            print("8. Polygon (MATIC) - Ethereum scaling solution")
-            print("9. Chainlink (LINK) - Leading oracle network")
-            print("10. Polkadot (DOT) - Interoperability focused blockchain")
-            print("\nHowever, please exercise caution and consider your risk tolerance.")
-        
-        print("\nINVESTMENT STRATEGY:")
-        print("-------------------")
-        print("• Consider dollar-cost averaging for long-term positions")
-        print("• Diversify across different cryptocurrencies")
-        print("• Set stop-loss orders to manage risk")
-        print("• Keep track of market trends and news")
-        
-        print("\nNote: These recommendations are based on current market conditions and sentiment analysis.")
-        print("Always conduct your own research and consider your risk tolerance before investing.")
-        print("Past performance does not guarantee future results.")
-            
     except Exception as e:
-        print(f"\nError generating recommendations: {str(e)}")
-        logging.error(f"Pipeline execution failed: {str(e)}", exc_info=True)
+        logging.error(f"Error in main pipeline: {e}")
+        raise
 
 if __name__ == "__main__":
     main() 
