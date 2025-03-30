@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 from typing import Dict, Any
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
 from sentiment.data_collection import DataCollector
@@ -12,16 +13,28 @@ from sentiment.prediction_generation import generate_predictions
 from sentiment.evaluation_metrics import evaluate_model
 from sentiment.recommendation_system import CryptoRecommender
 
+# Define base directory
+BASE_DIR = Path(__file__).parent
+LOG_DIR = BASE_DIR / "logs"
+DATA_DIR = BASE_DIR / "data"
+MODEL_DIR = BASE_DIR / "models"
+
+# Create necessary directories
+for directory in [LOG_DIR, DATA_DIR, MODEL_DIR]:
+    directory.mkdir(parents=True, exist_ok=True)
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='logs/crypto_bot.log',
-    filemode='a'
+    handlers=[
+        logging.FileHandler(LOG_DIR / 'crypto_bot.log'),
+        logging.StreamHandler()
+    ]
 )
 
 # Load environment variables
-load_dotenv('.env')
+load_dotenv(BASE_DIR / '.env')
 
 class CryptoBot:
     def __init__(self):
@@ -29,12 +42,8 @@ class CryptoBot:
         self.end_time = None
         self.results = {}
         self.data_collector = DataCollector()
-        self.data_dir = 'data'
+        self.data_dir = DATA_DIR
         self.recommender = CryptoRecommender()
-        
-        # Verify required directories exist
-        os.makedirs('logs', exist_ok=True)
-        os.makedirs(self.data_dir, exist_ok=True)
 
     def run_pipeline(self) -> Dict[str, Any]:
         """Run the complete crypto bot pipeline."""
@@ -82,15 +91,15 @@ class CryptoBot:
             # Process news data
             news_sources = ['coindesk', 'cryptopanic', 'newsapi']
             for source in news_sources:
-                news_file = os.path.join(self.data_dir, f"{source}_news.json")
-                if not os.path.exists(news_file):
+                news_file = self.data_dir / f"{source}_news.json"
+                if not news_file.exists():
                     logging.warning(f"News file not found: {news_file}")
                     continue
                 process_news_data(news_file)
 
             # Process Twitter data
-            twitter_file = os.path.join(self.data_dir, "twitter_data.json")
-            if os.path.exists(twitter_file):
+            twitter_file = self.data_dir / "twitter_data.json"
+            if twitter_file.exists():
                 process_twitter_data(twitter_file)
             else:
                 logging.warning("Twitter data file not found")

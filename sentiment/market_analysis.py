@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from enum import Enum
 from collections import defaultdict
+from pathlib import Path
 
 # Configure logging
 logging.basicConfig(
@@ -20,6 +21,10 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
+
+# Define base directory
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
 
 class TrendDirection(Enum):
     UP = 1
@@ -75,10 +80,10 @@ class MarketAnalyzer:
         """Load sentiment data from all sources with caching."""
         sentiment_data = {}
         files = {
-            'coindesk': os.path.join(self.data_dir, 'coindesk_sentiment.json'),
-            'cryptopanic': os.path.join(self.data_dir, 'cryptopanic_sentiment.json'),
-            'newsapi': os.path.join(self.data_dir, 'newsapi_sentiment.json'),
-            'twitter': os.path.join(self.data_dir, 'twitter_sentiment.json')
+            'coindesk': DATA_DIR / 'coindesk_sentiment.json',
+            'cryptopanic': DATA_DIR / 'cryptopanic_sentiment.json',
+            'newsapi': DATA_DIR / 'newsapi_sentiment.json',
+            'twitter': DATA_DIR / 'twitter_sentiment.json'
         }
         
         for source, file_path in files.items():

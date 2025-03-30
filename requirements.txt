@@ -1,8 +1,11 @@
-numpy>=1.21.0
-pandas>=1.3.0
-requests>=2.26.0
-python-dotenv>=0.19.0
-scikit-learn>=0.24.2
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+scikit-learn>=1.3.0
+
+# Sentiment Analysis dependencies
 nltk>=3.6.3
 textblob>=0.15.3
 praw>=7.4.0
@@ -10,4 +13,7 @@ newsapi-python>=0.2.6
 tweepy>=4.10.0
 aiohttp>=3.8.1
 python-binance>=1.0.15
-ta>=0.7.0 
+ta>=0.7.0
+
+# Iceberg Detection dependencies
+tensorflow>=2.13.0 

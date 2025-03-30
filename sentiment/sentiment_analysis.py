@@ -11,7 +11,12 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 from functools import lru_cache
 import os
+from pathlib import Path
 from datetime import datetime
+
+# Define base directory
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
 
 def setup_nltk():
     """Download required NLTK data."""
@@ -31,7 +36,7 @@ def setup_nltk():
 class SentimentAnalyzer:
     def __init__(self, max_workers: int = 4):
         self.max_workers = max_workers
-        self.data_dir = "data"
+        self.data_dir = DATA_DIR
         setup_nltk()
         self.stop_words = set(stopwords.words('english'))
         self.lemmatizer = WordNetLemmatizer()
@@ -116,7 +121,12 @@ class SentimentAnalyzer:
         return processed_items
 
     def process_news_data(self, file_path: str) -> List[Dict]:
-        """Process news data with parallel processing."""
+        """Process news data from file."""
+        file_path = Path(file_path)
+        if not file_path.exists():
+            logging.error(f"News data file not found: {file_path}")
+            return []
+        
         try:
             logging.info(f"Processing news data from {file_path}")
             with open(file_path, "r", encoding='utf-8') as file:
@@ -156,7 +166,7 @@ class SentimentAnalyzer:
                 logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
             
             # Save sentiment data
-            output_file = file_path.replace('_news.json', '_sentiment.json')
+            output_file = file_path.parent / f"{file_path.stem}_sentiment{file_path.suffix}"
             with open(output_file, 'w', encoding='utf-8') as file:
                 json.dump(processed_data, file, ensure_ascii=False, indent=2)
             
@@ -164,9 +174,6 @@ class SentimentAnalyzer:
             
             return processed_data
             
-        except FileNotFoundError:
-            logging.error(f"File not found: {file_path}")
-            return []
         except json.JSONDecodeError:
             logging.error(f"Invalid JSON in file: {file_path}")
             return []
@@ -175,7 +182,12 @@ class SentimentAnalyzer:
             return []
 
     def process_twitter_data(self, file_path: str) -> List[Dict]:
-        """Process Twitter data with parallel processing."""
+        """Process Twitter data from file."""
+        file_path = Path(file_path)
+        if not file_path.exists():
+            logging.error(f"Twitter data file not found: {file_path}")
+            return []
+        
         try:
             logging.info(f"Processing Twitter data from {file_path}")
             with open(file_path, "r", encoding='utf-8') as file:
@@ -199,7 +211,7 @@ class SentimentAnalyzer:
                 logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
             
             # Save sentiment data
-            output_file = file_path.replace('_data.json', '_sentiment.json')
+            output_file = file_path.parent / f"{file_path.stem}_sentiment{file_path.suffix}"
             with open(output_file, 'w', encoding='utf-8') as file:
                 json.dump(processed_data, file, ensure_ascii=False, indent=2)
             
@@ -207,9 +219,6 @@ class SentimentAnalyzer:
             
             return processed_data
             
-        except FileNotFoundError:
-            logging.error(f"File not found: {file_path}")
-            return []
         except json.JSONDecodeError:
             logging.error(f"Invalid JSON in file: {file_path}")
             return []

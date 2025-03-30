@@ -9,9 +9,14 @@ from typing import Dict, List, Tuple, Optional
 from datetime import datetime
 from dataclasses import dataclass
 from enum import Enum
+from pathlib import Path
 
 # Load environment variables
 load_dotenv()
+
+# Define base directory
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
 
 class PredictionConfidence(Enum):
     HIGH = "high"
@@ -170,35 +175,123 @@ class PredictionGenerator:
             logging.error(f"Error saving predictions: {e}")
             raise
 
-def generate_predictions() -> Tuple[np.ndarray, np.ndarray]:
-    """Wrapper function for prediction generation."""
+def generate_predictions() -> Tuple[List[Dict], List[float]]:
+    """Generate predictions based on market trends and sentiment analysis."""
     try:
         # Load market trends
-        with open(os.path.join("data", "market_trends.json"), "r") as file:
-            market_trends = json.load(file)
-
-        # Initialize generator
-        generator = PredictionGenerator()
-
+        trends_file = DATA_DIR / "market_trends.json"
+        if not trends_file.exists():
+            logging.error(f"Error in prediction generation: {trends_file}")
+            return [], []
+            
+        with open(trends_file, 'r') as file:
+            trends = json.load(file)
+            
+        if not trends:
+            logging.error("No market trends available for prediction")
+            return [], []
+            
         # Generate predictions
-        results = generator.generate_predictions(market_trends)
-
-        # Save predictions
-        generator.save_predictions(results, os.path.join("data", "predictions.json"))
-
-        # Extract predictions and confidence scores
-        predictions = np.array([r.prediction for r in results])
-        confidence_scores = np.array([r.confidence_score for r in results])
-
-        # Convert numpy types to Python native types
-        predictions = predictions.tolist()
-        confidence_scores = confidence_scores.tolist()
-
+        predictions = []
+        confidence_scores = []
+        
+        # Process each cryptocurrency
+        for symbol in trends['price_trends'].keys():
+            try:
+                prediction, confidence = predict_crypto(symbol, trends)
+                if prediction:
+                    predictions.append(prediction)
+                    confidence_scores.append(confidence)
+            except Exception as e:
+                logging.warning(f"Error predicting {symbol}: {e}")
+                continue
+                
+        # Sort by confidence score
+        sorted_indices = np.argsort(confidence_scores)[::-1]
+        predictions = [predictions[i] for i in sorted_indices]
+        confidence_scores = [confidence_scores[i] for i in sorted_indices]
+        
         return predictions, confidence_scores
-
+        
     except Exception as e:
         logging.error(f"Error in prediction generation: {e}")
-        raise
+        return [], []
+
+def predict_crypto(symbol: str, trends: Dict) -> Tuple[Optional[Dict], float]:
+    """Generate prediction for a single cryptocurrency."""
+    try:
+        # Get relevant data
+        price_trend = trends['price_trends'].get(symbol, {})
+        volume_trend = trends['volume_trends'].get(symbol, {})
+        mcap_trend = trends['market_cap_trends'].get(symbol, {})
+        sentiment_trends = trends['sentiment_trends']
+        
+        # Calculate confidence score
+        confidence = calculate_confidence(
+            price_trend,
+            volume_trend,
+            mcap_trend,
+            sentiment_trends
+        )
+        
+        # Generate prediction
+        prediction = {
+            'symbol': symbol,
+            'prediction': 'BUY' if confidence > 0.6 else 'HOLD' if confidence > 0.4 else 'SELL',
+            'confidence': confidence,
+            'timestamp': datetime.now().isoformat(),
+            'metrics': {
+                'price_change': price_trend.get('price_change', 0),
+                'volume_change': volume_trend.get('volume_change', 0),
+                'market_cap_change': mcap_trend.get('market_cap_change', 0),
+                'sentiment_score': np.mean([t.get('mean_sentiment', 0) for t in sentiment_trends.values()])
+            }
+        }
+        
+        return prediction, confidence
+        
+    except Exception as e:
+        logging.error(f"Error predicting {symbol}: {e}")
+        return None, 0.0
+
+def calculate_confidence(
+    price_trend: Dict,
+    volume_trend: Dict,
+    mcap_trend: Dict,
+    sentiment_trends: Dict
+) -> float:
+    """Calculate confidence score for prediction."""
+    try:
+        # Price trend weight
+        price_weight = 0.4
+        price_score = min(1.0, max(0.0, price_trend.get('price_change', 0) + 0.5))
+        
+        # Volume trend weight
+        volume_weight = 0.2
+        volume_score = min(1.0, max(0.0, volume_trend.get('volume_change', 0) + 0.5))
+        
+        # Market cap trend weight
+        mcap_weight = 0.2
+        mcap_score = min(1.0, max(0.0, mcap_trend.get('market_cap_change', 0) + 0.5))
+        
+        # Sentiment trend weight
+        sentiment_weight = 0.2
+        sentiment_scores = [t.get('mean_sentiment', 0) for t in sentiment_trends.values()]
+        sentiment_score = min(1.0, max(0.0, np.mean(sentiment_scores) + 0.5))
+        
+        # Calculate weighted average
+        confidence = (
+            price_weight * price_score +
+            volume_weight * volume_score +
+            mcap_weight * mcap_score +
+            sentiment_weight * sentiment_score
+        )
+        
+        return confidence
+        
+    except Exception as e:
+        logging.error(f"Error calculating confidence: {e}")
+        return 0.0
 
 if __name__ == "__main__":
     predictions, confidence_scores = generate_predictions()

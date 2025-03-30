@@ -859,3 +859,61 @@ FileNotFoundError: No trained models found
 2025-03-30 23:18:13,295 - INFO - Saved predictions to data\predictions.json
 2025-03-30 23:18:13,296 - INFO - Step 5: Generating investment recommendations
 2025-03-30 23:18:13,590 - INFO - Pipeline completed successfully
+2025-03-30 23:33:13,812 - INFO - Twitter API initialized successfully
+2025-03-30 23:33:15,208 - INFO - CoinMarketCap API initialized successfully
+2025-03-30 23:33:15,209 - INFO - Starting crypto bot pipeline
+2025-03-30 23:33:15,209 - INFO - Step 1: Collecting data
+2025-03-30 23:33:15,209 - INFO - Starting data collection
+2025-03-30 23:33:15,875 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-03-30 23:33:16,748 - INFO - Successfully collected CryptoPanic news data
+2025-03-30 23:33:18,325 - INFO - Successfully collected NewsAPI data
+2025-03-30 23:33:18,607 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-30 23:33:18,999 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-30 23:33:19,290 - ERROR - Twitter API error: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+2025-03-30 23:33:19,291 - WARNING - No Twitter data collected
+2025-03-30 23:33:19,304 - INFO - Successfully created historical data
+2025-03-30 23:33:19,305 - INFO - Data collection completed successfully
+2025-03-30 23:33:19,305 - INFO - Step 2: Performing sentiment analysis
+2025-03-30 23:33:19,305 - WARNING - News file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\coindesk_news.json
+2025-03-30 23:33:19,413 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json
+2025-03-30 23:33:19,440 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\cryptopanic_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-30 23:33:19,440 - ERROR - Error processing news data: Invalid suffix '_sentiment.json'
+2025-03-30 23:33:19,444 - INFO - Processing news data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json
+2025-03-30 23:33:19,455 - INFO - Aggregate metrics for C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\newsapi_news.json: {'mean_sentiment': np.float64(0.0), 'std_sentiment': np.float64(0.0), 'max_sentiment': 0.0, 'min_sentiment': 0.0, 'total_items': 1}
+2025-03-30 23:33:19,455 - ERROR - Error processing news data: Invalid suffix '_sentiment.json'
+2025-03-30 23:33:19,459 - INFO - Processing Twitter data from C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\data\twitter_data.json
+2025-03-30 23:33:19,459 - ERROR - Error processing Twitter data: Invalid suffix '_sentiment.json'
+2025-03-30 23:33:19,460 - INFO - Step 3: Analyzing market trends
+2025-03-30 23:33:19,460 - INFO - Starting market trend analysis
+2025-03-30 23:33:19,460 - ERROR - File not found: data\coindesk_sentiment.json
+2025-03-30 23:33:19,460 - ERROR - File not found: data\cryptopanic_sentiment.json
+2025-03-30 23:33:19,460 - ERROR - File not found: data\newsapi_sentiment.json
+2025-03-30 23:33:19,461 - ERROR - File not found: data\twitter_sentiment.json
+2025-03-30 23:33:19,461 - INFO - Loading market data from file...
+2025-03-30 23:33:19,461 - ERROR - Error loading market data: [Errno 2] No such file or directory: 'data\\market_data.json'
+2025-03-30 23:33:19,461 - ERROR - No market data available for analysis
+2025-03-30 23:33:19,461 - INFO - Step 4: Generating predictions
+2025-03-30 23:33:19,461 - ERROR - Error in prediction generation: [Errno 2] No such file or directory: 'data\\market_trends.json'
+2025-03-30 23:33:19,462 - ERROR - Pipeline failed: [Errno 2] No such file or directory: 'data\\market_trends.json'
+Traceback (most recent call last):
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\main.py", line 69, in run_pipeline
+    predictions, confidence_scores = generate_predictions()
+                                     ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\prediction_generation.py", line 177, in generate_predictions
+    with open(os.path.join("data", "market_trends.json"), "r") as file:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data\\market_trends.json'
+2025-03-30 23:33:19,464 - ERROR - Pipeline execution failed: [Errno 2] No such file or directory: 'data\\market_trends.json'
+Traceback (most recent call last):
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\main.py", line 115, in main
+    results = bot.run_pipeline()
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\main.py", line 69, in run_pipeline
+    predictions, confidence_scores = generate_predictions()
+                                     ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adity\Documents\GitHub\Crypto Bot\sentiment\prediction_generation.py", line 177, in generate_predictions
+    with open(os.path.join("data", "market_trends.json"), "r") as file:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data\\market_trends.json'

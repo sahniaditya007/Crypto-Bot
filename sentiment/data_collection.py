@@ -5,14 +5,24 @@ import os
 import time
 import logging
 from datetime import datetime, timedelta
+from pathlib import Path
 from dotenv import load_dotenv
 from requests.exceptions import ConnectionError, Timeout, RequestException
 from ratelimit import limits, sleep_and_retry
 from functools import lru_cache
 from typing import Dict, Optional, List, Any
 
+# Define base directory
+BASE_DIR = Path(__file__).parent
+CACHE_DIR = BASE_DIR / "cache"
+DATA_DIR = BASE_DIR / "data"
+
+# Create necessary directories
+for directory in [CACHE_DIR, DATA_DIR]:
+    directory.mkdir(parents=True, exist_ok=True)
+
 # Load environment variables
-load_dotenv()
+load_dotenv(BASE_DIR / '.env')
 
 # API Configuration
 API_CONFIG = {
@@ -33,8 +43,8 @@ API_CONFIG = {
 
 class DataCollector:
     def __init__(self):
-        self.cache_dir = "cache"
-        self.data_dir = "data"
+        self.cache_dir = CACHE_DIR
+        self.data_dir = DATA_DIR
         self._setup_cache_dir()
         self._setup_twitter_api()
         self.session = requests.Session()
@@ -47,10 +57,7 @@ class DataCollector:
 
     def _setup_cache_dir(self):
         """Create cache directory if it doesn't exist."""
-        if not os.path.exists(self.cache_dir):
-            os.makedirs(self.cache_dir)
-        if not os.path.exists(self.data_dir):
-            os.makedirs(self.data_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     def _setup_twitter_api(self):
         """Initialize Twitter API client."""
