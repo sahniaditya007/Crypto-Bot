@@ -14,9 +14,10 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-# Define base directory
-BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / "data"
+# Define project root directory
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+LOG_DIR = PROJECT_ROOT / "logs"
 
 def setup_nltk():
     """Download required NLTK data."""
@@ -37,6 +38,7 @@ class SentimentAnalyzer:
     def __init__(self, max_workers: int = 4):
         self.max_workers = max_workers
         self.data_dir = DATA_DIR
+        self.log_dir = LOG_DIR
         setup_nltk()
         self.stop_words = set(stopwords.words('english'))
         self.lemmatizer = WordNetLemmatizer()
@@ -47,6 +49,17 @@ class SentimentAnalyzer:
         # Compile regex patterns
         self.url_pattern = re.compile(r'http\S+|www\S+|https\S+')
         self.special_chars_pattern = re.compile(r'[^\w\s]')
+        
+        # Setup logging
+        log_file = self.log_dir / 'sentiment_analysis.log'
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(log_file),
+                logging.StreamHandler()
+            ]
+        )
 
     @lru_cache(maxsize=1000)
     def preprocess_text(self, text: str) -> str:
@@ -54,25 +67,29 @@ class SentimentAnalyzer:
         if not isinstance(text, str):
             return ""
         
-        # Convert to lowercase
-        text = text.lower()
-        
-        # Remove URLs
-        text = self.url_pattern.sub('', text)
-        
-        # Remove special characters and numbers
-        text = self.special_chars_pattern.sub('', text)
-        
-        # Tokenize
-        tokens = word_tokenize(text)
-        
-        # Remove stopwords
-        tokens = [token for token in tokens if token not in self.stop_words]
-        
-        # Lemmatize
-        tokens = [self.lemmatizer.lemmatize(token) for token in tokens]
-        
-        return ' '.join(tokens)
+        try:
+            # Convert to lowercase
+            text = text.lower()
+            
+            # Remove URLs
+            text = self.url_pattern.sub('', text)
+            
+            # Remove special characters and numbers
+            text = self.special_chars_pattern.sub('', text)
+            
+            # Tokenize
+            tokens = word_tokenize(text)
+            
+            # Remove stopwords
+            tokens = [token for token in tokens if token not in self.stop_words]
+            
+            # Lemmatize
+            tokens = [self.lemmatizer.lemmatize(token) for token in tokens]
+            
+            return ' '.join(tokens)
+        except Exception as e:
+            logging.error(f"Error in text preprocessing: {e}")
+            return ""
 
     def analyze_sentiment(self, text: str) -> float:
         """Analyze sentiment of preprocessed text with caching."""
@@ -100,6 +117,9 @@ class SentimentAnalyzer:
         """Process a single item (news article or tweet)."""
         try:
             content = item.get("content", item.get("title", item.get("text", "")))
+            if not content:
+                return item
+                
             item["sentiment"] = self.analyze_sentiment(content)
             item["processed_text"] = self.preprocess_text(content)
             return item
@@ -169,10 +189,10 @@ class SentimentAnalyzer:
             sentiments = [item.get("sentiment", 0) for item in processed_data]
             if sentiments:
                 aggregate_metrics = {
-                    "mean_sentiment": np.mean(sentiments),
-                    "std_sentiment": np.std(sentiments),
-                    "max_sentiment": max(sentiments),
-                    "min_sentiment": min(sentiments),
+                    "mean_sentiment": float(np.mean(sentiments)),
+                    "std_sentiment": float(np.std(sentiments)),
+                    "max_sentiment": float(max(sentiments)),
+                    "min_sentiment": float(min(sentiments)),
                     "total_items": len(sentiments)
                 }
             else:
@@ -185,7 +205,7 @@ class SentimentAnalyzer:
                 }
 
             # Save sentiment data
-            output_file = file_path.parent / f"{file_path.stem}_sentiment{file_path.suffix}"
+            output_file = self.data_dir / f"{file_path.stem}_sentiment.json"
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(aggregate_metrics, f, indent=4)
 
@@ -196,121 +216,76 @@ class SentimentAnalyzer:
             logging.error(f"Error processing news file {file_path}: {e}")
             raise
 
-    def process_news_data(self, file_path: str) -> List[Dict]:
-        """Process news data from file."""
-        file_path = Path(file_path)
-        if not file_path.exists():
-            logging.error(f"News data file not found: {file_path}")
-            return []
-        
+    def process_twitter_file(self, file_path: Path) -> None:
+        """Process Twitter data file and save sentiment analysis results."""
         try:
-            logging.info(f"Processing news data from {file_path}")
-            with open(file_path, "r", encoding='utf-8') as file:
-                news_data = json.load(file)
-            
-            if not isinstance(news_data, list):
-                news_data = [news_data]
-            
-            # Process each article
+            if not file_path.exists():
+                logging.warning(f"Twitter file not found: {file_path}")
+                return
+
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
             processed_data = []
-            for article in news_data:
-                # Combine title and description for sentiment analysis
-                content = f"{article.get('title', '')} {article.get('description', '')}"
-                sentiment = self.analyze_sentiment(content)
-                
-                processed_article = {
-                    'title': article.get('title', ''),
-                    'description': article.get('description', ''),
-                    'url': article.get('url', ''),
-                    'source': article.get('source', {}).get('name', ''),
-                    'published_at': article.get('publishedAt', ''),
-                    'sentiment': sentiment,
-                    'processed_text': self.preprocess_text(content)
-                }
-                processed_data.append(processed_article)
-            
+            for tweet in data:
+                try:
+                    content = tweet['text']
+                    sentiment = self.analyze_sentiment(content)
+                    processed_data.append({
+                        'id': tweet['id'],
+                        'text': content,
+                        'created_at': tweet['created_at'],
+                        'metrics': tweet['metrics'],
+                        'sentiment': sentiment,
+                    })
+                except Exception as e:
+                    logging.warning(f"Error processing tweet: {e}")
+                    continue
+
             # Calculate aggregate metrics
             sentiments = [item.get("sentiment", 0) for item in processed_data]
             if sentiments:
                 aggregate_metrics = {
-                    "mean_sentiment": np.mean(sentiments),
-                    "std_sentiment": np.std(sentiments),
-                    "max_sentiment": max(sentiments),
-                    "min_sentiment": min(sentiments),
+                    "mean_sentiment": float(np.mean(sentiments)),
+                    "std_sentiment": float(np.std(sentiments)),
+                    "max_sentiment": float(max(sentiments)),
+                    "min_sentiment": float(min(sentiments)),
                     "total_items": len(sentiments)
                 }
-                logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
-            
-            # Save sentiment data
-            output_file = file_path.parent / f"{file_path.stem}_sentiment{file_path.suffix}"
-            with open(output_file, 'w', encoding='utf-8') as file:
-                json.dump(processed_data, file, ensure_ascii=False, indent=2)
-            
-            logging.info(f"Saved sentiment data to {output_file}")
-            
-            return processed_data
-            
-        except json.JSONDecodeError:
-            logging.error(f"Invalid JSON in file: {file_path}")
-            return []
-        except Exception as e:
-            logging.error(f"Error processing news data: {e}")
-            return []
-
-    def process_twitter_data(self, file_path: str) -> List[Dict]:
-        """Process Twitter data from file."""
-        file_path = Path(file_path)
-        if not file_path.exists():
-            logging.error(f"Twitter data file not found: {file_path}")
-            return []
-        
-        try:
-            logging.info(f"Processing Twitter data from {file_path}")
-            with open(file_path, "r", encoding='utf-8') as file:
-                twitter_data = json.load(file)
-            
-            if not isinstance(twitter_data, list):
-                twitter_data = [twitter_data]
-            
-            processed_data = self.process_batch(twitter_data)
-            
-            # Calculate aggregate metrics
-            sentiments = [item.get("sentiment", 0) for item in processed_data]
-            if sentiments:
+            else:
                 aggregate_metrics = {
-                    "mean_sentiment": np.mean(sentiments),
-                    "std_sentiment": np.std(sentiments),
-                    "max_sentiment": max(sentiments),
-                    "min_sentiment": min(sentiments),
-                    "total_tweets": len(sentiments)
+                    "mean_sentiment": 0.0,
+                    "std_sentiment": 0.0,
+                    "max_sentiment": 0.0,
+                    "min_sentiment": 0.0,
+                    "total_items": 0
                 }
-                logging.info(f"Aggregate metrics for {file_path}: {aggregate_metrics}")
-            
+
             # Save sentiment data
-            output_file = file_path.parent / f"{file_path.stem}_sentiment{file_path.suffix}"
-            with open(output_file, 'w', encoding='utf-8') as file:
-                json.dump(processed_data, file, ensure_ascii=False, indent=2)
-            
-            logging.info(f"Saved sentiment data to {output_file}")
-            
-            return processed_data
-            
-        except json.JSONDecodeError:
-            logging.error(f"Invalid JSON in file: {file_path}")
-            return []
+            output_file = self.data_dir / "twitter_sentiment.json"
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(aggregate_metrics, f, indent=4)
+
+            logging.info(f"Aggregate metrics for Twitter data: {aggregate_metrics}")
+            logging.info(f"Saved Twitter sentiment data to {output_file}")
+
         except Exception as e:
-            logging.error(f"Error processing Twitter data: {e}")
-            return []
+            logging.error(f"Error processing Twitter file {file_path}: {e}")
+            raise
 
 def process_news_data(file_path: str) -> List[Dict]:
-    """Wrapper function for processing news data."""
+    """Process news data from file."""
     analyzer = SentimentAnalyzer()
-    return analyzer.process_news_data(file_path)
+    file_path = Path(file_path)
+    analyzer.process_news_file(file_path)
+    return []
 
 def process_twitter_data(file_path: str) -> List[Dict]:
-    """Wrapper function for processing Twitter data."""
+    """Process Twitter data from file."""
     analyzer = SentimentAnalyzer()
-    return analyzer.process_twitter_data(file_path)
+    file_path = Path(file_path)
+    analyzer.process_twitter_file(file_path)
+    return []
 
 if __name__ == "__main__":
     logging.info("Starting sentiment analysis")

@@ -73,24 +73,36 @@ class DataCollector:
             api_secret = os.getenv("TWITTER_API_SECRET_KEY")
             access_token = os.getenv("TWITTER_ACCESS_TOKEN")
             access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+            bearer_token = os.getenv("TWITTER_BEARER_TOKEN")
 
-            if not all([api_key, api_secret, access_token, access_token_secret]):
+            if not all([api_key, api_secret, access_token, access_token_secret, bearer_token]):
                 logging.warning("Missing Twitter API credentials - Twitter functionality will be disabled")
                 self.twitter_api = None
+                self.twitter_client = None
                 return
 
-            # Use Tweepy v2 API
-            client = tweepy.Client(
+            # Use Tweepy v2 API with proper authentication
+            auth = tweepy.OAuth1UserHandler(
+                api_key,
+                api_secret,
+                access_token,
+                access_token_secret
+            )
+            
+            self.twitter_api = tweepy.API(auth, wait_on_rate_limit=True)
+            self.twitter_client = tweepy.Client(
+                bearer_token=bearer_token,
                 consumer_key=api_key,
                 consumer_secret=api_secret,
                 access_token=access_token,
                 access_token_secret=access_token_secret
             )
-            self.twitter_api = client
+            
             logging.info("Twitter API initialized successfully")
         except Exception as e:
             logging.error(f"Twitter API authentication failed: {e}")
             self.twitter_api = None
+            self.twitter_client = None
 
     def setup_apis(self):
         """Set up API configurations with proper URL formatting."""
@@ -228,23 +240,44 @@ class DataCollector:
             return None
 
     def fetch_twitter_data(self, query: str = "bitcoin", count: int = 100) -> List[Dict]:
-        """Fetch Twitter data with error handling."""
-        if not self.twitter_api:
-            logging.error("Twitter API not initialized")
+        """Fetch tweets using Twitter API v2."""
+        if not self.twitter_client:
+            logging.warning("Twitter client not initialized - skipping Twitter data collection")
             return []
 
         try:
-            tweets = self.twitter_api.search_tweets(q=query, count=count, tweet_mode="extended")
-            return [{
-                'id': tweet.id_str,
-                'text': tweet.full_text,
-                'created_at': tweet.created_at.isoformat(),
-                'user': tweet.user.screen_name,
-                'retweet_count': tweet.retweet_count,
-                'favorite_count': tweet.favorite_count
-            } for tweet in tweets]
+            tweets = []
+            # Use search_recent_tweets for v2 API
+            response = self.twitter_client.search_recent_tweets(
+                query=query,
+                max_results=count,
+                tweet_fields=['created_at', 'public_metrics', 'text'],
+                user_fields=['username', 'public_metrics']
+            )
+            
+            if not response.data:
+                logging.warning(f"No tweets found for query: {query}")
+                return []
+
+            for tweet in response.data:
+                tweets.append({
+                    'id': tweet.id,
+                    'text': tweet.text,
+                    'created_at': tweet.created_at.isoformat(),
+                    'metrics': tweet.public_metrics,
+                    'query': query
+                })
+
+            # Save to file
+            twitter_file = self.data_dir / "twitter_data.json"
+            with open(twitter_file, 'w') as f:
+                json.dump(tweets, f, indent=2)
+            
+            logging.info(f"Successfully collected {len(tweets)} tweets")
+            return tweets
+
         except Exception as e:
-            logging.error(f"Twitter API error: {e}")
+            logging.error(f"Error fetching Twitter data: {e}")
             return []
 
     def collect_market_data(self):
