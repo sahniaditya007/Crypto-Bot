@@ -1,1 +1,214 @@
+# Environment variables
 .env
+.env.*
+!.env.example
+venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+models/
+data/
+logs/
+cache/
+*.h5
+*.csv
+*.json
+!requirements.txt
+
+# Additional security and sensitive files
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.der
+*.priv
+*.pub
+*.bak
+*.backup
+*.tmp
+*.temp
+*.log
+*.pid
+*.lock
+*.db
+*.sqlite
+*.sqlite3
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Local development
+local_settings.py
+instance/
+.webassets-cache
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Local development settings
+local_settings.py
+instance/
+.webassets-cache
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# API keys and secrets
+secrets.json
+credentials.json
+api_keys.json
+
+# Project specific data files
+data/*.json
+data/*.csv
+data/*.h5
+data/*.pkl
+data/*.npy
+data/*.npz
+data/*.bin
+data/*.dat
+data/*.txt
+!data/README.md
+
+# Project specific model files
+models/*.h5
+models/*.pkl
+models/*.bin
+models/*.onnx
+models/*.pt
+models/*.pth
+models/*.weights
+!models/README.md
+
+# Project specific log files
+logs/*.log
+logs/*.txt
+logs/*.csv
+!logs/README.md
+
+# Project specific cache files
+cache/*
+!cache/README.md
+
+# Project specific config files
+config/.env.*
+!config/README.md
+
+# Training and evaluation files
+training_history.csv
+evaluation_results.csv
+model_metrics.json
+model_checkpoints/
+wandb/
+runs/
+tensorboard/
