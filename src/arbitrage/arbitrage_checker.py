@@ -17,7 +17,7 @@ binance = ccxt.binance({
 # Initialize Kraken (for placing trades)
 kraken = ccxt.kraken({
     'apiKey': os.getenv('KRAKEN_API_KEY'),
-    'secret': os.getenv('KRAKEN_SECRET_KEY'),
+    'apiSecret': os.getenv('KRAKEN_API_SECRET'),
 })
 
 # Global variables to store latest prices

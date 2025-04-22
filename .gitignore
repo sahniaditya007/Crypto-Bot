@@ -1,6 +1,12 @@
 # Environment variables
 .env
 .env.*
+.env.arbitrage
+.env.sentiment
+.env.trading
+.env.arbitrage
+.env.sentiment
+.env.trading
 !.env.example
 venv
 
