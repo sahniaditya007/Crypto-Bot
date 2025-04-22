@@ -392,12 +392,19 @@ def predict_iceberg(symbol="BTCUSDT"):
     # Predict
     prediction = model.predict(X_input)[0][0]
     
-    # Log prediction with confidence
+    # Print detailed prediction
+    print("\n" + "="*50)
+    print(f"ICEBERG ORDER ANALYSIS FOR {symbol}")
+    print("="*50)
+    print(f"Prediction Score: {prediction:.4f}")
     confidence = prediction if prediction > 0.5 else 1 - prediction
     if prediction > 0.5:
-        logging.info(f"Symbol: {symbol} | Prediction: ICEBERG ORDER DETECTED 🚨 (Confidence: {confidence:.2%})")
+        print(f"Result: ICEBERG ORDER DETECTED 🚨")
+        print(f"Confidence: {confidence:.2%}")
     else:
-        logging.info(f"Symbol: {symbol} | Prediction: No iceberg order detected ✅ (Confidence: {confidence:.2%})")
+        print(f"Result: No iceberg order detected ✅")
+        print(f"Confidence: {confidence:.2%}")
+    print("="*50 + "\n")
 
 if __name__ == "__main__":
     try:

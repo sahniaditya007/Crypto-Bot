@@ -4,13 +4,12 @@ import os
 from binance.client import Client
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
-from tensorflow.keras.models import Sequential, load_model
-from tensorflow.keras.layers import LSTM, Dense, Input, Bidirectional, Dropout
-from tensorflow.keras.optimizers import Adam
+from tensorflow import keras
+from tensorflow.keras import layers
 import time
 from pathlib import Path
 
-@tf.keras.saving.register_keras_serializable()
+@keras.utils.register_keras_serializable()
 class CustomAttention(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         super(CustomAttention, self).__init__(**kwargs)
@@ -71,16 +70,16 @@ class CryptoPredictor:
         return np.array(X), np.array(y)
 
     def build_model(self):
-        inputs = Input(shape=(self.time_steps, 5))
-        x = Bidirectional(LSTM(128, return_sequences=True))(inputs)
-        x = Dropout(0.2)(x)
-        x = Bidirectional(LSTM(128, return_sequences=True))(x)
+        inputs = layers.Input(shape=(self.time_steps, 5))
+        x = layers.Bidirectional(layers.LSTM(128, return_sequences=True))(inputs)
+        x = layers.Dropout(0.2)(x)
+        x = layers.Bidirectional(layers.LSTM(128, return_sequences=True))(x)
         attention = CustomAttention()([x, x])
-        x = Bidirectional(LSTM(64, return_sequences=False))(attention)
-        x = Dropout(0.2)(x)
-        output = Dense(1, activation='linear')(x)
+        x = layers.Bidirectional(layers.LSTM(64, return_sequences=False))(attention)
+        x = layers.Dropout(0.2)(x)
+        output = layers.Dense(1, activation='linear')(x)
         model = tf.keras.Model(inputs, output)
-        model.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
+        model.compile(optimizer=keras.optimizers.Adam(learning_rate=0.001), loss='mse')
         return model
 
     def train_model(self, data=None, epochs=50, batch_size=32):
@@ -108,7 +107,7 @@ class CryptoPredictor:
 
     def load_model(self):
         if os.path.exists(self.model_path):
-            self.model = load_model(self.model_path)
+            self.model = keras.models.load_model(self.model_path)
             print("Model loaded successfully!")
             return True
         return False
