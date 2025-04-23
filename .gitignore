@@ -80,7 +80,6 @@ desktop.ini
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*.ipynb
 
 # Local development
 local_settings.py
