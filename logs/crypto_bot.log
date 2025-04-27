@@ -1843,3 +1843,41 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data\\market_trends.jso
 2025-04-21 23:31:16,762 - INFO - Saved market trends to C:\Users\adity\Documents\GitHub\Crypto Bot\data\market_trends.json
 2025-04-21 23:31:16,765 - INFO - Pipeline completed successfully
 2025-04-21 23:31:16,766 - INFO - Pipeline completed successfully
+2025-04-24 16:53:17,569 - INFO - CoinMarketCap API configured successfully
+2025-04-24 16:53:17,570 - INFO - API configurations set up successfully
+2025-04-24 16:53:17,570 - WARNING - Missing Twitter API credentials - Twitter functionality will be disabled
+2025-04-24 16:53:17,572 - INFO - Starting crypto bot pipeline
+2025-04-24 16:53:17,572 - INFO - Step 1: Collecting data
+2025-04-24 16:53:17,572 - INFO - Starting data collection
+2025-04-24 16:53:18,628 - INFO - Successfully collected market data for 100 cryptocurrencies
+2025-04-24 16:53:20,526 - INFO - Successfully collected cryptopanic news data
+2025-04-24 16:53:20,534 - INFO - Successfully collected newsapi news data
+2025-04-24 16:53:20,535 - WARNING - Twitter client not initialized - skipping Twitter data collection
+2025-04-24 16:53:20,535 - WARNING - Twitter client not initialized - skipping Twitter data collection
+2025-04-24 16:53:20,535 - WARNING - Twitter client not initialized - skipping Twitter data collection
+2025-04-24 16:53:20,561 - INFO - Successfully created historical data
+2025-04-24 16:53:20,562 - INFO - Successfully created historical data
+2025-04-24 16:53:20,562 - INFO - Data collection completed successfully
+2025-04-24 16:53:20,562 - INFO - Step 2: Performing sentiment analysis
+2025-04-24 16:53:20,563 - WARNING - News file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\coindesk_news.json
+2025-04-24 16:53:20,563 - INFO - Sentiment file already exists: C:\Users\adity\Documents\GitHub\Crypto Bot\data\cryptopanic_news_sentiment.json
+2025-04-24 16:53:20,564 - INFO - Sentiment file already exists: C:\Users\adity\Documents\GitHub\Crypto Bot\data\newsapi_news_sentiment.json
+2025-04-24 16:53:20,565 - WARNING - Twitter data file not found
+2025-04-24 16:53:20,565 - INFO - Step 3: Analyzing market trends
+2025-04-24 16:53:20,566 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\coindesk_sentiment.json
+2025-04-24 16:53:20,566 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\cryptopanic_sentiment.json
+2025-04-24 16:53:20,566 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\newsapi_sentiment.json
+2025-04-24 16:53:20,567 - ERROR - File not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\twitter_sentiment.json
+2025-04-24 16:53:20,567 - INFO - Loading market data from file...
+2025-04-24 16:53:20,569 - INFO - Loaded 100 market data points
+2025-04-24 16:53:20,569 - INFO - Calculating price changes...
+2025-04-24 16:53:20,575 - INFO - Step 4: Generating predictions
+2025-04-24 16:53:20,575 - ERROR - Error in prediction generation: C:\Users\adity\Documents\GitHub\Crypto Bot\src\sentiment\data\market_trends.json
+2025-04-24 16:53:20,576 - INFO - Step 5: Generating investment recommendations
+2025-04-24 16:53:21,553 - WARNING - Twitter sentiment file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\twitter_sentiment.json
+2025-04-24 16:53:21,553 - WARNING - Reddit sentiment file not found: C:\Users\adity\Documents\GitHub\Crypto Bot\data\reddit_sentiment.json
+2025-04-24 16:53:21,572 - INFO - Loaded sentiment data from C:\Users\adity\Documents\GitHub\Crypto Bot\data\cryptopanic_news_sentiment.json
+2025-04-24 16:53:21,576 - INFO - Loaded sentiment data from C:\Users\adity\Documents\GitHub\Crypto Bot\data\newsapi_news_sentiment.json
+2025-04-24 16:53:21,581 - INFO - Saved market trends to C:\Users\adity\Documents\GitHub\Crypto Bot\data\market_trends.json
+2025-04-24 16:53:21,591 - INFO - Pipeline completed successfully
+2025-04-24 16:53:21,592 - INFO - Pipeline completed successfully

@@ -3,21 +3,44 @@ import os
 import websocket
 import json
 import threading
-from dotenv import load_dotenv
+import boto3
+from botocore.exceptions import ClientError
 
-# Load API keys from .env file
-load_dotenv()
+# Function to fetch secrets from AWS Secrets Manager
+def get_secret():
+    secret_name = "arn:aws:secretsmanager:us-east-1:799854597846:secret:prod/cryptopilot-MA71Q3"
+    region_name = "us-east-1"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        raise e
+
+    # Parse and return the secret as a dictionary
+    return json.loads(get_secret_value_response['SecretString'])
+
+# Load secrets
+secrets = get_secret()
 
 # Initialize Binance (for placing trades)
 binance = ccxt.binance({
-    'apiKey': os.getenv('BINANCE_API_KEY'),
-    'secret': os.getenv('BINANCE_SECRET_KEY'),
+    'apiKey': secrets['BINANCE_API_KEY'],  # Replace with the key from your secret
+    'secret': secrets['BINANCE_SECRET_KEY'],  # Replace with the key from your secret
 })
 
 # Initialize Kraken (for placing trades)
 kraken = ccxt.kraken({
-    'apiKey': os.getenv('KRAKEN_API_KEY'),
-    'apiSecret': os.getenv('KRAKEN_API_SECRET'),
+    'apiKey': secrets['KRAKEN_API_KEY'],  # Replace with the key from your secret
+    'apiSecret': secrets['KRAKEN_API_SECRET'],  # Replace with the key from your secret
 })
 
 # Global variables to store latest prices

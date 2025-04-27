@@ -47,6 +47,9 @@ ENV/
 models/
 data/
 logs/
+log/
+crypto_bot.log
+*log
 cache/
 *.h5
 *.csv
