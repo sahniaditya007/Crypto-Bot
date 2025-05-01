@@ -5,13 +5,15 @@ from typing import Dict, Any
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import boto3  # Add this import
+from botocore.exceptions import NoCredentialsError
 
-from .data_collection import DataCollector
-from .sentiment_analysis import process_news_data, process_twitter_data
-from .market_analysis import analyze_market_trends
-from .prediction_generation import generate_predictions
-from .evaluation_metrics import evaluate_model
-from .recommendation_system import CryptoRecommender
+from data_collection import DataCollector
+from sentiment_analysis import process_news_data, process_twitter_data
+from market_analysis import analyze_market_trends
+from prediction_generation import generate_predictions
+from evaluation_metrics import evaluate_model
+from recommendation_system import CryptoRecommender
 
 # Define project root directory (two levels up from this file)
 PROJECT_ROOT = Path(__file__).parent.parent.parent
@@ -48,6 +50,8 @@ class CryptoBot:
         self.data_collector = DataCollector()
         self.data_dir = DATA_DIR
         self.recommender = CryptoRecommender()
+        self.s3_bucket = os.getenv("S3_BUCKET_NAME")  # Add S3 bucket name from environment variables
+        self.s3_client = boto3.client('s3')  # Initialize S3 client
 
     def run_pipeline(self) -> Dict[str, Any]:
         """Run the complete crypto bot pipeline."""
@@ -67,17 +71,32 @@ class CryptoBot:
             logging.info("Step 3: Analyzing market trends")
             market_trends = analyze_market_trends()
             self.results['market_trends'] = market_trends
+            
+            # Upload market trends to S3
+            if market_trends:
+                market_trends_file = self.data_dir / "market_trends.json"
+                self.upload_to_s3(market_trends_file, "market/market_trends.json")
 
             # Step 4: Generate Predictions
             logging.info("Step 4: Generating predictions")
             predictions, confidence_scores = generate_predictions()
             self.results['predictions'] = predictions
             self.results['confidence_scores'] = confidence_scores
+            
+            # Upload predictions to S3
+            if predictions:
+                predictions_file = self.data_dir / "predictions.json"
+                self.upload_to_s3(predictions_file, "predictions/predictions.json")
 
             # Step 5: Generate Investment Recommendations
             logging.info("Step 5: Generating investment recommendations")
             recommendations = self.recommender.get_top_recommendations()
             self.results['recommendations'] = recommendations
+            
+            # Upload recommendations to S3
+            if recommendations:
+                recommendations_file = self.data_dir / "recommendations.json"
+                self.upload_to_s3(recommendations_file, "recommendations/recommendations.json")
 
             self.end_time = datetime.now()
             self.results['execution_time'] = (self.end_time - self.start_time).total_seconds()
@@ -88,6 +107,39 @@ class CryptoBot:
         except Exception as e:
             logging.error(f"Pipeline failed: {str(e)}", exc_info=True)
             raise
+
+    def upload_to_s3(self, file_path: Path, s3_key: str):
+        """Upload a file to an S3 bucket."""
+        try:
+            if not file_path.exists():
+                logging.error(f"❌ File not found for S3 upload: {file_path}")
+                return
+
+            logging.info(f"📤 Attempting to upload {file_path} to S3 bucket {self.s3_bucket}/{s3_key}")
+            
+            # Log file size
+            file_size = file_path.stat().st_size
+            logging.info(f"File size: {file_size} bytes")
+
+            self.s3_client.upload_file(str(file_path), self.s3_bucket, s3_key)
+            logging.info(f"✅ Successfully uploaded {file_path} to S3 bucket {self.s3_bucket}/{s3_key}")
+            
+            # Verify upload
+            try:
+                self.s3_client.head_object(Bucket=self.s3_bucket, Key=s3_key)
+                logging.info(f"✅ Verified file exists in S3: {s3_key}")
+            except Exception as e:
+                logging.error(f"❌ Failed to verify S3 upload: {e}")
+                
+        except FileNotFoundError:
+            logging.error(f"❌ File not found: {file_path}")
+        except NoCredentialsError:
+            logging.error("❌ AWS credentials not found or invalid")
+        except Exception as e:
+            logging.error(f"❌ Failed to upload {file_path} to S3: {str(e)}")
+            logging.error(f"Error type: {type(e).__name__}")
+            if hasattr(e, 'response'):
+                logging.error(f"Error response: {e.response}")
 
     def _run_sentiment_analysis(self):
         """Run sentiment analysis on collected data."""
@@ -105,6 +157,8 @@ class CryptoBot:
                 if not sentiment_file.exists():
                     logging.info(f"Processing news data from {news_file}")
                     process_news_data(news_file)
+                    # Upload the processed sentiment file to S3
+                    self.upload_to_s3(sentiment_file, f"sentiment/{source}_news_sentiment.json")
                 else:
                     logging.info(f"Sentiment file already exists: {sentiment_file}")
 
@@ -116,6 +170,8 @@ class CryptoBot:
                 if not twitter_sentiment_file.exists():
                     logging.info("Processing Twitter data")
                     process_twitter_data(twitter_file)
+                    # Upload the processed Twitter sentiment file to S3
+                    self.upload_to_s3(twitter_sentiment_file, "sentiment/twitter_sentiment.json")
                 else:
                     logging.info("Twitter sentiment file already exists")
             else:
